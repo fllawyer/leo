@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="方雳律师，浙江科资律师事务所主任，专注科创企业与成长型企业法律服务，擅长股权架构、公司治理、投融资交易及商事争议解决，执业15年，坐落于杭州。">
+<template id="__bundler_thumbnail" data-bg-color="#ffffff">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <!-- Nav bar -->
+    <rect x="0" y="0" width="1200" height="64" fill="#ffffff" />
+    <rect x="0" y="63" width="1200" height="1" fill="#e6e2db" />
+    <text x="80" y="41" font-family="serif" font-size="18" fill="#0f2744" letter-spacing="8">方 · 雳</text>
+    <!-- Hero -->
+    <rect x="80" y="130" width="160" height="2" fill="#b8973a" opacity="0.5" />
+    <text x="80" y="120" font-family="serif" font-size="11" fill="#b8973a" letter-spacing="5">律师 · 浙江科资律师事务所 · 杭州</text>
+    <text x="80" y="200" font-family="serif" font-size="52" fill="#0f2744" font-weight="300">很多企业的法律风险，</text>
+    <text x="80" y="268" font-family="serif" font-size="52" fill="#0f2744" font-weight="300">不是没有，</text>
+    <text x="80" y="336" font-family="serif" font-size="52" fill="#0f2744" font-weight="300">只是<tspan font-weight="500" text-decoration="underline">还没爆发</tspan>。</text>
+    <!-- Stats -->
+    <rect x="820" y="160" width="1" height="300" fill="#e6e2db" />
+    <text x="868" y="230" font-family="serif" font-size="42" fill="#0f2744" font-weight="300">15</text>
+    <text x="868" y="260" font-family="sans-serif" font-size="11" fill="#999" letter-spacing="3">执业经验</text>
+    <text x="868" y="320" font-family="serif" font-size="42" fill="#0f2744" font-weight="300">200+</text>
+    <text x="868" y="350" font-family="sans-serif" font-size="11" fill="#999" letter-spacing="3">服务企业</text>
+    <text x="868" y="410" font-family="serif" font-size="42" fill="#0f2744" font-weight="300">5大</text>
+    <text x="868" y="440" font-family="sans-serif" font-size="11" fill="#999" letter-spacing="3">核心领域</text>
+    <!-- CTA -->
+    <text x="80" y="430" font-family="sans-serif" font-size="12" fill="#0f2744" letter-spacing="4">预约咨询</text>
+    <rect x="80" y="434" width="64" height="1" fill="#0f2744" />
+    <!-- Bottom section hint -->
+    <rect x="0" y="560" width="1200" height="240" fill="#0a1d33" />
+    <text x="80" y="630" font-family="sans-serif" font-size="11" fill="#b8973a" letter-spacing="5">主要服务领域</text>
+    <text x="80" y="670" font-family="serif" font-size="28" fill="#ffffff" font-weight="300">五大核心业务方向</text>
+  </svg>
+</template>
+<title>方雳律师 | 杭州股权治理·投融资·商事争议律师</title>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+/* ── Reset & Tokens ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --nv: #0f2744;
+  --nv2: #0a1d33;
+  --gd: #b8973a;
+  --gd2: rgba(184,151,58,.15);
+  --cr: #faf9f6;
+  --wh: #ffffff;
+  --tx: #1a1a1a;
+  --mt: #777;
+  --bd: #e6e2db;
+  --bd2: #f0ece5;
+  --g1: #f7f5f1;
+  --serif: 'Songti SC', 'STSong', 'SimSun', serif;
+  --sans: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  --pad: clamp(32px, 8vw, 100px);
+  --maxw: 1080px;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  color: var(--tx);
+  background: var(--wh);
+  font-size: 15px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Anchors ── */
+.anc { display: block; height: 80px; margin-top: -80px; pointer-events: none; }
+
+/* ── Nav ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--bd);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 var(--pad);
+  height: 64px;
+}
+.nav-brand {
+  font-family: var(--serif);
+  font-size: 14px; letter-spacing: 6px;
+  color: var(--nv); font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a {
+  font-size: 11px; letter-spacing: 2px; color: var(--mt);
+  cursor: pointer; transition: color .2s; text-decoration: none;
+  font-weight: 300;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--nv); }
+
+/* ── Hero ── */
+.hero {
+  padding-top: 64px;
+  min-height: 100vh;
+  display: flex; align-items: center;
+  border-bottom: 1px solid var(--bd);
+}
+.hero-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 100px var(--pad) 90px;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 80px;
+  align-items: end;
+  width: 100%;
+}
+.hero-eyebrow {
+  font-size: 10px; letter-spacing: 5px;
+  color: var(--gd); text-transform: uppercase;
+  margin-bottom: 36px; font-weight: 300;
+}
+.hero-h1 {
+  font-family: var(--serif);
+  font-size: clamp(36px, 4.5vw, 58px);
+  font-weight: 300; color: var(--nv);
+  line-height: 1.25; margin-bottom: 36px;
+}
+.hero-h1 em {
+  font-style: normal; font-weight: 500;
+  border-bottom: 2px solid var(--gd);
+  padding-bottom: 2px;
+}
+.hero-sub {
+  font-size: 13px; color: var(--mt);
+  line-height: 2.3; max-width: 500px;
+  font-weight: 300; margin-bottom: 48px;
+}
+.hero-cta {
+  display: inline-block; cursor: pointer;
+  font-size: 10px; letter-spacing: 4px;
+  color: var(--nv);
+  border-bottom: 1px solid var(--nv);
+  padding-bottom: 3px;
+  transition: opacity .2s;
+}
+.hero-cta:hover { opacity: .5; }
+.hero-aside {
+  padding-bottom: 4px;
+  display: flex; flex-direction: column; gap: 0;
+  border-left: 1px solid var(--bd);
+  padding-left: 48px;
+  align-self: center;
+}
+.hero-stat { padding: 20px 0; border-bottom: 1px solid var(--bd2); }
+.hero-stat:first-child { padding-top: 0; }
+.hero-stat:last-child { border-bottom: none; padding-bottom: 0; }
+.hero-stat-n {
+  font-family: var(--serif);
+  font-size: 38px; font-weight: 300;
+  color: var(--nv); line-height: 1;
+  margin-bottom: 6px;
+}
+.hero-stat-n sub { font-size: 16px; vertical-align: baseline; }
+.hero-stat-l { font-size: 10px; letter-spacing: 3px; color: var(--mt); }
+
+/* ── Section shell ── */
+.section { max-width: var(--maxw); margin: 0 auto; padding: 96px var(--pad); }
+.section-label {
+  font-size: 9px; letter-spacing: 5px;
+  color: var(--gd); text-transform: uppercase;
+  margin-bottom: 16px; font-weight: 400;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 300; color: var(--nv);
+  line-height: 1.5; margin-bottom: 56px;
+}
+
+/* ── Positioning ── */
+.pos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.pos-body { font-size: 13px; color: var(--mt); line-height: 2.3; font-weight: 300; margin-bottom: 16px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.tag {
+  font-size: 10px; letter-spacing: 1px;
+  color: var(--nv); border: 1px solid var(--bd);
+  padding: 6px 14px; font-weight: 300;
+  background: var(--cr); transition: border-color .2s;
+}
+.tag:hover { border-color: var(--nv); }
+
+/* ── Services (dark band) ── */
+.services-wrap { background: var(--nv2); }
+.services-inner { max-width: var(--maxw); margin: 0 auto; padding: 96px var(--pad); }
+.services-inner .section-label { color: rgba(184,151,58,.75); }
+.services-inner .section-title { color: var(--wh); }
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.07);
+}
+.svc-card {
+  background: rgba(255,255,255,.025);
+  padding: 36px 28px;
+  transition: background .2s;
+  cursor: default;
+}
+.svc-card:hover { background: rgba(255,255,255,.06); }
+.svc-n { font-size: 9px; letter-spacing: 4px; color: var(--gd); margin-bottom: 20px; }
+.svc-h {
+  font-family: var(--serif);
+  font-size: 15px; font-weight: 400; color: var(--wh);
+  margin-bottom: 14px; line-height: 1.6;
+}
+.svc-p { font-size: 12px; color: rgba(255,255,255,.38); line-height: 2; font-weight: 300; }
+.svc-sub { font-size: 10px; color: rgba(255,255,255,.2); margin-top: 16px; font-weight: 300; letter-spacing: 1px; }
+
+/* ── Pain points ── */
+.pain-wrap { background: var(--g1); border-top: 1px solid var(--bd); border-bottom: 1px solid var(--bd); }
+.pain-list { display: flex; flex-direction: column; }
+.pain-item {
+  display: flex; align-items: flex-start; gap: 28px;
+  padding: 22px 0; border-bottom: 1px solid var(--bd);
+}
+.pain-item:first-child { border-top: 1px solid var(--bd); }
+.pain-n { font-size: 9px; letter-spacing: 3px; color: var(--gd); min-width: 20px; padding-top: 4px; }
+.pain-t { font-size: 14px; color: var(--tx); line-height: 1.9; font-weight: 300; }
+
+/* ── Style band ── */
+.style-wrap { background: var(--nv); }
+.style-inner {
+  max-width: var(--maxw); margin: 0 auto; padding: 96px var(--pad);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.style-inner .section-label { color: rgba(184,151,58,.65); }
+.style-inner .section-title { color: var(--wh); margin-bottom: 24px; }
+.style-desc { font-size: 13px; color: rgba(255,255,255,.45); line-height: 2.3; font-weight: 300; }
+.style-list { display: flex; flex-direction: column; gap: 20px; }
+.style-item { display: flex; align-items: flex-start; gap: 20px; }
+.style-rule { width: 20px; height: 1px; background: var(--gd); margin-top: 11px; flex-shrink: 0; opacity: .55; }
+.style-item-t { font-size: 14px; color: rgba(255,255,255,.65); line-height: 1.9; font-weight: 300; }
+
+/* ── Profile ── */
+.profile-wrap { background: var(--g1); border-top: 1px solid var(--bd); border-bottom: 1px solid var(--bd); }
+.profile-inner {
+  max-width: var(--maxw); margin: 0 auto; padding: 96px var(--pad);
+  display: grid; grid-template-columns: auto 1fr; gap: 64px; align-items: start;
+}
+.avatar {
+  width: 96px; height: 96px; border-radius: 50%;
+  border: 1px solid var(--bd); background: var(--wh);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; overflow: hidden;
+  color: var(--bd); flex-direction: column; gap: 4px;
+}
+.avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.avatar-placeholder {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 6px; height: 100%;
+}
+.avatar-placeholder svg { opacity: .3; }
+.avatar-placeholder span { font-size: 9px; letter-spacing: 1px; color: var(--bd); }
+.profile-desc { font-size: 13px; color: var(--mt); line-height: 2.3; font-weight: 300; margin-bottom: 40px; }
+/* timeline */
+.timeline { padding-left: 24px; border-left: 1px solid var(--bd); display: flex; flex-direction: column; }
+.tl-item { position: relative; padding-bottom: 36px; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-dot {
+  position: absolute; left: -28.5px; top: 6px;
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--g1); border: 1px solid var(--gd);
+}
+.tl-year { font-size: 9px; letter-spacing: 3px; color: var(--gd); margin-bottom: 4px; }
+.tl-role { font-size: 15px; font-weight: 500; color: var(--nv); margin-bottom: 2px; }
+.tl-org { font-size: 13px; color: var(--mt); font-weight: 300; }
+.tl-desc { font-size: 13px; color: var(--mt); font-weight: 300; line-height: 2; margin-top: 8px; }
+
+/* ── Contact ── */
+.contact-inner {
+  max-width: var(--maxw); margin: 0 auto; padding: 96px var(--pad);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+}
+.contact-desc { font-size: 13px; color: var(--mt); line-height: 2.3; font-weight: 300; margin-bottom: 0; }
+.contact-list { display: flex; flex-direction: column; }
+.contact-item {
+  display: flex; gap: 24px; align-items: flex-start;
+  padding: 18px 0; border-bottom: 1px solid var(--bd);
+}
+.contact-item:first-child { border-top: 1px solid var(--bd); }
+.contact-label {
+  font-size: 9px; letter-spacing: 3px; color: var(--gd);
+  text-transform: uppercase; min-width: 36px; padding-top: 3px;
+  flex-shrink: 0;
+}
+.contact-val { font-size: 13px; color: var(--tx); font-weight: 300; line-height: 1.7; }
+.contact-val a { color: var(--nv); text-decoration: none; }
+.contact-val a:hover { opacity: .6; }
+
+/* ── Articles ── */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1px;
+  background: var(--bd);
+  border: 1px solid var(--bd);
+}
+.article-card {
+  background: var(--wh); padding: 32px 28px;
+  cursor: pointer; transition: background .2s;
+  display: flex; flex-direction: column;
+}
+.article-card:hover { background: var(--cr); }
+.article-tag { font-size: 9px; letter-spacing: 3px; color: var(--gd); margin-bottom: 16px; }
+.article-title {
+  font-family: var(--serif);
+  font-size: 16px; font-weight: 400; color: var(--nv);
+  line-height: 1.6; margin-bottom: 12px; flex: 1;
+}
+.article-desc { font-size: 12px; color: var(--mt); line-height: 1.9; font-weight: 300; }
+.article-date { font-size: 10px; color: var(--bd); margin-top: 20px; letter-spacing: 1px; }
+.article-more {
+  margin-top: 40px; display: inline-block;
+  font-size: 10px; letter-spacing: 4px; color: var(--mt);
+  border-bottom: 1px solid var(--bd); padding-bottom: 3px;
+  cursor: pointer; transition: color .2s, border-color .2s;
+}
+.article-more:hover { color: var(--nv); border-color: var(--nv); }
+
+/* ── Footer ── */
+footer {
+  text-align: center; padding: 36px var(--pad);
+  font-size: 10px; color: var(--bd);
+  border-top: 1px solid var(--bd);
+  letter-spacing: 3px; font-weight: 300;
+}
+
+/* ── Responsive: Tablet (≤1024px) ── */
+@media (max-width: 1024px) {
+  :root { --pad: clamp(24px, 5vw, 60px); }
+  .hero-inner { grid-template-columns: 1fr 260px; gap: 48px; }
+  .hero-stat-n { font-size: 30px; }
+  .svc-grid { grid-template-columns: repeat(2, 1fr); }
+  .pos-grid { gap: 48px; }
+  .style-inner { gap: 48px; }
+  .contact-inner { gap: 48px; }
+}
+
+/* ── Responsive: Mobile (≤680px) ── */
+@media (max-width: 680px) {
+  :root { --pad: 20px; }
+
+  /* Nav: hide text links, show hamburger-style compact */
+  nav { height: 56px; padding: 0 20px; }
+  .nav-brand { font-size: 13px; letter-spacing: 4px; }
+  .nav-links { gap: 12px; }
+  .nav-links a { font-size: 10px; letter-spacing: 1px; }
+  /* Hide less important nav items on small screens */
+  .nav-links a:nth-child(2),
+  .nav-links a:nth-child(3) { display: none; }
+  .anc { height: 56px; margin-top: -56px; }
+
+  /* Hero */
+  .hero { padding-top: 56px; min-height: auto; }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 60px 20px 52px;
+  }
+  .hero-h1 { font-size: clamp(28px, 8vw, 38px); margin-bottom: 24px; }
+  .hero-sub { font-size: 13px; margin-bottom: 36px; }
+  .hero-aside {
+    border-left: none; padding-left: 0;
+    flex-direction: row;
+    border-top: 1px solid var(--bd); padding-top: 28px;
+    gap: 0;
+  }
+  .hero-stat {
+    flex: 1; padding: 0 16px 0 0;
+    border-bottom: none;
+    border-right: 1px solid var(--bd2);
+  }
+  .hero-stat:last-child { border-right: none; padding-right: 0; }
+  .hero-stat-n { font-size: 26px; }
+  .hero-stat-l { font-size: 9px; }
+
+  /* Sections */
+  .section { padding: 56px 20px; }
+  .section-title { font-size: 22px; margin-bottom: 36px; }
+  .services-inner { padding: 56px 20px; }
+  .style-inner { padding: 56px 20px; }
+  .profile-inner { padding: 56px 20px; }
+
+  /* Grids → single column */
+  .pos-grid,
+  .style-inner,
+  .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+  .profile-inner { grid-template-columns: 1fr; gap: 24px; }
+  .svc-grid { grid-template-columns: 1fr; }
+  .articles-grid { grid-template-columns: 1fr; }
+
+  /* Profile */
+  .avatar { width: 72px; height: 72px; }
+
+  /* Contact */
+  .contact-item { gap: 16px; }
+  .contact-val { font-size: 13px; }
+
+  /* Footer */
+  footer { font-size: 9px; letter-spacing: 2px; padding: 28px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="site-nav">
+  <a class="nav-brand" href="index.html">方 · 雳</a>
+  <div class="nav-links">
+    <a onclick="nj('p1')">定位</a>
+    <a onclick="nj('p2')">服务领域</a>
+    <a onclick="nj('p3')">执业经历</a>
+    <a onclick="nj('p4')">联系方式</a>
+    <a href="articles.html">文章</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-eyebrow">律师 · 浙江科资律师事务所 · 杭州</p>
+      <h1 class="hero-h1" id="hero-h1"><span style="white-space:nowrap">很多企业的法律风险，</span><br>不是没有，<br>只是<em>还没爆发</em>。</h1>
+      <p class="hero-sub">股权没定清楚、控制权被悄悄稀释、合伙人关系开始出现裂缝——这些问题往往不会在平时显现，却会在企业最关键的节点突然变得棘手。方雳律师专注科创与成长型企业，帮你在问题变成危机之前，找到清晰可行的应对路径。</p>
+      <span class="hero-cta" onclick="nj('p4')">预约咨询</span>
+    </div>
+    <div class="hero-aside">
+      <div class="hero-stat">
+        <div class="hero-stat-n">15<sub>年</sub></div>
+        <div class="hero-stat-l">执业经验</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">200<sub>+</sub></div>
+        <div class="hero-stat-l">服务企业</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">5<sub>大</sub></div>
+        <div class="hero-stat-l">核心领域</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POSITIONING -->
+<span id="p1" class="anc"></span>
+<div class="section">
+  <p class="section-label">专业定位</p>
+  <div class="pos-grid">
+    <div>
+      <h2 class="section-title">你现在“先放一放”的问题，<br>迟早会变成你最头疼的事。</h2>
+      <p class="pos-body">大多数创始人不是不重视法律，而是被更紧迫的事情占满了——融资、产品、团队。法律的事“不急”，就一直往后推。</p>
+      <p class="pos-body">但那些没定清楚的股权、没看仔细的融资条款、没写进协议的合伙约定，不会因为你忙就自动消失。它们只是在等一个时机，以更大的代价重新出现在你面前。</p>
+      <p class="pos-body">创业初期觉得“先把事做起来”，但等合伙人出现分歧，才发现当初没定清楚的，现在很难改；融资时觉得“条款差不多就行”，签完才发现控制权已经悄悄被稀释；经营中觉得“大家是老朋友，不至于出问题”，直到矛盾爆发，才意识到没有任何书面依据可以保护自己。</p>
+    </div>
+    <div>
+      <p class="section-label" style="margin-bottom:20px">适合服务的客户</p>
+      <div class="tags">
+        <span class="tag">科创企业</span>
+        <span class="tag">成长型企业</span>
+        <span class="tag">创业团队</span>
+        <span class="tag">创始人 · 核心股东</span>
+        <span class="tag">正处于融资阶段的企业</span>
+        <span class="tag">面临治理调整的企业</span>
+        <span class="tag">股东矛盾 · 控制权争议</span>
+        <span class="tag">需要长期法律支持的民营企业</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<span id="p2" class="anc"></span>
+<div class="services-wrap">
+  <div class="services-inner">
+    <p class="section-label">主要服务领域</p>
+    <p class="section-title">五大核心业务方向</p>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <div class="svc-n">01</div>
+        <h3 class="svc-h">企业法律顾问</h3>
+        <p class="svc-p">合同发过来了，不知道能不能签；合作谈得差不多，不知道怎么落到纸面；出了纠纷，不知道自己有没有依据。这些不是要打官司才需要律师，而是每个决策节点都需要一个能说清楚的人。</p>
+        <p class="svc-sub">适合：日常经营中需要法律支撑的企业</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-n">02</div>
+        <h3 class="svc-h">股权架构与公司治理</h3>
+        <p class="svc-p">股权怎么分，表决权怎么定，创始人的控制权怎么保住，合伙人退出怎么处理——这些在初期看起来不急，却是日后最容易引发内部撕裂的根源。没定清楚的结构，迟早要补代价。</p>
+        <p class="svc-sub">适合：准备创业、已有分歧、计划融资前</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-n">03</div>
+        <h3 class="svc-h">投融资及合作交易</h3>
+        <p class="svc-p">投资人给的条款，大部分创始人看不懂，或者觉得“都是标准的”。但对赌、回购、优先清算权这些条款，在公司顺风顺水时感觉不到，一旦出现波折，就会发现自己签了什么。</p>
+        <p class="svc-sub">适合：正在融资、谈合作、准备签约的企业</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-n">04</div>
+        <h3 class="svc-h">股东及控制权争议</h3>
+        <p class="svc-p">股东之间开始有摩擦，开会越来越难达成一致，有人开始质疑决策权归属——这种阶段，每拖一天，公司的正常运营就多一分风险，最终付出的代价远超早期介入的成本。</p>
+        <p class="svc-sub">适合：已出现股东分歧或治理僵局的企业</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-n">05</div>
+        <h3 class="svc-h">商事争议解决</h3>
+        <p class="svc-p">对方不履约、款项收不回来、合作破裂了说不清责任——这些情况发生时，很多人的第一反应是“再等等看”。但越拖，证据越难固定，主动权越少，最终能拿回来的也越少。</p>
+        <p class="svc-sub">适合：面临纠纷或合作争议、需要尽快行动的企业</p>
+      </div>
+      <div class="svc-card" style="display:flex;flex-direction:column;justify-content:flex-end">
+        <p style="font-size:12px;color:rgba(255,255,255,.25);line-height:2;font-weight:300;margin-bottom:24px">如果你不确定自己的问题属于哪个方向，直接联系即可——我来判断。</p>
+        <span onclick="nj('p4')" style="display:inline-block;font-size:9px;letter-spacing:4px;color:rgba(184,151,58,.8);border-bottom:1px solid rgba(184,151,58,.3);padding-bottom:3px;cursor:pointer">预约咨询 →</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAIN POINTS -->
+<div class="pain-wrap">
+  <div class="section">
+    <p class="section-label">你是否也有这些困惑</p>
+    <p class="section-title">这些问题，很多人拖了很久</p>
+    <div class="pain-list">
+      <div class="pain-item">
+        <div class="pain-n">01</div>
+        <p class="pain-t">创业时股权随便分了，现在合伙人出现分歧，才发现当初什么都没写清楚</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-n">02</div>
+        <p class="pain-t">合伙了好几年，谁负责什么、谁能拍板、谁可以退出，从来没认真谈过</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-n">03</div>
+        <p class="pain-t">投资协议签了，后来才慢慢意识到某些条款对自己很不利，但已经没有回头路</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-n">04</div>
+        <p class="pain-t">股东之间的矛盾已经影响到正常决策，但不知道从哪里入手、怎么推进才不会把关系彻底搞僵</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-n">05</div>
+        <p class="pain-t">法定代表人或董事想退出，但不知道怎么操作，担心退了还要背责任</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-n">06</div>
+        <p class="pain-t">合同、采购、对外合作都靠感觉，出了问题才发现完全没有书面依据可以追究</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STYLE -->
+<div class="style-wrap">
+  <div class="style-inner">
+    <div>
+      <p class="section-label">服务风格</p>
+      <h2 class="section-title">不给你一个结论，<br>帮你想清楚怎么做。</h2>
+      <p class="style-desc">很多法律意见停留在“这样做有风险”，但企业需要的是“那怎么办、能不能做、做了之后要注意什么”。法律建议如果不能落地，对经营者来说几乎没有价值。</p>
+    </div>
+    <div class="style-list">
+      <div class="style-item">
+        <div class="style-rule"></div>
+        <p class="style-item-t">先搞清楚你的业务在做什么，再判断法律上的问题在哪</p>
+      </div>
+      <div class="style-item">
+        <div class="style-rule"></div>
+        <p class="style-item-t">不只给结论，解释背后的逻辑，让你自己能判断</p>
+      </div>
+      <div class="style-item">
+        <div class="style-rule"></div>
+        <p class="style-item-t">方案要能真正落地，而不是在理论上正确、实操上没法用</p>
+      </div>
+      <div class="style-item">
+        <div class="style-rule"></div>
+        <p class="style-item-t">沟通要省力，不让你反复解释背景、猜测法律语言的意思</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE -->
+<span id="p3" class="anc"></span>
+<div class="profile-wrap">
+  <div class="profile-inner">
+    <div class="avatar">
+      <img src="touxiang.jpg" alt="方雳律师">
+    </div>
+    <div>
+      <p class="section-label">执业经历</p>
+      <p class="section-title" style="margin-bottom:20px">从业十五年，专注企业法律服务。</p>
+      <p class="profile-desc">十五年里，接触最多的不是大案要案，而是那些“还没出事但已经埋着隐患”的企业——股权没理清、合伙人关系开始松动、融资条款没看懂就签了。这类问题处理得早，代价小；拖到爆发，往往已经很难收拾。</p>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2017 — 至今</div>
+          <div class="tl-role">主任律师</div>
+          <div class="tl-org">浙江科资律师事务所</div>
+          <p class="tl-desc">创立浙江科资律师事务所并任主任至今，带领团队聚焦科创企业与成长型企业法律服务，深耕股权治理、投融资交易及商事争议解决领域。</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2010 — 2017</div>
+          <div class="tl-role">执业律师</div>
+          <div class="tl-org">浙江省律师行业</div>
+          <p class="tl-desc">正式取得律师执业资格，长期服务于企业客户，逐步形成以股权架构、公司治理与商事争议为核心的专业方向。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<span id="p4" class="anc"></span>
+<div class="section contact-inner">
+  <div>
+    <p class="section-label">联系方式</p>
+    <h2 class="section-title">欢迎咨询，<br>共同梳理法律问题。</h2>
+    <p class="contact-desc">如果你现在有一个问题想确认，或者有一个情况不知道该怎么处理，欢迎直接联系。不用准备太多，说清楚你的情况就好，我来判断下一步怎么走。</p>
+  </div>
+  <div class="contact-list">
+    <div class="contact-item">
+      <span class="contact-label">电话</span>
+      <span class="contact-val"><a href="tel:18958154567">18958154567</a></span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">邮箱</span>
+      <span class="contact-val"><a href="/cdn-cgi/l/email-protection#b2d4deded3c5cbd7c0f28380849cd1dddf"><span class="__cf_email__" data-cfemail="5d3b31313c2a24382f1d6c6f6b733e3230">[email&#160;protected]</span></a></span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">律所</span>
+      <span class="contact-val">浙江科资律师事务所</span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">地址</span>
+      <span class="contact-val">杭州市上城区钱江路<br>太和广场8号楼1307—1309室</span>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 方雳律师 · 浙江科资律师事务所 · 保留所有权利</footer>
+
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function nj(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 72, behavior: 'smooth' });
+}
+// Active nav highlight
+var links = document.querySelectorAll('.nav-links a[onclick]');
+var sections = ['p1','p2','p3','p4'];
+window.addEventListener('scroll', function() {
+  var scrollY = window.pageYOffset + 120;
+  var current = '';
+  sections.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top + window.pageYOffset <= scrollY) current = id;
+  });
+  links.forEach(function(a) {
+    var fn = a.getAttribute('onclick') || '';
+    a.classList.toggle('active', fn.indexOf(current) > -1 && current !== '');
+  });
+}, { passive: true });
+</script>
+</body>
+</html>
