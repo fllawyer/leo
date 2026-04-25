@@ -48,8 +48,8 @@
   --gd2: rgba(184,151,58,.15);
   --cr: #faf9f6;
   --wh: #ffffff;
-  --tx: #1a1a1a;
-  --mt: #777;
+  --tx: #111111;
+  --mt: #555555;
   --bd: #e6e2db;
   --bd2: #f0ece5;
   --g1: #f7f5f1;
@@ -63,12 +63,19 @@ body {
   font-family: var(--sans);
   color: var(--tx);
   background: var(--wh);
-  font-size: 15px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 2;
   -webkit-font-smoothing: antialiased;
+  text-align: justify;
+  text-justify: inter-ideograph;
 }
 
-/* ── Anchors ── */
+/* 两端对齐排除项 */
+h1, h2, h3, nav, .nav-brand, .nav-links,
+.section-label, .hero-eyebrow, .hero-cta,
+.svc-n, .svc-sub, .pain-n, .tl-year, .tl-role, .tl-org,
+.contact-label, .tags, .tag, .hero-stat-l,
+footer { text-align: initial; }
 .anc { display: block; height: 80px; margin-top: -80px; pointer-events: none; }
 
 /* ── Nav ── */
@@ -91,7 +98,7 @@ nav {
 }
 .nav-links { display: flex; gap: 28px; align-items: center; }
 .nav-links a {
-  font-size: 11px; letter-spacing: 2px; color: var(--mt);
+  font-size: 11px; letter-spacing: 2px; color: #555;
   cursor: pointer; transition: color .2s; text-decoration: none;
   font-weight: 300;
 }
@@ -116,8 +123,8 @@ nav {
 }
 .hero-eyebrow {
   font-size: 10px; letter-spacing: 5px;
-  color: var(--gd); text-transform: uppercase;
-  margin-bottom: 36px; font-weight: 300;
+  color: #8a7030; text-transform: uppercase;
+  margin-bottom: 36px; font-weight: 400;
 }
 .hero-h1 {
   font-family: var(--serif);
@@ -131,8 +138,8 @@ nav {
   padding-bottom: 2px;
 }
 .hero-sub {
-  font-size: 13px; color: var(--mt);
-  line-height: 2.3; max-width: 500px;
+  font-size: 16px; color: var(--mt);
+  line-height: 2.3; max-width: 520px;
   font-weight: 300; margin-bottom: 48px;
 }
 .hero-cta {
@@ -161,7 +168,7 @@ nav {
   margin-bottom: 6px;
 }
 .hero-stat-n sub { font-size: 16px; vertical-align: baseline; }
-.hero-stat-l { font-size: 10px; letter-spacing: 3px; color: var(--mt); }
+.hero-stat-l { font-size: 10px; letter-spacing: 3px; color: #555; }
 
 /* ── Section shell ── */
 .section { max-width: var(--maxw); margin: 0 auto; padding: 96px var(--pad); }
@@ -179,12 +186,12 @@ nav {
 
 /* ── Positioning ── */
 .pos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-.pos-body { font-size: 13px; color: var(--mt); line-height: 2.3; font-weight: 300; margin-bottom: 16px; }
+.pos-body { font-size: 16px; color: var(--mt); line-height: 2.3; font-weight: 300; margin-bottom: 16px; }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
 .tag {
-  font-size: 10px; letter-spacing: 1px;
+  font-size: 13px; letter-spacing: 1px;
   color: var(--nv); border: 1px solid var(--bd);
-  padding: 6px 14px; font-weight: 300;
+  padding: 8px 16px; font-weight: 300;
   background: var(--cr); transition: border-color .2s;
 }
 .tag:hover { border-color: var(--nv); }
@@ -211,11 +218,11 @@ nav {
 .svc-n { font-size: 9px; letter-spacing: 4px; color: var(--gd); margin-bottom: 20px; }
 .svc-h {
   font-family: var(--serif);
-  font-size: 15px; font-weight: 400; color: var(--wh);
+  font-size: 18px; font-weight: 400; color: var(--wh);
   margin-bottom: 14px; line-height: 1.6;
 }
-.svc-p { font-size: 12px; color: rgba(255,255,255,.38); line-height: 2; font-weight: 300; }
-.svc-sub { font-size: 10px; color: rgba(255,255,255,.2); margin-top: 16px; font-weight: 300; letter-spacing: 1px; }
+.svc-p { font-size: 15px; color: rgba(255,255,255,.6); line-height: 2; font-weight: 300; }
+.svc-sub { font-size: 13px; color: rgba(255,255,255,.4); margin-top: 16px; font-weight: 300; letter-spacing: 1px; }
 
 /* ── Pain points ── */
 .pain-wrap { background: var(--g1); border-top: 1px solid var(--bd); border-bottom: 1px solid var(--bd); }
@@ -226,7 +233,7 @@ nav {
 }
 .pain-item:first-child { border-top: 1px solid var(--bd); }
 .pain-n { font-size: 9px; letter-spacing: 3px; color: var(--gd); min-width: 20px; padding-top: 4px; }
-.pain-t { font-size: 14px; color: var(--tx); line-height: 1.9; font-weight: 300; }
+.pain-t { font-size: 17px; color: var(--tx); line-height: 1.9; font-weight: 300; }
 
 /* ── Style band ── */
 .style-wrap { background: var(--nv); }
@@ -236,11 +243,11 @@ nav {
 }
 .style-inner .section-label { color: rgba(184,151,58,.65); }
 .style-inner .section-title { color: var(--wh); margin-bottom: 24px; }
-.style-desc { font-size: 13px; color: rgba(255,255,255,.45); line-height: 2.3; font-weight: 300; }
+.style-desc { font-size: 16px; color: rgba(255,255,255,.65); line-height: 2.3; font-weight: 300; }
 .style-list { display: flex; flex-direction: column; gap: 20px; }
 .style-item { display: flex; align-items: flex-start; gap: 20px; }
 .style-rule { width: 20px; height: 1px; background: var(--gd); margin-top: 11px; flex-shrink: 0; opacity: .55; }
-.style-item-t { font-size: 14px; color: rgba(255,255,255,.65); line-height: 1.9; font-weight: 300; }
+.style-item-t { font-size: 17px; color: rgba(255,255,255,.85); line-height: 1.9; font-weight: 300; }
 
 /* ── Profile ── */
 .profile-wrap { background: var(--g1); border-top: 1px solid var(--bd); border-bottom: 1px solid var(--bd); }
@@ -262,7 +269,7 @@ nav {
 }
 .avatar-placeholder svg { opacity: .3; }
 .avatar-placeholder span { font-size: 9px; letter-spacing: 1px; color: var(--bd); }
-.profile-desc { font-size: 13px; color: var(--mt); line-height: 2.3; font-weight: 300; margin-bottom: 40px; }
+.profile-desc { font-size: 16px; color: var(--mt); line-height: 2.3; font-weight: 300; margin-bottom: 40px; }
 /* timeline */
 .timeline { padding-left: 24px; border-left: 1px solid var(--bd); display: flex; flex-direction: column; }
 .tl-item { position: relative; padding-bottom: 36px; }
@@ -273,16 +280,16 @@ nav {
   background: var(--g1); border: 1px solid var(--gd);
 }
 .tl-year { font-size: 9px; letter-spacing: 3px; color: var(--gd); margin-bottom: 4px; }
-.tl-role { font-size: 15px; font-weight: 500; color: var(--nv); margin-bottom: 2px; }
-.tl-org { font-size: 13px; color: var(--mt); font-weight: 300; }
-.tl-desc { font-size: 13px; color: var(--mt); font-weight: 300; line-height: 2; margin-top: 8px; }
+.tl-role { font-size: 17px; font-weight: 500; color: var(--nv); margin-bottom: 2px; }
+.tl-org { font-size: 15px; color: var(--mt); font-weight: 300; }
+.tl-desc { font-size: 15px; color: var(--mt); font-weight: 300; line-height: 2; margin-top: 8px; }
 
 /* ── Contact ── */
 .contact-inner {
   max-width: var(--maxw); margin: 0 auto; padding: 96px var(--pad);
   display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
 }
-.contact-desc { font-size: 13px; color: var(--mt); line-height: 2.3; font-weight: 300; margin-bottom: 0; }
+.contact-desc { font-size: 16px; color: var(--mt); line-height: 2.3; font-weight: 300; margin-bottom: 0; }
 .contact-list { display: flex; flex-direction: column; }
 .contact-item {
   display: flex; gap: 24px; align-items: flex-start;
@@ -294,7 +301,7 @@ nav {
   text-transform: uppercase; min-width: 36px; padding-top: 3px;
   flex-shrink: 0;
 }
-.contact-val { font-size: 13px; color: var(--tx); font-weight: 300; line-height: 1.7; }
+.contact-val { font-size: 16px; color: var(--tx); font-weight: 300; line-height: 1.7; }
 .contact-val a { color: var(--nv); text-decoration: none; }
 .contact-val a:hover { opacity: .6; }
 
@@ -331,7 +338,7 @@ nav {
 /* ── Footer ── */
 footer {
   text-align: center; padding: 36px var(--pad);
-  font-size: 10px; color: var(--bd);
+  font-size: 12px; color: #888;
   border-top: 1px solid var(--bd);
   letter-spacing: 3px; font-weight: 300;
 }
@@ -633,7 +640,7 @@ footer {
     </div>
     <div class="contact-item">
       <span class="contact-label">邮箱</span>
-      <span class="contact-val"><a href="/cdn-cgi/l/email-protection#b2d4deded3c5cbd7c0f28380849cd1dddf"><span class="__cf_email__" data-cfemail="5d3b31313c2a24382f1d6c6f6b733e3230">[email&#160;protected]</span></a></span>
+      <span class="contact-val"><a href="/cdn-cgi/l/email-protection#70161c1c1107091502304142465e131f1d"><span class="__cf_email__" data-cfemail="9afcf6f6fbede3ffe8daaba8acb4f9f5f7">[email&#160;protected]</span></a></span>
     </div>
     <div class="contact-item">
       <span class="contact-label">律所</span>
