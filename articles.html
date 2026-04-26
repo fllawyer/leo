@@ -8,174 +8,88 @@
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
-  --nv: #0f2744;
-  --nv2: #0a1d33;
-  --gd: #b8973a;
-  --gd-dark: #8a7030;
-  --cr: #faf9f6;
-  --wh: #ffffff;
-  --tx: #111111;
-  --mt: #555555;
-  --bd: #e6e2db;
-  --bd2: #f0ece5;
-  --g1: #f7f5f1;
-  --serif: 'Songti SC', 'STSong', 'SimSun', serif;
-  --sans: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-  --pad: clamp(32px, 8vw, 100px);
-  --maxw: 1080px;
+  --nv: #0f2744; --nv2: #0a1d33; --gd: #b8973a; --gd-dark: #8a7030;
+  --cr: #faf9f6; --wh: #fff; --tx: #111; --mt: #555;
+  --bd: #e6e2db; --g1: #f7f5f1;
+  --serif: 'Songti SC','STSong','SimSun',serif;
+  --sans: 'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  --pad: clamp(32px,8vw,100px); --maxw: 1080px;
 }
 html { scroll-behavior: smooth; }
-body {
-  font-family: var(--sans);
-  color: var(--tx);
-  background: var(--wh);
-  font-size: 17px;
-  line-height: 2;
-  -webkit-font-smoothing: antialiased;
-  text-align: justify;
-  text-justify: inter-ideograph;
-}
+body { font-family: var(--sans); color: var(--tx); background: var(--wh); font-size: 17px; line-height: 2; -webkit-font-smoothing: antialiased; }
 
-/* 两端对齐排除项 */
-h1, h2, h3, nav, .nav-brand, .nav-links,
-.section-label, .art-eyebrow, .art-tag,
-.art-date, .search-wrap, .back-btn,
-.cta-wrap, footer { text-align: initial; }
-
-/* ── Nav ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(255,255,255,.96);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--bd);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 var(--pad); height: 64px;
-}
-.nav-brand {
-  font-family: var(--serif); font-size: 14px; letter-spacing: 6px;
-  color: var(--nv); font-weight: 400; text-decoration: none; white-space: nowrap;
-}
-.nav-links { display: flex; gap: 28px; align-items: center; }
-.nav-links a {
-  font-size: 11px; letter-spacing: 2px; color: #555;
-  cursor: pointer; transition: color .2s; text-decoration: none; font-weight: 300;
-}
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--bd); display: flex; align-items: center; justify-content: space-between; padding: 0 var(--pad); height: 64px; }
+.nav-brand { font-family: var(--serif); font-size: 14px; letter-spacing: 6px; color: var(--nv); font-weight: 400; text-decoration: none; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { font-size: 11px; letter-spacing: 2px; color: #555; text-decoration: none; transition: color .2s; font-weight: 300; }
 .nav-links a:hover, .nav-links a.active { color: var(--nv); }
 
-/* ── Page wrapper ── */
 .page-wrap { padding-top: 64px; }
 
-/* ── Article list ── */
-.list-section {
-  max-width: var(--maxw); margin: 0 auto;
-  padding: 80px var(--pad) 96px;
-}
-.section-label {
-  font-size: 9px; letter-spacing: 5px;
-  color: var(--gd-dark); text-transform: uppercase;
-  margin-bottom: 16px; font-weight: 400;
-}
-.section-title {
-  font-family: var(--serif); font-size: clamp(22px, 2.5vw, 30px);
-  font-weight: 300; color: var(--nv); line-height: 1.5; margin-bottom: 16px;
-}
-.list-desc {
-  font-size: 16px; color: var(--mt); font-weight: 300;
-  line-height: 2.2; max-width: 560px; margin-bottom: 0;
-}
+/* ── 列表页 ── */
+.list-section { max-width: var(--maxw); margin: 0 auto; padding: 80px var(--pad) 96px; }
+.section-label { font-size: 9px; letter-spacing: 5px; color: var(--gd-dark); text-transform: uppercase; margin-bottom: 16px; font-weight: 400; }
+.section-title { font-family: var(--serif); font-size: clamp(22px,2.5vw,30px); font-weight: 300; color: var(--nv); line-height: 1.5; margin-bottom: 16px; }
+.list-desc { font-size: 16px; color: var(--mt); font-weight: 300; line-height: 2.2; max-width: 560px; }
 
-/* Article grid */
-.art-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1px; background: var(--bd);
-  border: 1px solid var(--bd); margin-top: 48px;
-}
-.art-card {
-  background: var(--wh); padding: 32px 28px;
-  cursor: pointer; transition: background .2s; display: flex; flex-direction: column;
-}
+/* 分类筛选 */
+.filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 36px; margin-bottom: 0; }
+.filter-btn { font-size: 11px; letter-spacing: 2px; color: var(--mt); border: 1px solid var(--bd); padding: 7px 18px; cursor: pointer; transition: all .2s; background: var(--wh); font-family: inherit; }
+.filter-btn:hover { border-color: var(--nv); color: var(--nv); }
+.filter-btn.active { background: var(--nv); color: var(--wh); border-color: var(--nv); }
+
+/* 文章卡片 */
+.art-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 1px; background: var(--bd); border: 1px solid var(--bd); margin-top: 28px; }
+.art-card { background: var(--wh); padding: 32px 28px; cursor: pointer; transition: background .2s; display: flex; flex-direction: column; }
 .art-card:hover { background: var(--cr); }
-.art-tag {
-  font-size: 9px; letter-spacing: 4px; color: var(--gd-dark);
-  text-transform: uppercase; font-weight: 400; margin-bottom: 16px;
-}
-.art-title {
-  font-family: var(--serif); font-size: 18px; font-weight: 400; color: var(--nv);
-  line-height: 1.6; margin-bottom: 14px; flex: 1;
-}
+.art-tag { font-size: 9px; letter-spacing: 4px; color: var(--gd-dark); text-transform: uppercase; font-weight: 400; margin-bottom: 16px; }
+.art-title { font-family: var(--serif); font-size: 18px; font-weight: 400; color: var(--nv); line-height: 1.6; margin-bottom: 14px; flex: 1; }
 .art-desc { font-size: 15px; color: var(--mt); line-height: 1.9; font-weight: 300; }
 .art-date { font-size: 11px; color: #aaa; margin-top: 20px; font-weight: 300; letter-spacing: 1px; }
+.no-result { padding: 56px 0; font-size: 14px; color: var(--bd); letter-spacing: 1px; display: none; }
 
-/* ── Article body ── */
+/* ── 文章正文 ── */
 .art-body-wrap { display: none; }
-.art-inner {
-  max-width: var(--maxw); margin: 0 auto; padding: 64px var(--pad) 96px;
-}
-.back-btn {
-  display: inline-block; cursor: pointer;
-  font-size: 11px; letter-spacing: 3px; color: var(--mt);
-  margin-bottom: 48px; transition: color .2s; font-weight: 300;
-}
+.art-inner { max-width: var(--maxw); margin: 0 auto; padding: 64px var(--pad) 96px; }
+.art-nav-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 48px; flex-wrap: wrap; gap: 16px; }
+.back-btn { font-size: 11px; letter-spacing: 3px; color: var(--mt); cursor: pointer; transition: color .2s; font-weight: 300; }
 .back-btn:hover { color: var(--nv); }
+.share-btn { display: flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: 2px; color: var(--mt); cursor: pointer; transition: color .2s; border: 1px solid var(--bd); padding: 7px 16px; font-family: inherit; background: none; }
+.share-btn:hover { color: var(--nv); border-color: var(--nv); }
+.share-toast { position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%); background: var(--nv); color: var(--wh); font-size: 13px; letter-spacing: 1px; padding: 12px 24px; opacity: 0; transition: opacity .3s; pointer-events: none; z-index: 999; }
+.share-toast.show { opacity: 1; }
+
 .art-content { max-width: 680px; }
-.art-eyebrow {
-  font-size: 9px; letter-spacing: 4px; color: var(--gd-dark);
-  text-transform: uppercase; font-weight: 400; margin-bottom: 20px;
-}
-.art-content h1 {
-  font-family: var(--serif); font-size: clamp(24px, 3vw, 36px);
-  font-weight: 300; color: var(--nv); line-height: 1.4; margin-bottom: 20px;
-}
-.art-meta {
-  font-size: 12px; color: #aaa; letter-spacing: 2px; font-weight: 300;
-  margin-bottom: 48px; border-bottom: 1px solid var(--bd); padding-bottom: 24px;
-}
-.art-content h3 {
-  font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--nv);
-  margin: 40px 0 16px; line-height: 1.5;
-}
-.art-content p {
-  font-size: 17px; color: var(--tx); line-height: 2.1;
-  margin-bottom: 20px; font-weight: 300;
-}
-.tip {
-  background: var(--g1); border-left: 2px solid var(--gd);
-  padding: 16px 20px; margin: 32px 0;
-  font-size: 16px; color: var(--mt); line-height: 2; font-weight: 300;
-}
+.art-eyebrow { font-size: 9px; letter-spacing: 4px; color: var(--gd-dark); text-transform: uppercase; font-weight: 400; margin-bottom: 20px; }
+.art-content h1 { font-family: var(--serif); font-size: clamp(24px,3vw,36px); font-weight: 300; color: var(--nv); line-height: 1.4; margin-bottom: 20px; }
+.art-meta { font-size: 12px; color: #aaa; letter-spacing: 2px; font-weight: 300; margin-bottom: 48px; border-bottom: 1px solid var(--bd); padding-bottom: 24px; }
+.art-content h3 { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--nv); margin: 40px 0 16px; line-height: 1.5; }
+.art-content p { font-size: 17px; color: var(--tx); line-height: 2.1; margin-bottom: 20px; font-weight: 300; text-align: justify; }
+.tip { background: var(--g1); border-left: 2px solid var(--gd); padding: 16px 20px; margin: 32px 0; font-size: 16px; color: var(--mt); line-height: 2; font-weight: 300; }
 
 /* CTA */
-.cta-wrap {
-  margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--bd);
-  display: flex; align-items: flex-start;
-  justify-content: space-between; flex-wrap: wrap; gap: 24px;
-}
-.cta-left .cta-label {
-  font-size: 9px; letter-spacing: 4px; color: var(--gd-dark);
-  text-transform: uppercase; font-weight: 400; margin-bottom: 8px;
-}
-.cta-left p { font-size: 15px; color: var(--mt); line-height: 1.9; font-weight: 300; margin-bottom: 0; }
-.cta-right { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-.btn {
-  display: inline-block; cursor: pointer; font-size: 11px; letter-spacing: 3px;
-  padding: 12px 24px; transition: all .25s; font-family: inherit;
-  text-decoration: none; border: 1px solid var(--nv);
-}
+.cta-wrap { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--bd); display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+.cta-label { font-size: 9px; letter-spacing: 4px; color: var(--gd-dark); text-transform: uppercase; font-weight: 400; margin-bottom: 8px; }
+.cta-left p { font-size: 15px; color: var(--mt); line-height: 1.9; font-weight: 300; }
+.cta-right { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn { display: inline-block; cursor: pointer; font-size: 11px; letter-spacing: 3px; padding: 12px 24px; transition: all .25s; font-family: inherit; border: 1px solid var(--nv); text-decoration: none; }
 .btn-p { background: var(--nv); color: var(--wh); }
-.btn-p:hover { background: var(--nv2); border-color: var(--nv2); }
+.btn-p:hover { background: var(--nv2); }
 .btn-g { background: transparent; color: var(--nv); }
 .btn-g:hover { background: var(--nv); color: var(--wh); }
 
-/* ── Footer ── */
-footer {
-  text-align: center; padding: 36px var(--pad);
-  font-size: 12px; color: #888;
-  border-top: 1px solid var(--bd); letter-spacing: 3px; font-weight: 300;
-}
+/* 上一篇/下一篇 */
+.art-pager { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--bd); display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--bd); border: 1px solid var(--bd); }
+.pager-item { background: var(--wh); padding: 24px 28px; cursor: pointer; transition: background .2s; }
+.pager-item:hover { background: var(--cr); }
+.pager-item.disabled { opacity: .3; cursor: default; pointer-events: none; }
+.pager-item.next { text-align: right; }
+.pager-dir { font-size: 9px; letter-spacing: 3px; color: var(--gd-dark); text-transform: uppercase; margin-bottom: 8px; font-weight: 400; }
+.pager-title { font-family: var(--serif); font-size: 15px; color: var(--nv); line-height: 1.5; font-weight: 400; }
 
-/* ── Responsive ── */
-@media (max-width: 1024px) { :root { --pad: clamp(24px, 5vw, 60px); } }
+footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #888; border-top: 1px solid var(--bd); letter-spacing: 3px; font-weight: 300; }
+
+@media (max-width: 1024px) { :root { --pad: clamp(24px,5vw,60px); } }
 @media (max-width: 680px) {
   :root { --pad: 20px; }
   nav { height: 56px; padding: 0 20px; }
@@ -187,6 +101,8 @@ footer {
   .art-grid { grid-template-columns: 1fr; }
   .art-inner { padding: 48px 20px 72px; }
   .cta-wrap { flex-direction: column; }
+  .art-pager { grid-template-columns: 1fr; }
+  .pager-item.next { text-align: left; }
 }
 </style>
 </head>
@@ -205,147 +121,160 @@ footer {
 
 <div class="page-wrap">
 
-<!-- 文章列表 -->
+<!-- 列表页 -->
 <div id="art-list">
   <div class="list-section">
     <p class="section-label">文章</p>
     <h2 class="section-title">写给企业经营者的法律思考</h2>
     <p class="list-desc">不谈法条，只谈处境。这里记录的是在实际工作中反复遇到的问题、容易被低估的风险，以及一些可以提前想清楚的事。</p>
+    <div class="filter-bar" id="filter-bar"></div>
+    <div class="no-result" id="no-result">没有找到相关文章</div>
     <div class="art-grid" id="art-grid"></div>
   </div>
 </div>
 
-<!-- 文章正文 -->
-<div id="a1" class="art-body-wrap"><div class="art-inner">
-  <span class="back-btn" onclick="showList()">← 返回文章列表</span>
-  <div class="art-content">
-    <div class="art-eyebrow">股权</div>
-    <h1>三个人创业，股权怎么分才不会埋雷</h1>
-    <p class="art-meta">2026 · 04 · 方雳律师</p>
-    <p>很多创业团队在最开始的时候，对股权的态度是"先把事情做起来，后面再说"。这个想法可以理解，但问题是：股权结构一旦确定，后续再改就需要付出很高的沟通成本和法律成本——甚至根本改不了。</p>
-    <p>我见过太多这样的情况：三个人创业，两年后其中一个人出工不出力，但因为当初没有退出机制，他的股权就这么摆在那里，既影响融资，也影响决策，更影响其他合伙人的心态。</p>
-    <h3>平均分是最"公平"的，也是最容易出问题的</h3>
-    <p>三个人各占三分之一，看起来公平，实际上是最容易陷入僵局的结构。一旦出现分歧，没有任何一方能推动决策，公司就会卡住。更大的问题是：平均分往往意味着大家默认"贡献差不多"，但实际上三个人的投入从来就不是均等的。</p>
-    <h3>按出资比例分，听起来合理，但忽略了一件事</h3>
-    <p>出资是静态的，贡献是动态的。一个出钱少但持续投入精力的人，和一个出钱多但后来几乎不参与的人，最终对公司的价值是完全不同的。纯按出资分，无法反映这种差异。</p>
-    <div class="tip">有一个值得参考的原则：谁是真正推动公司运转的核心人，谁就应该拿大头。股权的本质不是对过去贡献的奖励，而是对未来持续投入的绑定。</div>
-    <h3>创始人股权为什么需要锁定期</h3>
-    <p>成熟的做法是给创始人股权设置一个"成熟期"，比如四年，每年解锁四分之一。如果某个创始人在第一年就离开，他只能带走四分之一的股权，而不是全部。这个机制的意义不是不信任对方，而是在保护那些留下来继续干的人。</p>
-    <h3>那股权到底怎么分</h3>
-    <p>没有放之四海而皆准的答案，但有几个基本原则：第一，要有明确的控制核心，避免势均力敌的结构；第二，要有退出机制，约定好人走之后股权怎么处理；第三，要有动态调整空间。最重要的一点：这些事要在关系最好的时候谈清楚，写进协议。等到出了问题再谈，就不是谈判了，是谈崩。</p>
+<!-- 文章正文（动态渲染） -->
+<div id="art-body" class="art-body-wrap">
+  <div class="art-inner">
+    <div class="art-nav-top">
+      <span class="back-btn" onclick="showList()">← 返回文章列表</span>
+      <button class="share-btn" onclick="shareArt()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        分享
+      </button>
+    </div>
+    <div class="art-content" id="art-content-body"></div>
     <div class="cta-wrap">
       <div class="cta-left"><div class="cta-label">有类似的问题？</div><p>说清楚你的情况就好，我来判断下一步怎么走。</p></div>
-      <div class="cta-right"><a class="btn btn-p" href="tel:18958154567">电话咨询</a><a class="btn btn-g" href="/cdn-cgi/l/email-protection#f0969c9c9187899582b0c1c2c6de939f9d">发邮件</a></div>
+      <div class="cta-right">
+        <span class="btn btn-p" onclick="window.location.href='tel:18958154567'">电话咨询</span>
+        <span class="btn btn-g" onclick="window.location.href='mailto:fllawyer@126.com'">发邮件</span>
+      </div>
     </div>
+    <div class="art-pager" id="art-pager"></div>
   </div>
-</div></div>
-
-<div id="a2" class="art-body-wrap"><div class="art-inner">
-  <span class="back-btn" onclick="showList()">← 返回文章列表</span>
-  <div class="art-content">
-    <div class="art-eyebrow">融资</div>
-    <h1>投资协议里最容易忽略的三个条款</h1>
-    <p class="art-meta">2026 · 04 · 方雳律师</p>
-    <p>大多数创始人在拿到投资协议的时候，注意力都集中在估值和融资金额上。这两个数字当然重要，但真正决定你日后处境的，往往是那些写在后面、措辞平淡的条款。</p>
-    <p>我接触过不少创始人，在签完协议之后才意识到某些条款的含义——不是因为他们粗心，而是这些条款确实很隐蔽，在公司顺风顺水的时候完全感觉不到，一旦出现波折，才会突然变得非常刺眼。</p>
-    <h3>第一个：对赌条款</h3>
-    <p>对赌的本质是：你承诺公司会达到某个目标，如果没达到，你需要用钱或股权来补偿投资人。问题不在于对赌本身，而在于触发条件往往比创始人预想的宽泛得多。</p>
-    <div class="tip">签对赌之前，一定要把触发条件逐字拆解，问自己：如果最坏的情况发生，我有没有能力履行这个承诺？</div>
-    <h3>第二个：回购条款</h3>
-    <p>回购条款规定，在某些情况下，投资人有权要求创始人或公司以约定价格回购其股权。这个条款最危险的地方在于：触发回购的情形，往往也是公司最困难的时候——公司出了问题，投资人要求回购，而你偏偏在这个时候最没有钱。</p>
-    <h3>第三个：优先清算权</h3>
-    <p>公司被收购或清算时，投资人优先于普通股东拿回资金，有时还附带倍数。如果收购价格不够高，创始人可能辛苦了几年，最终什么都拿不到。这种情况在并购退出的项目里相当常见。</p>
-    <h3>怎么处理这些条款</h3>
-    <p>不是说这些条款一定不能接受，而是在签之前要真正理解它们的含义，评估自己的承受能力，并尽可能在谈判阶段争取更有利的表述。很多条款是可以谈的，只是大多数创始人不知道可以谈，或者不知道怎么谈。</p>
-    <div class="cta-wrap">
-      <div class="cta-left"><div class="cta-label">有类似的问题？</div><p>说清楚你的情况就好，我来判断下一步怎么走。</p></div>
-      <div class="cta-right"><a class="btn btn-p" href="tel:18958154567">电话咨询</a><a class="btn btn-g" href="/cdn-cgi/l/email-protection#4422282825333d2136047576726a272b29">发邮件</a></div>
-    </div>
-  </div>
-</div></div>
-
-<div id="a3" class="art-body-wrap"><div class="art-inner">
-  <span class="back-btn" onclick="showList()">← 返回文章列表</span>
-  <div class="art-content">
-    <div class="art-eyebrow">合伙</div>
-    <h1>合伙人想退出，公司该怎么办</h1>
-    <p class="art-meta">2026 · 04 · 方雳律师</p>
-    <p>这个问题，几乎每个走过三四年的创业团队都会遇到。合伙人要退出，可能是因为方向不合、个人原因、或者纯粹觉得不想干了。理由千变万化，但摆在留下来那些人面前的问题是一样的：他的股权怎么处理？</p>
-    <h3>没有退出协议，会发生什么</h3>
-    <p>最常见的情况是：合伙人离开了，但股权还在他名下。他不再参与公司经营，但每次股东会都需要他签字；公司想融资，投资人问起这个股东，很难解释；时间越长，双方的关系越淡，沟通越难推进，问题就这么悬着。</p>
-    <p>我处理过一个案子，创始团队三人，其中一人离开后两年，公司准备引入新投资，才发现那位离开的股东持有的股权一直没有处理，重新谈判的成本极高。</p>
-    <h3>股权回购是最常见的处理方式</h3>
-    <p>由公司或其他股东按照约定价格，回购退出方持有的股权。价格怎么定，是按原始出资额还是按当前估值的折扣，这些都需要在协议里提前约定好。如果没有提前约定，这个价格就会成为谈判的焦点。</p>
-    <div class="tip">最好的退出机制，是在合伙关系最好的时候谈好的。此时大家都还没有利益冲突，更容易达成公平的约定。</div>
-    <h3>强制退出：什么情况下适用</h3>
-    <p>如果合伙人严重违反约定、长期不履行义务、或者做出损害公司利益的行为，法律层面有一定空间要求其退出，但操作难度很高，需要有充分的书面依据。</p>
-    <h3>退出这件事，越早处理越好</h3>
-    <p>合伙人一旦表达退出意向，要尽快启动协商，不要拖。拖的时间越长，双方的情绪越复杂，谈判的空间越窄，最终达成的方案往往对所有人都不好。</p>
-    <div class="cta-wrap">
-      <div class="cta-left"><div class="cta-label">有类似的问题？</div><p>说清楚你的情况就好，我来判断下一步怎么走。</p></div>
-      <div class="cta-right"><a class="btn btn-p" href="tel:18958154567">电话咨询</a><a class="btn btn-g" href="/cdn-cgi/l/email-protection#57313b3b36202e3225176665617934383a">发邮件</a></div>
-    </div>
-  </div>
-</div></div>
-
-<div id="a4" class="art-body-wrap"><div class="art-inner">
-  <span class="back-btn" onclick="showList()">← 返回文章列表</span>
-  <div class="art-content">
-    <div class="art-eyebrow">治理</div>
-    <h1>股东开始闹矛盾，第一步该做什么</h1>
-    <p class="art-meta">2026 · 04 · 方雳律师</p>
-    <p>股东矛盾有一个很典型的演变轨迹：开始是小摩擦，然后是开会越来越难达成一致，然后是双方开始各自行动，最后变成公开对抗、相互掣肘，公司经营陷入瘫痪。大多数人在前几个阶段都选择拖，但拖的结果，往往是把小问题养成了大危机。</p>
-    <h3>第一步：搞清楚矛盾的性质</h3>
-    <p>股东矛盾大致分两类：一类是利益分配问题，比如分红、薪酬；另一类是控制权问题，比如公司方向、重大决策。这两类问题的处理逻辑完全不同。利益分配问题通常可以通过谈判解决；控制权问题如果双方立场根本对立，就很难靠谈判化解，需要从结构上寻找出路。</p>
-    <h3>第二步：翻出公司章程和股东协议</h3>
-    <p>很多股东在出现矛盾之后才第一次认真看公司章程，才发现上面写的和自己的理解完全不一样。章程规定了股东会的召集程序、表决比例、董事任免方式等关键事项，搞清楚这些才能判断自己有哪些合法的手段可以使用。</p>
-    <div class="tip">如果公司章程完全照抄示范文本，没有任何个性化约定，双方的很多争议就只能按法定规则处理——这通常意味着更长的周期和更高的成本。</div>
-    <h3>第三步：固定证据，停止损害</h3>
-    <p>如果矛盾已经发展到一方开始采取单方面行动——比如转移资产、私自对外签约——另一方需要尽快固定证据，并通过法律手段阻止进一步的损害。等到损害已经发生，再去追究责任，难度会大很多。</p>
-    <h3>越早介入，选择越多</h3>
-    <p>矛盾初期，双方通常还有沟通的意愿，处理方案也更多元。等到矛盾公开化、情绪化，能用的工具就只剩下诉讼和仲裁了——周期长、成本高、结果不确定。所以，如果你现在感觉股东之间有点不对劲，这正是最好的介入时机。</p>
-    <div class="cta-wrap">
-      <div class="cta-left"><div class="cta-label">有类似的问题？</div><p>说清楚你的情况就好，我来判断下一步怎么走。</p></div>
-      <div class="cta-right"><a class="btn btn-p" href="tel:18958154567">电话咨询</a><a class="btn btn-g" href="/cdn-cgi/l/email-protection#c3a5afafa2b4baa6b183f2f1f5eda0acae">发邮件</a></div>
-    </div>
-  </div>
-</div></div>
+</div>
 
 </div>
 <footer>© 2026 方雳律师 · 浙江科资律师事务所 · 保留所有权利</footer>
+<div class="share-toast" id="share-toast">链接已复制到剪贴板</div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-var arts = [
-  {id:'a1', tag:'股权', title:'三个人创业，股权怎么分才不会埋雷', desc:'平均分、按出资分、按贡献分——哪种方式最容易在两年后出问题，以及创始人股权为什么需要锁定期。', date:'2026 · 04'},
-  {id:'a2', tag:'融资', title:'投资协议里最容易忽略的三个条款', desc:'对赌、回购、优先清算权——这三个条款在顺风时感觉不到，一旦出现波折，才会发现自己当初签了什么。', date:'2026 · 04'},
-  {id:'a3', tag:'合伙', title:'合伙人想退出，公司该怎么办', desc:'没有退出机制的合伙关系，迟早要面对这个问题。强制退出、股权回购、补偿方案的处理逻辑。', date:'2026 · 04'},
-  {id:'a4', tag:'治理', title:'股东开始闹矛盾，第一步该做什么', desc:'越拖主动权越少。早期介入和晚期补救，处理成本可能相差十倍。', date:'2026 · 04'}
-];
+<script src="articles-data.js"></script>
+<script>
+var currentTag = '全部';
+var currentId = null;
 
-function renderGrid() {
-  document.getElementById('art-grid').innerHTML = arts.map(function(a) {
-    return '<div class="art-card" onclick="showArt(\'' + a.id + '\')">' +
-      '<div class="art-tag">' + a.tag + '</div>' +
-      '<div class="art-title">' + a.title + '</div>' +
-      '<div class="art-desc">' + a.desc + '</div>' +
-      '<div class="art-date">' + a.date + '</div>' +
-    '</div>';
+// 获取所有分类
+function getTags() {
+  var tags = ['全部'];
+  ARTICLES.forEach(function(a) {
+    if (tags.indexOf(a.tag) === -1) tags.push(a.tag);
+  });
+  return tags;
+}
+
+// 渲染分类按钮
+function renderFilter() {
+  var bar = document.getElementById('filter-bar');
+  bar.innerHTML = getTags().map(function(t) {
+    return '<button class="filter-btn' + (t === currentTag ? ' active' : '') + '" onclick="setTag(\'' + t + '\')">' + t + '</button>';
   }).join('');
 }
 
+// 切换分类
+function setTag(tag) {
+  currentTag = tag;
+  renderFilter();
+  renderGrid();
+}
+
+// 渲染文章列表
+function renderGrid() {
+  var list = ARTICLES.filter(function(a) {
+    return currentTag === '全部' || a.tag === currentTag;
+  });
+  var grid = document.getElementById('art-grid');
+  var empty = document.getElementById('no-result');
+  if (!list.length) {
+    grid.style.display = 'none';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+  grid.style.display = 'grid';
+  grid.innerHTML = list.map(function(a) {
+    return '<div class="art-card" onclick="showArt(\'' + a.id + '\')">'
+      + '<div class="art-tag">' + a.tag + '</div>'
+      + '<div class="art-title">' + a.title + '</div>'
+      + '<div class="art-desc">' + a.desc + '</div>'
+      + '<div class="art-date">' + a.date + '</div>'
+      + '</div>';
+  }).join('');
+}
+
+// 显示文章正文
 function showArt(id) {
+  var a = ARTICLES.find(function(x) { return x.id === id; });
+  if (!a) return;
+  currentId = id;
+  // 填充内容
+  document.getElementById('art-content-body').innerHTML =
+    '<div class="art-eyebrow">' + a.tag + '</div>'
+    + '<h1>' + a.title + '</h1>'
+    + '<p class="art-meta">' + a.date + ' · 方雳律师</p>'
+    + a.content;
+  // 上下篇
+  var idx = ARTICLES.findIndex(function(x) { return x.id === id; });
+  var prev = ARTICLES[idx - 1];
+  var next = ARTICLES[idx + 1];
+  document.getElementById('art-pager').innerHTML =
+    '<div class="pager-item' + (prev ? '' : ' disabled') + '"' + (prev ? ' onclick="showArt(\'' + prev.id + '\')"' : '') + '>'
+    + '<div class="pager-dir">← 上一篇</div>'
+    + '<div class="pager-title">' + (prev ? prev.title : '已是第一篇') + '</div>'
+    + '</div>'
+    + '<div class="pager-item next' + (next ? '' : ' disabled') + '"' + (next ? ' onclick="showArt(\'' + next.id + '\')"' : '') + '>'
+    + '<div class="pager-dir">下一篇 →</div>'
+    + '<div class="pager-title">' + (next ? next.title : '已是最后一篇') + '</div>'
+    + '</div>';
   document.getElementById('art-list').style.display = 'none';
-  document.querySelectorAll('.art-body-wrap').forEach(function(e) { e.style.display = 'none'; });
-  document.getElementById(id).style.display = 'block';
+  document.getElementById('art-body').style.display = 'block';
   window.scrollTo({ top: 0 });
 }
 
+// 返回列表
 function showList() {
   document.getElementById('art-list').style.display = 'block';
-  document.querySelectorAll('.art-body-wrap').forEach(function(e) { e.style.display = 'none'; });
+  document.getElementById('art-body').style.display = 'none';
+  currentId = null;
   window.scrollTo({ top: 0 });
 }
 
+// 分享
+function shareArt() {
+  var a = ARTICLES.find(function(x) { return x.id === currentId; });
+  var text = a ? a.title + ' — 方雳律师' : '方雳律师';
+  var url = window.location.href;
+  if (navigator.share) {
+    navigator.share({ title: text, url: url });
+  } else {
+    try {
+      navigator.clipboard.writeText(url);
+    } catch(e) {
+      var ta = document.createElement('textarea');
+      ta.value = url;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    var toast = document.getElementById('share-toast');
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 2000);
+  }
+}
+
+// 初始化
+renderFilter();
 renderGrid();
 </script>
 </body>
