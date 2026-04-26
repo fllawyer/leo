@@ -76,7 +76,7 @@ h1, h2, h3, nav, .nav-brand, .nav-links,
 .svc-n, .svc-sub, .pain-n, .tl-year, .tl-role, .tl-org,
 .contact-label, .tags, .tag, .hero-stat-l,
 footer { text-align: initial; }
-.anc { display: block; height: 80px; margin-top: -80px; pointer-events: none; }
+.anc { display: block; height: 0; pointer-events: none; }
 
 /* ── Nav ── */
 nav {
@@ -366,7 +366,7 @@ footer {
   /* Hide less important nav items on small screens */
   .nav-links a:nth-child(2),
   .nav-links a:nth-child(3) { display: none; }
-  .anc { height: 56px; margin-top: -56px; }
+  .anc { height: 0; }
 
   /* Hero */
   .hero { padding-top: 56px; min-height: auto; }
@@ -640,7 +640,7 @@ footer {
     </div>
     <div class="contact-item">
       <span class="contact-label">邮箱</span>
-      <span class="contact-val"><a href="/cdn-cgi/l/email-protection#70161c1c1107091502304142465e131f1d"><span class="__cf_email__" data-cfemail="9afcf6f6fbede3ffe8daaba8acb4f9f5f7">[email&#160;protected]</span></a></span>
+      <span class="contact-val"><a href="/cdn-cgi/l/email-protection#7d1b11111c0a04180f3d4c4f4b531e1210"><span class="__cf_email__" data-cfemail="d3b5bfbfb2a4aab6a193e2e1e5fdb0bcbe">[email&#160;protected]</span></a></span>
     </div>
     <div class="contact-item">
       <span class="contact-label">律所</span>
@@ -660,7 +660,7 @@ footer {
 function nj(id) {
   var el = document.getElementById(id);
   if (!el) return;
-  window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 72, behavior: 'smooth' });
+  window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 64, behavior: 'smooth' });
 }
 // Active nav highlight
 var links = document.querySelectorAll('.nav-links a[onclick]');
