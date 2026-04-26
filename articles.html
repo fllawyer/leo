@@ -205,7 +205,7 @@ function showArt(id) {
   document.getElementById('art-content-body').innerHTML =
     '<div class="art-eyebrow">' + a.tag + '</div>'
     + '<h1>' + a.title + '</h1>'
-    + '<p class="art-meta">' + a.date + ' · 方雳律师</p>'
+    + '<p class="art-meta">' + a.date + '</p>'
     + a.content;
   var idx = ARTICLES.findIndex(function(x) { return x.id === id; });
   var prev = ARTICLES[idx - 1];
