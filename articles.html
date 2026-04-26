@@ -150,7 +150,14 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
 <footer>© 2026 方雳律师 · 浙江科资律师事务所 · 保留所有权利</footer>
 <div class="share-toast" id="share-toast">链接已复制到剪贴板</div>
 
-<script src="articles-data.js"></script>
+<script>
+(function(){
+  var s = document.createElement('script');
+  s.src = 'articles-data.js?t=' + Date.now();
+  s.onload = function() { renderFilter(); renderGrid(); };
+  document.head.appendChild(s);
+})();
+</script>
 <script>
 var currentTag = '全部';
 var currentId = null;
@@ -250,13 +257,7 @@ function shareArt() {
   }
 }
 
-// 直接初始化，此时 articles-data.js 已执行完毕
-if (typeof ARTICLES !== 'undefined') {
-  renderFilter();
-  renderGrid();
-} else {
-  console.error('articles-data.js 未正确加载');
-}
+// 初始化由动态加载的 onload 触发，无需在此调用
 </script>
 </body>
 </html>
