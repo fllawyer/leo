@@ -25,20 +25,16 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .nav-links a:hover, .nav-links a.active { color: var(--nv); }
 
 .page-wrap { padding-top: 64px; }
-
-/* ── 列表页 ── */
 .list-section { max-width: var(--maxw); margin: 0 auto; padding: 80px var(--pad) 96px; }
 .section-label { font-size: 9px; letter-spacing: 5px; color: var(--gd-dark); text-transform: uppercase; margin-bottom: 16px; font-weight: 400; }
 .section-title { font-family: var(--serif); font-size: clamp(22px,2.5vw,30px); font-weight: 300; color: var(--nv); line-height: 1.5; margin-bottom: 16px; }
 .list-desc { font-size: 16px; color: var(--mt); font-weight: 300; line-height: 2.2; max-width: 560px; }
 
-/* 分类筛选 */
-.filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 36px; margin-bottom: 0; }
+.filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 36px; }
 .filter-btn { font-size: 11px; letter-spacing: 2px; color: var(--mt); border: 1px solid var(--bd); padding: 7px 18px; cursor: pointer; transition: all .2s; background: var(--wh); font-family: inherit; }
 .filter-btn:hover { border-color: var(--nv); color: var(--nv); }
 .filter-btn.active { background: var(--nv); color: var(--wh); border-color: var(--nv); }
 
-/* 文章卡片 */
 .art-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 1px; background: var(--bd); border: 1px solid var(--bd); margin-top: 28px; }
 .art-card { background: var(--wh); padding: 32px 28px; cursor: pointer; transition: background .2s; display: flex; flex-direction: column; }
 .art-card:hover { background: var(--cr); }
@@ -48,7 +44,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .art-date { font-size: 11px; color: #aaa; margin-top: 20px; font-weight: 300; letter-spacing: 1px; }
 .no-result { padding: 56px 0; font-size: 14px; color: var(--bd); letter-spacing: 1px; display: none; }
 
-/* ── 文章正文 ── */
 .art-body-wrap { display: none; }
 .art-inner { max-width: var(--maxw); margin: 0 auto; padding: 64px var(--pad) 96px; }
 .art-nav-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 48px; flex-wrap: wrap; gap: 16px; }
@@ -67,7 +62,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .art-content p { font-size: 17px; color: var(--tx); line-height: 2.1; margin-bottom: 20px; font-weight: 300; text-align: justify; }
 .tip { background: var(--g1); border-left: 2px solid var(--gd); padding: 16px 20px; margin: 32px 0; font-size: 16px; color: var(--mt); line-height: 2; font-weight: 300; }
 
-/* CTA */
 .cta-wrap { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--bd); display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
 .cta-label { font-size: 9px; letter-spacing: 4px; color: var(--gd-dark); text-transform: uppercase; font-weight: 400; margin-bottom: 8px; }
 .cta-left p { font-size: 15px; color: var(--mt); line-height: 1.9; font-weight: 300; }
@@ -78,7 +72,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .btn-g { background: transparent; color: var(--nv); }
 .btn-g:hover { background: var(--nv); color: var(--wh); }
 
-/* 上一篇/下一篇 */
 .art-pager { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--bd); display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--bd); border: 1px solid var(--bd); }
 .pager-item { background: var(--wh); padding: 24px 28px; cursor: pointer; transition: background .2s; }
 .pager-item:hover { background: var(--cr); }
@@ -121,7 +114,6 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
 
 <div class="page-wrap">
 
-<!-- 列表页 -->
 <div id="art-list">
   <div class="list-section">
     <p class="section-label">文章</p>
@@ -133,7 +125,6 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
   </div>
 </div>
 
-<!-- 文章正文（动态渲染） -->
 <div id="art-body" class="art-body-wrap">
   <div class="art-inner">
     <div class="art-nav-top">
@@ -164,7 +155,6 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
 var currentTag = '全部';
 var currentId = null;
 
-// 获取所有分类
 function getTags() {
   var tags = ['全部'];
   ARTICLES.forEach(function(a) {
@@ -173,22 +163,18 @@ function getTags() {
   return tags;
 }
 
-// 渲染分类按钮
 function renderFilter() {
-  var bar = document.getElementById('filter-bar');
-  bar.innerHTML = getTags().map(function(t) {
+  document.getElementById('filter-bar').innerHTML = getTags().map(function(t) {
     return '<button class="filter-btn' + (t === currentTag ? ' active' : '') + '" onclick="setTag(\'' + t + '\')">' + t + '</button>';
   }).join('');
 }
 
-// 切换分类
 function setTag(tag) {
   currentTag = tag;
   renderFilter();
   renderGrid();
 }
 
-// 渲染文章列表
 function renderGrid() {
   var list = ARTICLES.filter(function(a) {
     return currentTag === '全部' || a.tag === currentTag;
@@ -212,18 +198,15 @@ function renderGrid() {
   }).join('');
 }
 
-// 显示文章正文
 function showArt(id) {
   var a = ARTICLES.find(function(x) { return x.id === id; });
   if (!a) return;
   currentId = id;
-  // 填充内容
   document.getElementById('art-content-body').innerHTML =
     '<div class="art-eyebrow">' + a.tag + '</div>'
     + '<h1>' + a.title + '</h1>'
     + '<p class="art-meta">' + a.date + ' · 方雳律师</p>'
     + a.content;
-  // 上下篇
   var idx = ARTICLES.findIndex(function(x) { return x.id === id; });
   var prev = ARTICLES[idx - 1];
   var next = ARTICLES[idx + 1];
@@ -241,7 +224,6 @@ function showArt(id) {
   window.scrollTo({ top: 0 });
 }
 
-// 返回列表
 function showList() {
   document.getElementById('art-list').style.display = 'block';
   document.getElementById('art-body').style.display = 'none';
@@ -249,7 +231,6 @@ function showList() {
   window.scrollTo({ top: 0 });
 }
 
-// 分享
 function shareArt() {
   var a = ARTICLES.find(function(x) { return x.id === currentId; });
   var text = a ? a.title + ' — 方雳律师' : '方雳律师';
@@ -257,14 +238,10 @@ function shareArt() {
   if (navigator.share) {
     navigator.share({ title: text, url: url });
   } else {
-    try {
-      navigator.clipboard.writeText(url);
-    } catch(e) {
+    try { navigator.clipboard.writeText(url); } catch(e) {
       var ta = document.createElement('textarea');
-      ta.value = url;
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
+      ta.value = url; document.body.appendChild(ta);
+      ta.select(); document.execCommand('copy');
       document.body.removeChild(ta);
     }
     var toast = document.getElementById('share-toast');
@@ -273,9 +250,11 @@ function shareArt() {
   }
 }
 
-// 初始化
-renderFilter();
-renderGrid();
+// 等 articles-data.js 加载完成后再初始化
+window.addEventListener('DOMContentLoaded', function() {
+  renderFilter();
+  renderGrid();
+});
 </script>
 </body>
 </html>
