@@ -250,11 +250,13 @@ function shareArt() {
   }
 }
 
-// 等 articles-data.js 加载完成后再初始化
-window.addEventListener('DOMContentLoaded', function() {
+// 直接初始化，此时 articles-data.js 已执行完毕
+if (typeof ARTICLES !== 'undefined') {
   renderFilter();
   renderGrid();
-});
+} else {
+  console.error('articles-data.js 未正确加载');
+}
 </script>
 </body>
 </html>
