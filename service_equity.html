@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="股权架构与公司治理法律服务说明——方雳律师，浙江科资律师事务所，专注科创与成长型企业。">
+<title>股权架构与公司治理 | 方雳律师</title>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --nv: #0f2744; --nv2: #0a1d33; --gd: #b8973a; --gd-dark: #8a7030;
+  --cr: #faf9f6; --wh: #fff; --tx: #111; --mt: #555;
+  --bd: #e6e2db; --g1: #f7f5f1;
+  --serif: 'Songti SC','STSong','SimSun',serif;
+  --sans: 'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  --pad: clamp(32px,8vw,100px); --maxw: 1080px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); color: var(--tx); background: var(--wh); font-size: 17px; line-height: 2; -webkit-font-smoothing: antialiased; }
+
+/* Nav */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--bd); display: flex; align-items: center; justify-content: space-between; padding: 0 var(--pad); height: 64px; }
+.nav-brand { font-family: var(--serif); font-size: 14px; letter-spacing: 6px; color: var(--nv); font-weight: 400; text-decoration: none; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { font-size: 11px; letter-spacing: 2px; color: #555; text-decoration: none; transition: color .2s; font-weight: 300; }
+.nav-links a:hover { color: var(--nv); }
+
+/* Hero */
+.hero { background: var(--nv2); padding-top: 64px; }
+.hero-inner { max-width: var(--maxw); margin: 0 auto; padding: 80px var(--pad) 72px; }
+.back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: 2px; color: rgba(255,255,255,.4); text-decoration: none; margin-bottom: 48px; transition: color .2s; font-weight: 300; }
+.back-link:hover { color: rgba(255,255,255,.8); }
+.hero-label { font-size: 9px; letter-spacing: 5px; color: rgba(184,151,58,.75); text-transform: uppercase; margin-bottom: 20px; font-weight: 400; }
+.hero-title { font-family: var(--serif); font-size: clamp(28px,4vw,48px); font-weight: 300; color: var(--wh); line-height: 1.3; margin-bottom: 24px; }
+.hero-desc { font-size: 16px; color: rgba(255,255,255,.55); line-height: 2.2; font-weight: 300; max-width: 640px; }
+
+/* TOC */
+.toc-wrap { background: var(--g1); border-bottom: 1px solid var(--bd); }
+.toc-inner { max-width: var(--maxw); margin: 0 auto; padding: 40px var(--pad); display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.toc-label { font-size: 9px; letter-spacing: 4px; color: var(--gd-dark); text-transform: uppercase; font-weight: 400; margin-right: 8px; white-space: nowrap; }
+.toc-link { font-size: 12px; letter-spacing: 1px; color: var(--mt); text-decoration: none; border: 1px solid var(--bd); padding: 6px 16px; transition: all .2s; font-weight: 300; }
+.toc-link:hover { border-color: var(--nv); color: var(--nv); }
+
+/* Content */
+.content-wrap { max-width: var(--maxw); margin: 0 auto; padding: 80px var(--pad) 96px; }
+.chapter { margin-bottom: 72px; padding-bottom: 72px; border-bottom: 1px solid var(--bd); }
+.chapter:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.chapter-num { display: none; }
+.chapter-title { font-family: var(--serif); font-size: clamp(20px,2.5vw,26px); font-weight: 400; color: var(--nv); line-height: 1.4; margin-bottom: 36px; }
+.section { margin-bottom: 40px; }
+.section:last-child { margin-bottom: 0; }
+.section-title { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--nv); margin-bottom: 16px; line-height: 1.5; padding-left: 16px; border-left: 2px solid var(--gd); }
+.section p { font-size: 16px; color: var(--mt); line-height: 2.1; margin-bottom: 16px; font-weight: 300; text-align: justify; }
+.section p:last-child { margin-bottom: 0; }
+.tip { background: var(--g1); border-left: 2px solid var(--gd); padding: 16px 20px; margin: 24px 0; font-size: 15px; color: var(--mt); line-height: 2; font-weight: 300; font-style: italic; }
+.list { display: flex; flex-direction: column; gap: 0; margin: 16px 0; }
+.list-item { display: flex; align-items: flex-start; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--bd); font-size: 15px; color: var(--mt); font-weight: 300; line-height: 1.8; }
+.list-item:first-child { border-top: 1px solid var(--bd); }
+.list-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gd); flex-shrink: 0; margin-top: 10px; }
+
+/* Two-col grid for lists */
+.list-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+
+/* CTA */
+.cta-section { background: var(--nv); }
+.cta-inner { max-width: var(--maxw); margin: 0 auto; padding: 72px var(--pad); display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.cta-label { font-size: 9px; letter-spacing: 5px; color: rgba(184,151,58,.75); text-transform: uppercase; margin-bottom: 16px; font-weight: 400; }
+.cta-title { font-family: var(--serif); font-size: clamp(22px,3vw,32px); font-weight: 300; color: var(--wh); line-height: 1.4; margin-bottom: 16px; }
+.cta-desc { font-size: 15px; color: rgba(255,255,255,.5); line-height: 2; font-weight: 300; }
+.cta-right { display: flex; flex-direction: column; gap: 16px; }
+.cta-item { display: flex; gap: 20px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+.cta-item:first-child { border-top: 1px solid rgba(255,255,255,.08); }
+.cta-item-label { font-size: 9px; letter-spacing: 3px; color: var(--gd); text-transform: uppercase; min-width: 36px; padding-top: 3px; font-weight: 400; }
+.cta-item-val { font-size: 15px; color: rgba(255,255,255,.7); font-weight: 300; }
+.cta-item-val a { color: rgba(255,255,255,.8); text-decoration: none; }
+.cta-item-val a:hover { opacity: .7; }
+
+footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #888; border-top: 1px solid var(--bd); letter-spacing: 3px; font-weight: 300; }
+
+@media (max-width: 1024px) { :root { --pad: clamp(24px,5vw,60px); } }
+@media (max-width: 680px) {
+  :root { --pad: 20px; }
+  nav { height: 56px; padding: 0 20px; }
+  .nav-brand { font-size: 13px; letter-spacing: 4px; }
+  .nav-links { gap: 12px; }
+  .nav-links a:nth-child(2), .nav-links a:nth-child(3) { display: none; }
+  .hero { padding-top: 56px; }
+  .hero-inner { padding: 56px 20px 56px; }
+  .toc-inner { padding: 28px 20px; }
+  .content-wrap { padding: 56px 20px 72px; }
+  .list-2col { grid-template-columns: 1fr; }
+  .cta-inner { grid-template-columns: 1fr; gap: 40px; padding: 56px 20px; }
+  footer { padding: 28px 20px; font-size: 9px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">方 · 雳</a>
+  <div class="nav-links">
+    <a href="index.html#p1">定位</a>
+    <a href="index.html#p2">服务领域</a>
+    <a href="index.html#p3">执业经历</a>
+    <a href="index.html#p4">联系方式</a>
+    <a href="articles.html">文章</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-inner">
+    <a class="back-link" href="index.html#p2">← 返回服务领域</a>
+    <p class="hero-label">服务说明</p>
+    <h1 class="hero-title">股权架构与公司治理</h1>
+    <p class="hero-desc">股权架构设计的核心，不只是"股份怎么分"，而是要提前回答：谁负责决策？谁长期投入？谁可以退出？谁不能轻易拿走股权？公司未来融资、激励、治理是否还有空间？</p>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc-wrap">
+  <div class="toc-inner">
+    <span class="toc-label">目录</span>
+    <a class="toc-link" href="#s1">哪些情况需要考虑</a>
+    <a class="toc-link" href="#s2">常见误区</a>
+    <a class="toc-link" href="#s3">不处理的风险</a>
+    <a class="toc-link" href="#s4">律师可以协助什么</a>
+    <a class="toc-link" href="#s5">一般服务流程</a>
+    <a class="toc-link" href="#s6">沟通前准备</a>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="content-wrap">
+
+  <!-- 一 -->
+  <div class="chapter" id="s1">
+    <p class="chapter-num">一</p>
+    <h2 class="chapter-title">一、哪些情况下需要考虑股权架构？</h2>
+
+    <div class="section">
+      <h3 class="section-title">几个人准备一起创业</h3>
+      <p>三个人、四个人一起做公司，大家一开始关系很好，也都愿意投入。但每个人投入的资金、时间、资源价值不同，有人全职有人兼职，有人负责业务有人负责技术。如果只凭"关系好""先做起来再说"来分股权，后续很容易留下隐患。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">公司已经成立，但股权结构比较随意</h3>
+      <p>有些公司成立时为了方便，直接按出资比例分股，或者简单平均分。公司发展到一定阶段后，可能出现：小股东不参与经营却长期持股、大股东出力最多但没有足够控制权、股东之间无法形成有效决策、融资时投资人认为股权结构不清晰等问题。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">公司准备融资</h3>
+      <p>融资前，投资人通常会关注公司的股权结构是否清晰、稳定、可持续。常见关注点包括：创始团队股权是否过于分散、实际控制人是否清晰、是否存在代持或隐名股东、是否预留股权激励空间、核心创始人的股权是否有锁定安排等。如果这些问题没有提前处理，可能影响融资进度，甚至影响投资人判断。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">公司准备做股权激励</h3>
+      <p>股权激励不是简单给员工一点股份，而是要考虑激励对象是谁、给实股期权还是虚拟股、授予条件是什么、退出时如何处理、是否影响创始人控制权、是否影响公司未来融资。如果原有股权架构没有预留空间，后续激励可能很难落地。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">合伙人之间已经出现分歧</h3>
+      <p>股权问题往往不是一开始爆发，而是在经营压力、利益分配、控制权争夺中逐渐显现。有股东不再参与经营、有股东想退出但价格谈不拢、有股东不同意融资或重大决策、公司章程和股东协议没有约定退出机制——这时股权架构已经不仅是设计问题，还可能涉及争议解决和风险控制。</p>
+    </div>
+  </div>
+
+  <!-- 二 -->
+  <div class="chapter" id="s2">
+    <p class="chapter-num">二</p>
+    <h2 class="chapter-title">二、股权架构的常见误区</h2>
+
+    <div class="section">
+      <h3 class="section-title">误区一：平均分最公平</h3>
+      <p>平均分看似公平，实际可能导致后续决策僵局。两个股东各占50%，如果双方意见不一致，公司可能无法作出有效决策。股权不是单纯的利益分配工具，也是公司决策和控制权安排的基础。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">误区二：谁出钱多，谁股权就多</h3>
+      <p>出资当然重要，但创业公司不能只看资金。有些创始人投入的是技术、客户资源、管理能力、行业经验、全职时间，这些也可能是公司早期最核心的价值来源。更合理的方式是综合考虑资金投入、时间投入、资源贡献、岗位价值、责任承担、未来持续贡献和控制权安排。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">误区三：先口头说好，后面再补协议</h3>
+      <p>股权问题越早说清楚，越不容易伤感情。真正容易破坏关系的，不是提前谈规则，而是公司做起来以后，大家对贡献、收益、退出、控制权的理解完全不同。口头约定在发生争议时往往很难证明，股权安排应当尽量落实到公司章程、股东协议等书面文件中。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">误区四：工商登记股权比例就是全部安排</h3>
+      <p>工商登记只是外部公示，并不等于股东之间的全部权利义务安排。股东是否必须全职投入、股权是否分期成熟、中途退出如何回购、离职后股权如何处理、重大事项如何表决——这些更细的问题，需要通过内部协议解决。如果只有工商登记，没有内部规则，很多问题仍然处于空白状态。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">误区五：股权架构只是大公司的事</h3>
+      <p>事实上，越是早期公司，越需要重视股权架构。早期团队的股权结构，往往决定了公司未来的融资空间、治理效率和合伙人关系。早期处理好，成本相对较低；等到公司已经有收入、有投资人、有员工、有争议时，再调整就会复杂很多。</p>
+    </div>
+  </div>
+
+  <!-- 三 -->
+  <div class="chapter" id="s3">
+    <p class="chapter-num">三</p>
+    <h2 class="chapter-title">三、如果不处理，可能有哪些风险？</h2>
+
+    <div class="section">
+      <h3 class="section-title">创始人之间发生股权纠纷</h3>
+      <p>常见纠纷包括：实际出资与登记不一致、口头约定无法证明、代持关系说不清、股东贡献与股权比例严重不匹配、股东退出价格无法协商、股东之间争夺公司控制权。一旦进入纠纷阶段，处理成本通常会明显上升。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">公司决策陷入僵局</h3>
+      <p>如果股权比例和表决机制设计不合理，公司可能在是否融资、是否引入新股东、是否处分重大资产、是否更换法定代表人、是否调整公司业务方向等重大事项上无法形成有效决议，直接影响公司经营效率。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">影响融资</h3>
+      <p>投资人通常不喜欢股权结构混乱的公司。如果公司存在代持、历史出资瑕疵、股东争议、控制权不清、核心创始人股权过低等问题，投资人可能要求先整改，甚至直接放弃投资。融资谈判中，股权问题是投资人判断公司稳定性的重要依据。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">核心人员激励困难</h3>
+      <p>如果公司没有预留股权激励空间，或者没有设计好激励工具，后续想绑定核心员工时会比较被动。激励比例从哪里来、谁让渡、如何授予、员工离职如何处理，这些都需要提前规划，否则股权激励可能变成新的纠纷来源。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">实际控制权被削弱</h3>
+      <p>有些创始人虽然实际负责公司经营，但由于股权设计不合理，在法律上并没有足够的控制权。这可能导致重大事项无法推动、核心创始人被边缘化、公司经营方向被其他股东牵制。股权架构设计中，控制权安排往往比单纯持股比例更重要。</p>
+    </div>
+  </div>
+
+  <!-- 四 -->
+  <div class="chapter" id="s4">
+    <p class="chapter-num">四</p>
+    <h2 class="chapter-title">四、律师通常可以协助做什么？</h2>
+
+    <div class="section">
+      <h3 class="section-title">梳理现有股权结构</h3>
+      <p>包括当前股东及持股比例、实际出资情况、是否存在代持、历史股权变动、股东之间的口头或书面约定、公司章程与实际安排是否一致、是否存在潜在争议。这一步主要是先把问题看清楚。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">设计股权分配与控制权方案</h3>
+      <p>根据创始人贡献、投入、职责和未来规划，协助设计更合理的股权比例和权利安排，同时设计股东会表决比例、董事安排、重大事项清单、一票否决权边界、决策僵局解决机制等，确保公司未来能够顺畅运转。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">设计股东退出机制</h3>
+      <p>包括股东主动退出、股东不再参与经营、股东违约或离职、股东死亡离婚被执行等特殊情况，以及股权回购价格、回购程序、付款安排、争议解决方式。退出机制是股权架构中非常重要的一部分。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">起草或修改相关法律文件</h3>
+      <p>常见文件包括：公司章程、股东协议、出资协议、股权转让协议、股权代持协议、一致行动协议、表决权委托协议、股权激励协议、期权授予协议、限制性股权协议、合伙人合作协议。不同公司需要的文件不同，不建议简单套模板。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">为融资或股权激励预留空间</h3>
+      <p>如果公司未来有融资或激励计划，需要提前考虑创始团队持股是否稳定、是否预留员工持股平台、是否设置期权池、投资人进入后的股权稀释、控制权是否会被过早削弱。这类安排最好在早期就有整体规划。</p>
+    </div>
+  </div>
+
+  <!-- 五 -->
+  <div class="chapter" id="s5">
+    <p class="chapter-num">五</p>
+    <h2 class="chapter-title">五、服务的一般流程</h2>
+
+    <div class="list">
+      <div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第一步：初步沟通</strong>　了解公司基本情况、股东现状、是否存在分歧、未来是否有融资或激励计划，判断问题类型和服务范围。</div></div>
+      <div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第二步：材料审阅</strong>　查看营业执照、公司章程、股东名册、出资凭证、历史股权转让文件、已签署协议等，全面了解现有安排。</div></div>
+      <div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第三步：风险诊断</strong>　梳理可能存在的问题，形成问题清单或沟通意见，让客户清楚地了解当前股权结构的潜在风险。</div></div>
+      <div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第四步：方案设计</strong>　根据公司实际情况，提出股权架构调整或设计方案，兼顾法律可行性和商业可接受度。</div></div>
+      <div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第五步：文件起草与修改</strong>　根据确定的方案，起草或修改相关法律文件，把规则落实到可执行的文本中。</div></div>
+      <div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第六步：协助签署与落地</strong>　协助处理股东会议安排、文件签署、工商变更、内部授权、股权转让流程等，确保方案真正落地执行。</div></div>
+    </div>
+  </div>
+
+  <!-- 六 -->
+  <div class="chapter" id="s6">
+    <p class="chapter-num">六</p>
+    <h2 class="chapter-title">六、沟通前建议准备哪些材料？</h2>
+
+    <div class="section">
+      <h3 class="section-title">公司已经成立</h3>
+      <div class="list list-2col">
+        <div class="list-item"><div class="list-dot"></div><span>营业执照</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>公司章程</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>工商登记信息</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>股东及持股比例情况</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>实际出资情况说明</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>股东之间已签署的协议</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>历史股权转让或增资文件</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>是否存在代持的说明</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>公司目前经营情况简要说明</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>当前最希望解决的问题</span></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">公司尚未成立</h3>
+      <div class="list list-2col">
+        <div class="list-item"><div class="list-dot"></div><span>拟设立公司的业务方向</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>创始人名单</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>各创始人拟投入的资金、资源和时间</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>各创始人的职责分工</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>是否有人全职、有人兼职</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>未来是否计划融资</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>是否计划做员工股权激励</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>对控制权和分红的初步想法</span></div>
+      </div>
+      <p style="margin-top:20px">材料不需要一开始就非常完整。初步沟通时，可以先说明基本情况，再根据需要补充。</p>
+    </div>
+
+    <div class="tip">股权架构问题通常需要结合具体材料和交易背景进行判断。未审阅完整材料前，律师一般只能提供初步分析和方向性建议，不能直接作出确定性结论。</div>
+  </div>
+
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-inner">
+    <div>
+      <p class="cta-label">预约咨询</p>
+      <h2 class="cta-title">股权问题越早说清楚，<br>越不容易出问题。</h2>
+      <p class="cta-desc">无论你正在准备创业、公司股权结构比较随意，还是合伙人之间已经出现分歧，欢迎先进行一次初步沟通。说清楚你的情况，我来判断下一步怎么走。</p>
+    </div>
+    <div class="cta-right">
+      <div class="cta-item"><span class="cta-item-label">电话</span><span class="cta-item-val"><a href="tel:18958154567">18958154567</a></span></div>
+      <div class="cta-item"><span class="cta-item-label">邮箱</span><span class="cta-item-val"><a href="mailto:fllawyer@126.com">fllawyer@126.com</a></span></div>
+      <div class="cta-item"><span class="cta-item-label">律所</span><span class="cta-item-val">浙江科资律师事务所</span></div>
+      <div class="cta-item"><span class="cta-item-label">地址</span><span class="cta-item-val">杭州市上城区钱江路太和广场8号楼1307—1309室</span></div>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 方雳律师 · 浙江科资律师事务所 · 保留所有权利</footer>
+
+</body>
+</html>
