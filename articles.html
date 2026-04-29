@@ -33,7 +33,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .nav-ham svg { display: block; }
 
 .page-wrap { padding-top: 64px; }
-.list-section { max-width: var(--maxw); margin: 0 auto; padding: 80px var(--pad) 96px; }
+.list-section { max-width: var(--maxw); margin: 0 auto; padding: 80px var(--pad) 56px; }
 .section-label { font-size: 9px; letter-spacing: 5px; color: var(--gd-dark); text-transform: uppercase; margin-bottom: 16px; font-weight: 400; }
 .section-title { font-family: var(--serif); font-size: clamp(22px,2.5vw,30px); font-weight: 300; color: var(--nv); line-height: 1.5; margin-bottom: 16px; }
 .list-desc { font-size: 16px; color: var(--mt); font-weight: 300; line-height: 2.2; max-width: 560px; }
@@ -53,9 +53,21 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .no-result { padding: 56px 0; font-size: 14px; color: var(--bd); letter-spacing: 1px; display: none; }
 
 .art-body-wrap { display: none; }
-.art-inner { max-width: 1200px; margin: 0 auto; padding: 64px var(--pad) 96px; display: grid; grid-template-columns: 1fr 200px; gap: 64px; align-items: start; }
+.art-inner { max-width: 1200px; margin: 0 auto; padding: 64px var(--pad) 56px; display: grid; grid-template-columns: 1fr; gap: 64px; align-items: start; transition: grid-template-columns .3s ease; }
+.art-inner.side-open { grid-template-columns: 1fr 200px; }
 .art-main { min-width: 0; }
-.art-side { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 0; }
+.art-side { position: sticky; top: 88px; display: none; flex-direction: column; gap: 0; }
+.art-inner.side-open .art-side { display: flex; }
+
+/* 侧栏折叠触发按钮 */
+.side-toggle { position: fixed; right: 0; top: 50%; transform: translateY(-50%); z-index: 50; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; background: var(--wh); border: 1px solid var(--bd); border-right: none; padding: 14px 8px; cursor: pointer; transition: background .2s; }
+.side-toggle:hover { background: var(--cr); }
+.side-toggle svg { display: block; transition: transform .3s ease; }
+.side-toggle.open svg.toggle-icon { transform: rotate(180deg); }
+.side-toggle-label { font-size: 9px; letter-spacing: 2px; color: var(--mt); writing-mode: vertical-rl; font-weight: 300; }
+html.dark .side-toggle { background: var(--wh); border-color: var(--bd); }
+html.dark .side-toggle:hover { background: var(--cr); }
+
 .share-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; letter-spacing: 2px; color: #aaa; cursor: pointer; transition: color .2s; border: none; padding: 0; font-family: inherit; background: none; }
 .share-btn:hover { color: var(--nv); }
 .share-toast { position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%); background: var(--nv); color: var(--wh); font-size: 13px; letter-spacing: 1px; padding: 12px 24px; opacity: 0; transition: opacity .3s; pointer-events: none; z-index: 999; }
@@ -64,7 +76,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .art-content { max-width: 100%; }
 .art-eyebrow { font-size: 9px; letter-spacing: 4px; color: var(--gd-dark); text-transform: uppercase; font-weight: 400; margin-bottom: 20px; }
 .art-content h1 { font-family: var(--serif); font-size: clamp(24px,3vw,36px); font-weight: 300; color: var(--nv); line-height: 1.4; margin-bottom: 20px; }
-.art-meta { font-size: 12px; color: #aaa; letter-spacing: 2px; font-weight: 300; margin-bottom: 48px; border-bottom: 1px solid var(--bd); padding-bottom: 24px; display: flex; align-items: center; justify-content: space-between; }
+.art-meta { font-size: 12px; color: #aaa; letter-spacing: 2px; font-weight: 300; margin-bottom: 16px; border-bottom: 1px solid var(--bd); padding-bottom: 24px; display: flex; align-items: center; justify-content: space-between; }
 .art-content h3 { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--nv); margin: 40px 0 16px; line-height: 1.5; }
 .art-content p { font-size: 17px; color: var(--tx); line-height: 2.1; margin-bottom: 20px; font-weight: 300; text-align: justify; }
 .tip { background: var(--g1); border-left: 2px solid var(--gd); padding: 16px 20px; margin: 32px 0; font-size: 16px; color: var(--mt); line-height: 2; font-weight: 300; }
@@ -94,15 +106,17 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .pager-title { font-family: var(--serif); font-size: 13px; color: var(--nv); line-height: 1.6; font-weight: 400; }
 .side-back { display: block; font-size: 9px; letter-spacing: 3px; color: var(--mt); text-transform: uppercase; font-weight: 400; margin-bottom: 12px; cursor: pointer; transition: color .2s; }
 .side-back:hover { color: var(--nv); }
+.mob-font-ctrl { display: none; width: 120px; margin: 20px 0 32px auto; }
+.font-ctrl.mob-font-ctrl { display: none; }
 .font-ctrl { margin-bottom: 16px; border: 1px solid var(--bd); display: flex; overflow: hidden; }
-.font-btn { flex: 1; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 13px; color: var(--mt); padding: 8px 0; transition: all .2s; border-right: 1px solid var(--bd); }
+.font-btn { flex: 1; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 10px; letter-spacing: 1px; color: var(--mt); padding: 4px 0; transition: all .2s; border-right: 1px solid var(--bd); }
 .font-btn:last-child { border-right: none; }
 .font-btn:hover { background: var(--cr); color: var(--nv); }
 .font-size-label { font-size: 9px; letter-spacing: 2px; color: var(--mt); text-align: center; display: block; margin-bottom: 6px; font-weight: 300; }
 .mob-back { display: none; font-size: 11px; letter-spacing: 2px; color: var(--mt); cursor: pointer; transition: color .2s; margin-bottom: 32px; }
 .mob-back:hover { color: var(--nv); }
 
-footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #888; border-top: 1px solid var(--bd); letter-spacing: 3px; font-weight: 300; }
+footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #888; border-top: 1px solid var(--bd); letter-spacing: 3px; font-weight: 300; white-space: nowrap; }
 
 @media (max-width: 1024px) { :root { --pad: clamp(24px,5vw,60px); } }
 @media (max-width: 680px) {
@@ -116,10 +130,16 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
   .page-wrap { padding-top: 56px; }
   .list-section { padding: 56px 20px 72px; }
   .art-grid { grid-template-columns: 1fr; }
-  .art-inner { padding: 48px 20px 72px; grid-template-columns: 1fr; gap: 0; }
-  .art-side { position: static; margin-top: 48px; }
+  .art-inner { padding: 48px 20px 72px; grid-template-columns: 1fr !important; gap: 0; }
+  .art-side { position: static; margin-top: 48px; display: flex !important; width: auto !important; opacity: 1 !important; pointer-events: auto !important; }
   .cta-wrap { flex-direction: column; }
-  .mob-back { display: block; }
+  /* 移动端：隐藏字号控件 */
+  .mob-font-ctrl { display: none !important; }
+  .font-ctrl.mob-font-ctrl { display: none !important; }
+  .desk-font-ctrl { display: none; }
+  /* 移动端隐藏侧栏折叠按钮 */
+  .side-toggle { display: none !important; }
+  footer { font-size: 9px; letter-spacing: 1px; padding: 24px 20px; }
 }
 
 .nav-right { display: flex; align-items: center; gap: 4px; }
@@ -214,9 +234,13 @@ html.dark footer { border-top-color: #2a2720; color: #55524f; }
 </div>
 
 <div id="art-body" class="art-body-wrap">
-  <div class="art-inner">
+  <!-- 侧栏折叠按钮（PC/平板）-->
+  <button class="side-toggle" id="side-toggle" onclick="toggleSide()" aria-label="展开工具栏" style="display:none">
+    <svg class="toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
+    <span class="side-toggle-label">工具</span>
+  </button>
+  <div class="art-inner" id="art-inner">
     <div class="art-main">
-      <span class="mob-back" onclick="showList()">← 返回列表</span>
       <div class="art-content" id="art-content-body"></div>
       <div class="cta-wrap">
         <div class="cta-left"><div class="cta-label">有类似的问题？</div><p>说清楚你的情况就好，我来判断下一步怎么走。</p></div>
@@ -228,7 +252,7 @@ html.dark footer { border-top-color: #2a2720; color: #55524f; }
     </div>
     <div class="art-side">
       <span class="side-back" onclick="showList()">← 返回列表</span>
-      <div class="font-ctrl">
+      <div class="font-ctrl desk-font-ctrl">
         <button class="font-btn" onclick="changeFontSize(-1)">A−</button>
         <button class="font-btn" onclick="resetFontSize()">重置</button>
         <button class="font-btn" onclick="changeFontSize(1)">A+</button>
@@ -305,6 +329,18 @@ function renderGrid() {
   }).join('');
 }
 
+function toggleSide() {
+  var inner = document.getElementById('art-inner');
+  var btn = document.getElementById('side-toggle');
+  var open = inner.classList.toggle('side-open');
+  btn.classList.toggle('open', open);
+  btn.setAttribute('aria-label', open ? '收起工具栏' : '展开工具栏');
+  // 箭头方向：收起时朝左（←），展开时朝右（→）
+  var arrow = btn.querySelector('.toggle-icon');
+  if (open) { arrow.innerHTML = '<polyline points="9 18 15 12 9 6"/>'; }
+  else { arrow.innerHTML = '<polyline points="15 18 9 12 15 6"/>'; }
+}
+
 function showArt(id) {
   var a = ARTICLES.find(function(x) { return x.id === id; });
   if (!a) return;
@@ -312,7 +348,8 @@ function showArt(id) {
   document.getElementById('art-content-body').innerHTML =
     '<div class="art-eyebrow">' + a.tag + '</div>'
     + '<h1>' + a.title + '</h1>'
-    + '<div class="art-meta"><span>' + a.date + '</span><button class="share-btn" onclick="shareArt()"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>分享</button></div>'
+    + '<div class="art-meta"><div style="display:flex;align-items:center;justify-content:space-between;width:100%"><span>' + a.date + '</span><button class="share-btn" onclick="shareArt()"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>分享</button></div></div>'
+    + '<div class="font-ctrl mob-font-ctrl"><button class="font-btn" onclick="changeFontSize(-1)">A−</button><button class="font-btn" onclick="resetFontSize()">重置</button><button class="font-btn" onclick="changeFontSize(1)">A+</button></div>'
     + a.content;
   var idx = ARTICLES.findIndex(function(x) { return x.id === id; });
   var prev = ARTICLES[idx - 1];
@@ -328,6 +365,9 @@ function showArt(id) {
     + '</div>';
   document.getElementById('art-list').style.display = 'none';
   document.getElementById('art-body').style.display = 'block';
+  // 显示侧栏折叠按钮（仅 PC/平板）
+  var btn = document.getElementById('side-toggle');
+  if (window.innerWidth > 680) { btn.style.display = 'flex'; }
   window.scrollTo({ top: 0 });
   loadFontSize();
   try { history.pushState(null, '', 'articles.html?id=' + id); } catch(e) {}
@@ -336,6 +376,14 @@ function showArt(id) {
 function showList() {
   document.getElementById('art-list').style.display = 'block';
   document.getElementById('art-body').style.display = 'none';
+  // 隐藏侧栏按钮并重置状态
+  var btn = document.getElementById('side-toggle');
+  btn.style.display = 'none';
+  btn.classList.remove('open');
+  var inner = document.getElementById('art-inner');
+  inner.classList.remove('side-open');
+  var arrow = btn.querySelector('.toggle-icon');
+  if (arrow) arrow.innerHTML = '<polyline points="15 18 9 12 15 6"/>';
   currentId = null;
   window.scrollTo({ top: 0 });
   try { history.pushState(null, '', 'articles.html'); } catch(e) {}
