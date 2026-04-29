@@ -17,7 +17,7 @@
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
-  --nv: #0f2744; --nv2: #0a1d33; --gd: #b8973a; --gd-dark: #8a7030;
+  --nv: #0f2744; --nv2: #0a1d33; --gd: #b8973a; --gd-dark: #7a6428;
   --cr: #faf9f6; --wh: #fff; --tx: #111; --mt: #555;
   --bd: #e6e2db; --g1: #f7f5f1;
   --serif: 'Songti SC','STSong','SimSun',serif;
@@ -36,7 +36,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 
 .svc-select { background: var(--nv2); padding-top: 64px; }
 .svc-select-inner { max-width: var(--maxw); margin: 0 auto; padding: 40px var(--pad) 0; display: flex; flex-wrap: wrap; gap: 10px; }
-.svc-pill { font-size: 12px; letter-spacing: 1px; color: rgba(255,255,255,.4); background: none; border: 1px solid rgba(255,255,255,.12); padding: 8px 20px; cursor: pointer; transition: all .2s; font-family: inherit; white-space: nowrap; font-weight: 300; }
+.svc-pill { font-size: 12px; letter-spacing: 1px; color: rgba(255,255,255,.6); background: none; border: 1px solid rgba(255,255,255,.12); padding: 8px 20px; cursor: pointer; transition: all .2s; font-family: inherit; white-space: nowrap; font-weight: 300; }
 .svc-pill:hover { color: rgba(255,255,255,.7); border-color: rgba(255,255,255,.3); }
 .svc-pill.active { color: var(--wh); border-color: var(--gd); background: rgba(184,151,58,.15); }
 
@@ -89,7 +89,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .qr-box img { width: 200px; height: 200px; display: block; margin: 0 auto 16px; }
 .qr-box p { font-size: 14px; color: var(--mt); margin-bottom: 16px; font-weight: 300; }
 .qr-close { font-size: 11px; letter-spacing: 2px; color: var(--mt); cursor: pointer; border: none; background: none; font-family: inherit; }
-footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #888; border-top: 1px solid var(--bd); letter-spacing: 3px; font-weight: 300; }
+footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #6e6e6e; border-top: 1px solid var(--bd); letter-spacing: 3px; font-weight: 300; }
 
 @media (max-width: 1024px) { :root { --pad: clamp(24px,5vw,60px); } }
 @media (max-width: 680px) {
@@ -1040,7 +1040,7 @@ html.dark footer { border-top-color: #2a2720; color: #55524f; }
   <div class="qr-box" onclick="event.stopPropagation()">
     <img src="weixin.webp" alt="微信二维码" width="200" height="200" loading="lazy">
     <p>扫码添加微信咨询</p>
-    <p style="font-size:12px;color:#888;letter-spacing:1px;margin-bottom:16px">微信号：fllawyer</p>
+    <p style="font-size:12px;color:#6e6e6e;letter-spacing:1px;margin-bottom:16px">微信号：fllawyer</p>
     <button class="qr-close" onclick="document.getElementById('qr-overlay').classList.remove('show')">关闭</button>
   </div>
 </div>
