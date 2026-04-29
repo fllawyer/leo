@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>页面不存在 | 方雳律师</title>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --nv: #0f2744; --nv2: #0a1d33; --gd: #b8973a;
+  --cr: #faf9f6; --wh: #fff; --tx: #111; --mt: #555;
+  --bd: #e6e2db;
+  --serif: 'Songti SC','STSong','SimSun',serif;
+  --sans: 'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  --pad: clamp(32px,8vw,100px);
+}
+body { font-family: var(--sans); color: var(--tx); background: var(--wh); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: var(--pad); -webkit-font-smoothing: antialiased; }
+main { width: 100%; max-width: 480px; }
+.num { font-family: var(--serif); font-size: clamp(80px,15vw,120px); font-weight: 300; color: var(--bd); line-height: 1; margin-bottom: 32px; letter-spacing: -4px; }
+.num em { font-style: normal; color: var(--gd); }
+.title { font-family: var(--serif); font-size: clamp(20px,3vw,26px); font-weight: 300; color: var(--nv); line-height: 1.5; margin-bottom: 16px; }
+.desc { font-size: 15px; color: var(--mt); line-height: 2.1; font-weight: 300; margin-bottom: 40px; }
+.links { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--bd); }
+.link-item { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--bd); text-decoration: none; color: var(--tx); transition: color .2s; cursor: pointer; }
+.link-item:hover { color: var(--nv); }
+.link-label { font-size: 9px; letter-spacing: 3px; color: var(--gd); text-transform: uppercase; font-weight: 400; min-width: 60px; }
+.link-text { font-size: 15px; color: inherit; font-weight: 300; flex: 1; padding: 0 16px; }
+.link-arr { font-size: 13px; color: var(--bd); }
+.link-item:hover .link-arr { color: var(--nv); }
+@media (max-width: 680px) {
+  :root { --pad: 20px; }
+}
+</style>
+</head>
+<body>
+<main>
+  <div>
+    <div class="num">4<em>0</em>4</div>
+    <h1 class="title">这个页面不存在</h1>
+    <p class="desc">你访问的地址可能已经失效，或者链接有误。以下是一些可以去的地方：</p>
+    <div class="links">
+      <a class="link-item" href="index.html">
+        <span class="link-label">首页</span>
+        <span class="link-text">回到主页</span>
+        <span class="link-arr">→</span>
+      </a>
+      <a class="link-item" href="services.html">
+        <span class="link-label">服务</span>
+        <span class="link-text">了解服务领域</span>
+        <span class="link-arr">→</span>
+      </a>
+      <a class="link-item" href="articles.html">
+        <span class="link-label">文章</span>
+        <span class="link-text">阅读法律思考</span>
+        <span class="link-arr">→</span>
+      </a>
+      <a class="link-item" href="index.html#p4">
+        <span class="link-label">联系</span>
+        <span class="link-text">预约咨询</span>
+        <span class="link-arr">→</span>
+      </a>
+    </div>
+  </div>
+</main>
+</body>
+</html>
