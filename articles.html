@@ -20,9 +20,11 @@ body { font-family: var(--sans); color: var(--tx); background: var(--wh); font-s
 
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--bd); display: flex; align-items: center; justify-content: space-between; padding: 0 var(--pad); height: 64px; }
 .nav-brand { font-family: var(--serif); font-size: 14px; letter-spacing: 6px; color: var(--nv); font-weight: 400; text-decoration: none; }
-.nav-links { display: flex; gap: 28px; }
-.nav-links a { font-size: 11px; letter-spacing: 2px; color: #555; text-decoration: none; transition: color .2s; font-weight: 300; }
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a { font-size: 11px; letter-spacing: 2px; color: #555; cursor: pointer; transition: color .2s; text-decoration: none; font-weight: 300; }
 .nav-links a:hover, .nav-links a.active { color: var(--nv); }
+.nav-ham { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-ham svg { display: block; }
 
 .page-wrap { padding-top: 64px; }
 .list-section { max-width: var(--maxw); margin: 0 auto; padding: 80px var(--pad) 96px; }
@@ -87,8 +89,10 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
   :root { --pad: 20px; }
   nav { height: 56px; padding: 0 20px; }
   .nav-brand { font-size: 13px; letter-spacing: 4px; }
-  .nav-links { gap: 12px; }
-  .nav-links a:nth-child(2), .nav-links a:nth-child(3) { display: none; }
+  .nav-ham { display: block; }
+  .nav-links { display: none; position: absolute; top: 56px; left: 0; right: 0; background: rgba(255,255,255,.98); backdrop-filter: blur(8px); flex-direction: column; gap: 0; border-bottom: 1px solid var(--bd); z-index: 101; }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 13px; letter-spacing: 2px; padding: 16px 20px; border-top: 1px solid var(--bd); }
   .page-wrap { padding-top: 56px; }
   .list-section { padding: 56px 20px 72px; }
   .art-grid { grid-template-columns: 1fr; }
@@ -103,13 +107,16 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
 
 <nav>
   <a class="nav-brand" href="index.html">方 · 雳</a>
-  <div class="nav-links">
-    <a href="index.html#p1">定位</a>
+  <div class="nav-links" id="nav-menu">
+    <a href="index.html#p1">专业定位</a>
     <a href="index.html#p2">服务领域</a>
     <a href="index.html#p3">执业经历</a>
     <a href="index.html#p4">联系方式</a>
     <a href="articles.html" class="active">文章</a>
   </div>
+  <button class="nav-ham" onclick="document.getElementById('nav-menu').classList.toggle('open')" aria-label="菜单">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
 </nav>
 
 <div class="page-wrap">
@@ -138,7 +145,6 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
     <div class="cta-wrap">
       <div class="cta-left"><div class="cta-label">有类似的问题？</div><p>说清楚你的情况就好，我来判断下一步怎么走。</p></div>
       <div class="cta-right">
-        <span class="btn btn-p" onclick="window.location.href='tel:18958154567'">电话咨询</span>
         <span class="btn btn-g" onclick="window.location.href='mailto:fllawyer@126.com'">发邮件</span>
       </div>
     </div>
