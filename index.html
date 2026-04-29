@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
 <meta name="description" content="方雳律师，浙江科资律师事务所主任，专注科创企业与成长型企业法律服务，擅长股权架构、公司治理、投融资交易及商事争议解决，执业15年，坐落于杭州。">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="canonical" href="https://fllawyer.net/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fllawyer.net/">
 <meta property="og:title" content="方雳律师 | 杭州股权治理·投融资·商事争议律师">
@@ -42,7 +45,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .hero-h1 { font-family: var(--serif); font-size: clamp(36px,4.5vw,58px); font-weight: 300; color: var(--nv); line-height: 1.25; margin-bottom: 36px; }
 .hero-h1 em { font-style: normal; font-weight: 500; border-bottom: 2px solid var(--gd); padding-bottom: 2px; }
 .hero-sub { font-size: 16px; color: var(--mt); line-height: 2.3; max-width: 520px; font-weight: 300; margin-bottom: 48px; }
-.hero-cta { display: inline-block; cursor: pointer; font-size: 10px; letter-spacing: 4px; color: var(--nv); border-bottom: 1px solid var(--nv); padding-bottom: 3px; transition: opacity .2s; }
+.hero-cta { display: inline-block; cursor: pointer; font-size: 10px; letter-spacing: 4px; color: var(--nv); border-bottom: 1px solid var(--nv); padding-bottom: 3px; transition: opacity .2s; text-decoration: none; }
 .hero-cta:hover { opacity: .5; }
 .hero-aside { padding-bottom: 4px; display: flex; flex-direction: column; gap: 0; border-left: 1px solid var(--bd); padding-left: 48px; align-self: center; }
 .hero-stat { padding: 20px 0; border-bottom: 1px solid var(--bd2); }
@@ -53,7 +56,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .hero-stat-l { font-size: 10px; letter-spacing: 3px; color: #555; }
 
 .section { max-width: var(--maxw); margin: 0 auto; padding: 96px var(--pad); }
-.section-label { font-size: 9px; letter-spacing: 5px; color: var(--gd); text-transform: uppercase; margin-bottom: 16px; font-weight: 400; }
+.section-label { font-size: 9px; letter-spacing: 5px; color: #8a7030; text-transform: uppercase; margin-bottom: 16px; font-weight: 400; }
 .section-title { font-family: var(--serif); font-size: clamp(22px,2.5vw,30px); font-weight: 300; color: var(--nv); line-height: 1.5; margin-bottom: 56px; }
 
 .pos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
@@ -82,7 +85,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .pain-item:first-child { border-top: 1px solid var(--bd); }
 .pain-item:hover { background: var(--g1); }
 .pain-item:hover .pain-arrow { opacity: 1; }
-.pain-n { font-size: 9px; letter-spacing: 3px; color: var(--gd); min-width: 20px; padding-top: 4px; }
+.pain-n { font-size: 9px; letter-spacing: 3px; color: #8a7030; min-width: 20px; padding-top: 4px; }
 .pain-t { font-size: 17px; color: var(--tx); line-height: 1.9; font-weight: 300; }
 .pain-arrow { font-size: 13px; color: var(--gd-dark); opacity: 0; transition: opacity .2s; flex-shrink: 0; padding-top: 6px; }
 
@@ -105,7 +108,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .tl-item { position: relative; padding-bottom: 36px; }
 .tl-item:last-child { padding-bottom: 0; }
 .tl-dot { position: absolute; left: -28.5px; top: 6px; width: 9px; height: 9px; border-radius: 50%; background: var(--g1); border: 1px solid var(--gd); }
-.tl-year { font-size: 9px; letter-spacing: 3px; color: var(--gd); margin-bottom: 4px; }
+.tl-year { font-size: 9px; letter-spacing: 3px; color: #8a7030; margin-bottom: 4px; }
 .tl-role { font-size: 17px; font-weight: 500; color: var(--nv); margin-bottom: 2px; }
 .tl-org { font-size: 15px; color: var(--mt); font-weight: 300; }
 .tl-desc { font-size: 15px; color: var(--mt); font-weight: 300; line-height: 2; margin-top: 8px; }
@@ -115,7 +118,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .contact-list { display: flex; flex-direction: column; }
 .contact-item { display: flex; gap: 24px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid var(--bd); }
 .contact-item:first-child { border-top: 1px solid var(--bd); }
-.contact-label { font-size: 9px; letter-spacing: 3px; color: var(--gd); text-transform: uppercase; min-width: 36px; padding-top: 3px; flex-shrink: 0; }
+.contact-label { font-size: 9px; letter-spacing: 3px; color: #8a7030; text-transform: uppercase; min-width: 36px; padding-top: 3px; flex-shrink: 0; }
 .contact-val { font-size: 16px; color: var(--tx); font-weight: 300; line-height: 1.7; }
 .contact-val a { color: var(--nv); text-decoration: none; }
 .contact-val a:hover { opacity: .6; }
@@ -221,16 +224,19 @@ html.dark .icon-sun { opacity: 0; }
   footer { font-size: 9px; letter-spacing: 2px; padding: 28px 20px; }
 }
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Attorney","name":"方雳","jobTitle":"主任律师","url":"https://fllawyer.net","image":"https://fllawyer.net/touxiang.jpg","description":"专注科创企业与成长型企业法律服务，擅长股权架构、公司治理、投融资交易及商事争议解决，执业15年。","worksFor":{"@type":"LegalService","name":"浙江科资律师事务所","address":{"@type":"PostalAddress","streetAddress":"钱江路太和广场8号楼1307—1309室","addressLocality":"杭州市","addressRegion":"浙江省","addressCountry":"CN"},"url":"https://fllawyer.net"},"knowsAbout":["股权架构","公司治理","投融资交易","股东争议","商事争议解决"],"areaServed":{"@type":"City","name":"杭州"}}
+</script>
 </head>
 <body>
 
 <nav>
   <a class="nav-brand" href="index.html">方 · 雳</a>
   <div class="nav-links" id="nav-menu">
-    <a onclick="nj('p1')">专业定位</a>
-    <a onclick="nj('p2')">服务领域</a>
-    <a onclick="nj('p3')">执业经历</a>
-    <a onclick="nj('p4')">联系方式</a>
+    <a href="#p1" onclick="event.preventDefault();nj('p1')">专业定位</a>
+    <a href="#p2" onclick="event.preventDefault();nj('p2')">服务领域</a>
+    <a href="#p3" onclick="event.preventDefault();nj('p3')">执业经历</a>
+    <a href="#p4" onclick="event.preventDefault();nj('p4')">联系方式</a>
     <a href="articles.html">文章</a>
   </div>
   <div class="nav-right">
@@ -252,7 +258,7 @@ html.dark .icon-sun { opacity: 0; }
       <p class="hero-eyebrow">律师 · 浙江科资律师事务所 · 杭州</p>
       <h1 class="hero-h1"><span style="white-space:nowrap">很多企业的法律风险，</span><br>不是没有，<br>只是<em>还没爆发</em>。</h1>
       <p class="hero-sub">股权没定清楚、控制权被悄悄稀释、合伙人关系开始出现裂缝——这些问题往往不会在平时显现，却会在企业最关键的节点突然变得棘手。方雳律师专注科创与成长型企业，帮你在<em>问题变成危机之前</em>，找到清晰可行的应对路径。</p>
-      <span class="hero-cta" onclick="nj('p4')">预约咨询</span>
+      <a class="hero-cta" href="#p4" onclick="event.preventDefault();nj('p4')">预约咨询</a>
     </div>
     <div class="hero-aside">
       <div class="hero-stat"><div class="hero-stat-n">15<sub>年</sub></div><div class="hero-stat-l">执业经验</div></div>
@@ -324,7 +330,7 @@ html.dark .icon-sun { opacity: 0; }
       </div>
       <div class="svc-card" style="display:flex;flex-direction:column;justify-content:center">
         <p style="font-size:16px;color:rgba(255,255,255,.45);line-height:2;font-weight:300;margin-bottom:24px">如果你不确定自己的问题属于哪个方向，直接联系即可——我来判断。</p>
-        <span onclick="nj('p4')" style="display:inline-block;font-size:11px;letter-spacing:4px;color:rgba(184,151,58,.8);border-bottom:1px solid rgba(184,151,58,.3);padding-bottom:3px;cursor:pointer">预约咨询 →</span>
+        <a href="#p4" onclick="event.preventDefault();nj('p4')" style="display:inline-block;font-size:11px;letter-spacing:4px;color:rgba(184,151,58,.8);border-bottom:1px solid rgba(184,151,58,.3);padding-bottom:3px;cursor:pointer;text-decoration:none">预约咨询 →</a>
       </div>
     </div>
   </div>
@@ -364,7 +370,7 @@ html.dark .icon-sun { opacity: 0; }
 <span id="p3" class="anc"></span>
 <div class="profile-wrap">
   <div class="profile-inner">
-    <div class="avatar"><img src="touxiang.jpg" alt="方雳律师"></div>
+    <div class="avatar"><img src="touxiang.webp" alt="方雳律师" width="96" height="96" loading="lazy"></div>
     <div>
       <p class="section-label">执业经历</p>
       <p class="section-title" style="margin-bottom:20px">从业十五年，专注企业法律服务。</p>
@@ -397,7 +403,7 @@ html.dark .icon-sun { opacity: 0; }
     <p class="contact-desc">如果你现在有一个问题想确认，或者有一个情况不知道该怎么处理，欢迎直接联系。不用准备太多，说清楚你的情况就好，我来判断下一步怎么走。</p>
   </div>
   <div class="contact-list">
-    <div class="contact-item"><span class="contact-label">微信</span><span class="contact-val"><img src="weixin.png" alt="微信二维码" style="width:120px;height:120px;display:block;margin-top:4px;border:1px solid var(--bd)"><span style="font-size:12px;color:#888;letter-spacing:1px;display:block;margin-top:8px">微信号：fllawyer</span></span></div>
+    <div class="contact-item"><span class="contact-label">微信</span><span class="contact-val"><img src="weixin.webp" alt="微信二维码" width="120" height="120" loading="lazy" style="display:block;margin-top:4px;border:1px solid var(--bd)"><span style="font-size:12px;color:#888;letter-spacing:1px;display:block;margin-top:8px">微信号：fllawyer</span></span></div>
     <div class="contact-item"><span class="contact-label">邮箱</span><span class="contact-val"><a href="/cdn-cgi/l/email-protection#d1b7bdbdb0a6a8b4a391e0e3e7ffb2bebc"><span class="__cf_email__" data-cfemail="791f1515180e001c0b39484b4f571a1614">[email&#160;protected]</span></a></span></div>
     <div class="contact-item"><span class="contact-label">律所</span><span class="contact-val">浙江科资律师事务所</span></div>
     <div class="contact-item"><span class="contact-label">地址</span><span class="contact-val">杭州市上城区钱江路<br>太和广场8号楼1307—1309室</span></div>
@@ -426,7 +432,7 @@ function nj(id) {
   if (menu) menu.classList.remove('open');
   window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 64, behavior: 'smooth' });
 }
-var links = document.querySelectorAll('.nav-links a[onclick]');
+var links = document.querySelectorAll('.nav-links a[href^="#"]');
 var sections = ['p1','p2','p3','p4'];
 window.addEventListener('scroll', function() {
   var scrollY = window.pageYOffset + 120;
@@ -436,8 +442,8 @@ window.addEventListener('scroll', function() {
     if (el && el.getBoundingClientRect().top + window.pageYOffset <= scrollY) current = id;
   });
   links.forEach(function(a) {
-    var fn = a.getAttribute('onclick') || '';
-    a.classList.toggle('active', fn.indexOf(current) > -1 && current !== '');
+    var hr = a.getAttribute('href') || '';
+    a.classList.toggle('active', hr === '#' + current && current !== '');
   });
 }, { passive: true });
 </script>
