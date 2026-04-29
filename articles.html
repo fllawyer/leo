@@ -94,6 +94,11 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .pager-title { font-family: var(--serif); font-size: 13px; color: var(--nv); line-height: 1.6; font-weight: 400; }
 .side-back { display: block; font-size: 9px; letter-spacing: 3px; color: var(--mt); text-transform: uppercase; font-weight: 400; margin-bottom: 12px; cursor: pointer; transition: color .2s; }
 .side-back:hover { color: var(--nv); }
+.font-ctrl { margin-bottom: 16px; border: 1px solid var(--bd); display: flex; overflow: hidden; }
+.font-btn { flex: 1; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 13px; color: var(--mt); padding: 8px 0; transition: all .2s; border-right: 1px solid var(--bd); }
+.font-btn:last-child { border-right: none; }
+.font-btn:hover { background: var(--cr); color: var(--nv); }
+.font-size-label { font-size: 9px; letter-spacing: 2px; color: var(--mt); text-align: center; display: block; margin-bottom: 6px; font-weight: 300; }
 .mob-back { display: none; font-size: 11px; letter-spacing: 2px; color: var(--mt); cursor: pointer; transition: color .2s; margin-bottom: 32px; }
 .mob-back:hover { color: var(--nv); }
 
@@ -223,6 +228,11 @@ html.dark footer { border-top-color: #2a2720; color: #55524f; }
     </div>
     <div class="art-side">
       <span class="side-back" onclick="showList()">← 返回列表</span>
+      <div class="font-ctrl">
+        <button class="font-btn" onclick="changeFontSize(-1)">A−</button>
+        <button class="font-btn" onclick="resetFontSize()">重置</button>
+        <button class="font-btn" onclick="changeFontSize(1)">A+</button>
+      </div>
       <div class="art-pager" id="art-pager"></div>
     </div>
   </div>
@@ -319,6 +329,7 @@ function showArt(id) {
   document.getElementById('art-list').style.display = 'none';
   document.getElementById('art-body').style.display = 'block';
   window.scrollTo({ top: 0 });
+  loadFontSize();
   try { history.pushState(null, '', 'articles.html?id=' + id); } catch(e) {}
 }
 
@@ -389,6 +400,30 @@ function showToast() {
 </script>
 
 <script>
+// 字号控制
+var BASE_SIZE = 17;
+var MIN_SIZE = 14;
+var MAX_SIZE = 22;
+function applyFontSize(size) {
+  document.querySelectorAll('.art-content p, .art-content h3').forEach(function(el) {
+    el.style.fontSize = size + 'px';
+  });
+}
+function changeFontSize(delta) {
+  var cur = parseInt(localStorage.getItem('art-font-size') || BASE_SIZE);
+  var next = Math.min(MAX_SIZE, Math.max(MIN_SIZE, cur + delta));
+  localStorage.setItem('art-font-size', next);
+  applyFontSize(next);
+}
+function resetFontSize() {
+  localStorage.removeItem('art-font-size');
+  applyFontSize(BASE_SIZE);
+}
+function loadFontSize() {
+  var saved = parseInt(localStorage.getItem('art-font-size') || BASE_SIZE);
+  applyFontSize(saved);
+}
+
 function toggleTheme() {
   var isDark = document.documentElement.classList.contains('dark');
   document.documentElement.classList.toggle('dark', !isDark);
