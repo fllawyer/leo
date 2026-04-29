@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
 <meta name="description" content="法律服务说明——方雳律师，浙江科资律师事务所，专注科创与成长型企业。">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="canonical" href="https://fllawyer.net/services.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fllawyer.net/services.html">
 <meta property="og:title" content="服务说明 | 方雳律师">
@@ -1027,15 +1030,15 @@ html.dark footer { border-top-color: #2a2720; color: #55524f; }
   <div class="cta-bar">
     <div><div class="cta-bar-label">有类似的问题？</div><p class="cta-bar-text">说清楚你的情况就好，我来判断下一步怎么走。</p></div>
     <div class="cta-btns">
-      <span class="btn btn-p" onclick="document.getElementById('qr-overlay').classList.add('show')">微信咨询</span>
-      <span class="btn btn-g" onclick="window.location.href='mailto:fllawyer@126.com'">发邮件</span>
+      <button class="btn btn-p" onclick="document.getElementById('qr-overlay').classList.add('show')">微信咨询</button>
+      <a class="btn btn-g" href="mailto:fllawyer@126.com">发邮件</a>
     </div>
   </div>
 </div>
 
 <div class="qr-overlay" id="qr-overlay" onclick="this.classList.remove('show')">
   <div class="qr-box" onclick="event.stopPropagation()">
-    <img src="weixin.png" alt="微信二维码">
+    <img src="weixin.webp" alt="微信二维码" width="200" height="200" loading="lazy">
     <p>扫码添加微信咨询</p>
     <p style="font-size:12px;color:#888;letter-spacing:1px;margin-bottom:16px">微信号：fllawyer</p>
     <button class="qr-close" onclick="document.getElementById('qr-overlay').classList.remove('show')">关闭</button>
