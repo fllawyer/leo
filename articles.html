@@ -48,18 +48,15 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 
 .art-body-wrap { display: none; }
 .art-inner { max-width: var(--maxw); margin: 0 auto; padding: 64px var(--pad) 96px; }
-.art-nav-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 48px; flex-wrap: wrap; gap: 16px; }
-.back-btn { font-size: 11px; letter-spacing: 3px; color: var(--mt); cursor: pointer; transition: color .2s; font-weight: 300; }
-.back-btn:hover { color: var(--nv); }
-.share-btn { display: flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: 2px; color: var(--mt); cursor: pointer; transition: color .2s; border: 1px solid var(--bd); padding: 7px 16px; font-family: inherit; background: none; }
-.share-btn:hover { color: var(--nv); border-color: var(--nv); }
+.share-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; letter-spacing: 2px; color: #aaa; cursor: pointer; transition: color .2s; border: none; padding: 0; font-family: inherit; background: none; }
+.share-btn:hover { color: var(--nv); }
 .share-toast { position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%); background: var(--nv); color: var(--wh); font-size: 13px; letter-spacing: 1px; padding: 12px 24px; opacity: 0; transition: opacity .3s; pointer-events: none; z-index: 999; }
 .share-toast.show { opacity: 1; }
 
 .art-content { max-width: 100%; }
 .art-eyebrow { font-size: 9px; letter-spacing: 4px; color: var(--gd-dark); text-transform: uppercase; font-weight: 400; margin-bottom: 20px; }
 .art-content h1 { font-family: var(--serif); font-size: clamp(24px,3vw,36px); font-weight: 300; color: var(--nv); line-height: 1.4; margin-bottom: 20px; }
-.art-meta { font-size: 12px; color: #aaa; letter-spacing: 2px; font-weight: 300; margin-bottom: 48px; border-bottom: 1px solid var(--bd); padding-bottom: 24px; }
+.art-meta { font-size: 12px; color: #aaa; letter-spacing: 2px; font-weight: 300; margin-bottom: 48px; border-bottom: 1px solid var(--bd); padding-bottom: 24px; display: flex; align-items: center; justify-content: space-between; }
 .art-content h3 { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--nv); margin: 40px 0 16px; line-height: 1.5; }
 .art-content p { font-size: 17px; color: var(--tx); line-height: 2.1; margin-bottom: 20px; font-weight: 300; text-align: justify; }
 .tip { background: var(--g1); border-left: 2px solid var(--gd); padding: 16px 20px; margin: 32px 0; font-size: 16px; color: var(--mt); line-height: 2; font-weight: 300; }
@@ -140,13 +137,6 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
 
 <div id="art-body" class="art-body-wrap">
   <div class="art-inner">
-    <div class="art-nav-top">
-      <span class="back-btn" onclick="showList()">← 返回文章列表</span>
-      <button class="share-btn" onclick="shareArt()">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-        分享
-      </button>
-    </div>
     <div class="art-content" id="art-content-body"></div>
     <div class="cta-wrap">
       <div class="cta-left"><div class="cta-label">有类似的问题？</div><p>说清楚你的情况就好，我来判断下一步怎么走。</p></div>
@@ -232,7 +222,7 @@ function showArt(id) {
   document.getElementById('art-content-body').innerHTML =
     '<div class="art-eyebrow">' + a.tag + '</div>'
     + '<h1>' + a.title + '</h1>'
-    + '<p class="art-meta">' + a.date + '</p>'
+    + '<div class="art-meta"><span>' + a.date + '</span><button class="share-btn" onclick="shareArt()"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>分享</button></div>'
     + a.content;
   var idx = ARTICLES.findIndex(function(x) { return x.id === id; });
   var prev = ARTICLES[idx - 1];
