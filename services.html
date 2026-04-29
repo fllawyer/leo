@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="法律服务说明——方雳律师，浙江科资律师事务所，专注科创与成长型企业。">
+<title>服务说明 | 方雳律师</title>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --nv: #0f2744; --nv2: #0a1d33; --gd: #b8973a; --gd-dark: #8a7030;
+  --cr: #faf9f6; --wh: #fff; --tx: #111; --mt: #555;
+  --bd: #e6e2db; --g1: #f7f5f1;
+  --serif: 'Songti SC','STSong','SimSun',serif;
+  --sans: 'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  --pad: clamp(32px,8vw,100px); --maxw: 1080px;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body { font-family: var(--sans); color: var(--tx); background: var(--wh); font-size: 17px; line-height: 2; -webkit-font-smoothing: antialiased; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--bd); display: flex; align-items: center; justify-content: space-between; padding: 0 var(--pad); height: 64px; }
+.nav-brand { font-family: var(--serif); font-size: 14px; letter-spacing: 6px; color: var(--nv); font-weight: 400; text-decoration: none; }
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a { font-size: 11px; letter-spacing: 2px; color: #555; cursor: pointer; transition: color .2s; text-decoration: none; font-weight: 300; }
+.nav-links a:hover, .nav-links a.active { color: var(--nv); }
+.nav-ham { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-ham svg { display: block; }
+
+.svc-select { background: var(--nv2); padding-top: 64px; }
+.svc-select-inner { max-width: var(--maxw); margin: 0 auto; padding: 40px var(--pad) 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.svc-pill { font-size: 12px; letter-spacing: 1px; color: rgba(255,255,255,.4); background: none; border: 1px solid rgba(255,255,255,.12); padding: 8px 20px; cursor: pointer; transition: all .2s; font-family: inherit; white-space: nowrap; font-weight: 300; }
+.svc-pill:hover { color: rgba(255,255,255,.7); border-color: rgba(255,255,255,.3); }
+.svc-pill.active { color: var(--wh); border-color: var(--gd); background: rgba(184,151,58,.15); }
+
+.svc-panel { display: none; }
+.svc-panel.active { display: block; }
+
+.hero { background: var(--nv2); }
+.hero-inner { max-width: var(--maxw); margin: 0 auto; padding: 40px var(--pad) 64px; }
+.hero-title { font-family: var(--serif); font-size: clamp(28px,4vw,48px); font-weight: 300; color: var(--wh); line-height: 1.3; margin-bottom: 24px; }
+.hero-desc { font-size: 16px; color: rgba(255,255,255,.55); line-height: 2.2; font-weight: 300; max-width: 640px; }
+
+.toc-wrap { background: var(--g1); border-bottom: 1px solid var(--bd); }
+.toc-inner { max-width: var(--maxw); margin: 0 auto; padding: 40px var(--pad); display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.toc-label { font-size: 9px; letter-spacing: 4px; color: var(--gd-dark); text-transform: uppercase; font-weight: 400; margin-right: 8px; white-space: nowrap; }
+.toc-link { font-size: 12px; letter-spacing: 1px; color: var(--mt); text-decoration: none; border: 1px solid var(--bd); padding: 6px 16px; transition: all .2s; font-weight: 300; }
+.toc-link:hover { border-color: var(--nv); color: var(--nv); }
+
+.content-wrap { max-width: var(--maxw); margin: 0 auto; padding: 80px var(--pad) 96px; }
+.chapter { margin-bottom: 72px; padding-bottom: 72px; border-bottom: 1px solid var(--bd); }
+.chapter:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.chapter-num { display: none; }
+.chapter-title { font-family: var(--serif); font-size: clamp(20px,2.5vw,26px); font-weight: 400; color: var(--nv); line-height: 1.4; margin-bottom: 36px; }
+.section { margin-bottom: 40px; }
+.section:last-child { margin-bottom: 0; }
+.section-title { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--nv); margin-bottom: 16px; line-height: 1.5; padding-left: 16px; border-left: 2px solid var(--gd); }
+.section p { font-size: 16px; color: var(--mt); line-height: 2.1; margin-bottom: 16px; font-weight: 300; text-align: justify; }
+.section p:last-child { margin-bottom: 0; }
+.tip { background: var(--g1); border-left: 2px solid var(--gd); padding: 16px 20px; margin: 24px 0; font-size: 15px; color: var(--mt); line-height: 2; font-weight: 300; font-style: italic; }
+.list { display: flex; flex-direction: column; gap: 0; margin: 16px 0; }
+.list-item { display: flex; align-items: flex-start; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--bd); font-size: 15px; color: var(--mt); font-weight: 300; line-height: 1.8; }
+.list-item:first-child { border-top: 1px solid var(--bd); }
+.list-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gd); flex-shrink: 0; margin-top: 10px; }
+.list-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+
+.cta-wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad) 96px; }
+.cta-bar { padding-top: 32px; border-top: 1px solid var(--bd); display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+.cta-bar-label { font-size: 9px; letter-spacing: 4px; color: var(--gd-dark); text-transform: uppercase; font-weight: 400; margin-bottom: 8px; }
+.cta-bar-text { font-size: 15px; color: var(--mt); line-height: 1.9; font-weight: 300; }
+.cta-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn { display: inline-block; cursor: pointer; font-size: 11px; letter-spacing: 3px; padding: 12px 24px; transition: all .25s; font-family: inherit; border: 1px solid var(--nv); text-decoration: none; }
+.btn-p { background: var(--nv); color: var(--wh); }
+.btn-p:hover { background: var(--nv2); }
+.btn-g { background: transparent; color: var(--nv); }
+.btn-g:hover { background: var(--nv); color: var(--wh); }
+.qr-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,.6); z-index: 200; align-items: center; justify-content: center; }
+.qr-overlay.show { display: flex; }
+.qr-box { background: var(--wh); padding: 40px; text-align: center; max-width: 320px; }
+.qr-box img { width: 200px; height: 200px; display: block; margin: 0 auto 16px; }
+.qr-box p { font-size: 14px; color: var(--mt); margin-bottom: 16px; font-weight: 300; }
+.qr-close { font-size: 11px; letter-spacing: 2px; color: var(--mt); cursor: pointer; border: none; background: none; font-family: inherit; }
+footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #888; border-top: 1px solid var(--bd); letter-spacing: 3px; font-weight: 300; }
+
+@media (max-width: 1024px) { :root { --pad: clamp(24px,5vw,60px); } }
+@media (max-width: 680px) {
+  :root { --pad: 20px; }
+  nav { height: 56px; padding: 0 20px; }
+  .nav-brand { font-size: 13px; letter-spacing: 4px; }
+  .nav-ham { display: block; }
+  .nav-links { display: none; position: absolute; top: 56px; left: 0; right: 0; background: rgba(255,255,255,.98); backdrop-filter: blur(8px); flex-direction: column; gap: 0; border-bottom: 1px solid var(--bd); z-index: 101; }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 13px; letter-spacing: 2px; padding: 16px 20px; border-top: 1px solid var(--bd); }
+  .svc-select { padding-top: 56px; }
+  .svc-select-inner { padding: 28px 20px 0; gap: 8px; }
+  .svc-pill { font-size: 11px; padding: 6px 14px; }
+  .hero-inner { padding: 28px 20px 48px; }
+  .cta-bar { flex-direction: column; }
+  .toc-inner { padding: 28px 20px; }
+  .content-wrap { padding: 56px 20px 72px; }
+  .list-2col { grid-template-columns: 1fr; }
+  footer { padding: 28px 20px; font-size: 9px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">方 · 雳</a>
+  <div class="nav-links" id="nav-menu">
+    <a href="index.html#p1">专业定位</a>
+    <a href="index.html#p2">服务领域</a>
+    <a href="index.html#p3">执业经历</a>
+    <a href="index.html#p4">联系方式</a>
+    <a href="articles.html">文章</a>
+  </div>
+  <button class="nav-ham" onclick="document.getElementById('nav-menu').classList.toggle('open')" aria-label="菜单">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+
+<div class="svc-select">
+  <div class="svc-select-inner">
+    <button class="svc-pill" data-svc="equity" onclick="switchSvc('equity')">股权治理</button>
+    <button class="svc-pill" data-svc="counsel" onclick="switchSvc('counsel')">法律顾问</button>
+    <button class="svc-pill" data-svc="investment" onclick="switchSvc('investment')">投融资交易</button>
+    <button class="svc-pill" data-svc="shareholder" onclick="switchSvc('shareholder')">股东争议</button>
+    <button class="svc-pill" data-svc="litigation" onclick="switchSvc('litigation')">商事争议</button>
+  </div>
+</div>
+
+
+<div class="svc-panel" id="panel-equity">
+  <div class="hero">
+    <div class="hero-inner">
+<h1 class="hero-title">股权架构与公司治理</h1>
+      <p class="hero-desc">股权架构设计的核心，不只是"股份怎么分"，而是要提前回答：谁负责决策？谁长期投入？谁可以退出？谁不能轻易拿走股权？公司未来融资、激励、治理是否还有空间？</p>
+    </div>
+  </div>
+  <div class="toc-wrap">
+    <div class="toc-inner">
+      <span class="toc-label">目录</span>
+      <a class="toc-link" href="#equity-s1">哪些情况需要考虑</a>
+    <a class="toc-link" href="#equity-s2">常见误区</a>
+    <a class="toc-link" href="#equity-s3">不处理的风险</a>
+    <a class="toc-link" href="#equity-s4">律师可以协助什么</a>
+    <a class="toc-link" href="#equity-s5">一般服务流程</a>
+    <a class="toc-link" href="#equity-s6">沟通前准备</a>
+    </div>
+  </div>
+  <div class="content-wrap">
+  <!-- 一 -->
+  <div class="chapter" id="equity-s1">
+    <p class="chapter-num">一</p>
+    <h2 class="chapter-title">一、哪些情况下需要考虑股权架构？</h2>
+
+    <div class="section">
+      <h3 class="section-title">几个人准备一起创业</h3>
+      <p>三个人、四个人一起做公司，大家一开始关系很好，也都愿意投入。但每个人投入的资金、时间、资源价值不同，有人全职有人兼职，有人负责业务有人负责技术。如果只凭"关系好""先做起来再说"来分股权，后续很容易留下隐患。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">公司已经成立，但股权结构比较随意</h3>
+      <p>有些公司成立时为了方便，直接按出资比例分股，或者简单平均分。公司发展到一定阶段后，可能出现：小股东不参与经营却长期持股、大股东出力最多但没有足够控制权、股东之间无法形成有效决策、融资时投资人认为股权结构不清晰等问题。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">公司准备融资</h3>
+      <p>融资前，投资人通常会关注公司的股权结构是否清晰、稳定、可持续。常见关注点包括：创始团队股权是否过于分散、实际控制人是否清晰、是否存在代持或隐名股东、是否预留股权激励空间、核心创始人的股权是否有锁定安排等。如果这些问题没有提前处理，可能影响融资进度，甚至影响投资人判断。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">公司准备做股权激励</h3>
+      <p>股权激励不是简单给员工一点股份，而是要考虑激励对象是谁、给实股期权还是虚拟股、授予条件是什么、退出时如何处理、是否影响创始人控制权、是否影响公司未来融资。如果原有股权架构没有预留空间，后续激励可能很难落地。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">合伙人之间已经出现分歧</h3>
+      <p>股权问题往往不是一开始爆发，而是在经营压力、利益分配、控制权争夺中逐渐显现。有股东不再参与经营、有股东想退出但价格谈不拢、有股东不同意融资或重大决策、公司章程和股东协议没有约定退出机制——这时股权架构已经不仅是设计问题，还可能涉及争议解决和风险控制。</p>
+    </div>
+  </div>
+
+  <!-- 二 -->
+  <div class="chapter" id="equity-s2">
+    <p class="chapter-num">二</p>
+    <h2 class="chapter-title">二、股权架构的常见误区</h2>
+
+    <div class="section">
+      <h3 class="section-title">误区一：平均分最公平</h3>
+      <p>平均分看似公平，实际可能导致后续决策僵局。两个股东各占50%，如果双方意见不一致，公司可能无法作出有效决策。股权不是单纯的利益分配工具，也是公司决策和控制权安排的基础。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">误区二：谁出钱多，谁股权就多</h3>
+      <p>出资当然重要，但创业公司不能只看资金。有些创始人投入的是技术、客户资源、管理能力、行业经验、全职时间，这些也可能是公司早期最核心的价值来源。更合理的方式是综合考虑资金投入、时间投入、资源贡献、岗位价值、责任承担、未来持续贡献和控制权安排。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">误区三：先口头说好，后面再补协议</h3>
+      <p>股权问题越早说清楚，越不容易伤感情。真正容易破坏关系的，不是提前谈规则，而是公司做起来以后，大家对贡献、收益、退出、控制权的理解完全不同。口头约定在发生争议时往往很难证明，股权安排应当尽量落实到公司章程、股东协议等书面文件中。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">误区四：工商登记股权比例就是全部安排</h3>
+      <p>工商登记只是外部公示，并不等于股东之间的全部权利义务安排。股东是否必须全职投入、股权是否分期成熟、中途退出如何回购、离职后股权如何处理、重大事项如何表决——这些更细的问题，需要通过内部协议解决。如果只有工商登记，没有内部规则，很多问题仍然处于空白状态。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">误区五：股权架构只是大公司的事</h3>
+      <p>事实上，越是早期公司，越需要重视股权架构。早期团队的股权结构，往往决定了公司未来的融资空间、治理效率和合伙人关系。早期处理好，成本相对较低；等到公司已经有收入、有投资人、有员工、有争议时，再调整就会复杂很多。</p>
+    </div>
+  </div>
+
+  <!-- 三 -->
+  <div class="chapter" id="equity-s3">
+    <p class="chapter-num">三</p>
+    <h2 class="chapter-title">三、如果不处理，可能有哪些风险？</h2>
+
+    <div class="section">
+      <h3 class="section-title">创始人之间发生股权纠纷</h3>
+      <p>常见纠纷包括：实际出资与登记不一致、口头约定无法证明、代持关系说不清、股东贡献与股权比例严重不匹配、股东退出价格无法协商、股东之间争夺公司控制权。一旦进入纠纷阶段，处理成本通常会明显上升。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">公司决策陷入僵局</h3>
+      <p>如果股权比例和表决机制设计不合理，公司可能在是否融资、是否引入新股东、是否处分重大资产、是否更换法定代表人、是否调整公司业务方向等重大事项上无法形成有效决议，直接影响公司经营效率。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">影响融资</h3>
+      <p>投资人通常不喜欢股权结构混乱的公司。如果公司存在代持、历史出资瑕疵、股东争议、控制权不清、核心创始人股权过低等问题，投资人可能要求先整改，甚至直接放弃投资。融资谈判中，股权问题是投资人判断公司稳定性的重要依据。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">核心人员激励困难</h3>
+      <p>如果公司没有预留股权激励空间，或者没有设计好激励工具，后续想绑定核心员工时会比较被动。激励比例从哪里来、谁让渡、如何授予、员工离职如何处理，这些都需要提前规划，否则股权激励可能变成新的纠纷来源。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">实际控制权被削弱</h3>
+      <p>有些创始人虽然实际负责公司经营，但由于股权设计不合理，在法律上并没有足够的控制权。这可能导致重大事项无法推动、核心创始人被边缘化、公司经营方向被其他股东牵制。股权架构设计中，控制权安排往往比单纯持股比例更重要。</p>
+    </div>
+  </div>
+
+  <!-- 四 -->
+  <div class="chapter" id="equity-s4">
+    <p class="chapter-num">四</p>
+    <h2 class="chapter-title">四、律师通常可以协助做什么？</h2>
+
+    <div class="section">
+      <h3 class="section-title">梳理现有股权结构</h3>
+      <p>包括当前股东及持股比例、实际出资情况、是否存在代持、历史股权变动、股东之间的口头或书面约定、公司章程与实际安排是否一致、是否存在潜在争议。这一步主要是先把问题看清楚。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">设计股权分配与控制权方案</h3>
+      <p>根据创始人贡献、投入、职责和未来规划，协助设计更合理的股权比例和权利安排，同时设计股东会表决比例、董事安排、重大事项清单、一票否决权边界、决策僵局解决机制等，确保公司未来能够顺畅运转。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">设计股东退出机制</h3>
+      <p>包括股东主动退出、股东不再参与经营、股东违约或离职、股东死亡离婚被执行等特殊情况，以及股权回购价格、回购程序、付款安排、争议解决方式。退出机制是股权架构中非常重要的一部分。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">起草或修改相关法律文件</h3>
+      <p>常见文件包括：公司章程、股东协议、出资协议、股权转让协议、股权代持协议、一致行动协议、表决权委托协议、股权激励协议、期权授予协议、限制性股权协议、合伙人合作协议。不同公司需要的文件不同，不建议简单套模板。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">为融资或股权激励预留空间</h3>
+      <p>如果公司未来有融资或激励计划，需要提前考虑创始团队持股是否稳定、是否预留员工持股平台、是否设置期权池、投资人进入后的股权稀释、控制权是否会被过早削弱。这类安排最好在早期就有整体规划。</p>
+    </div>
+  </div>
+
+  <!-- 五 -->
+  <div class="chapter" id="equity-s5">
+    <p class="chapter-num">五</p>
+    <h2 class="chapter-title">五、服务的一般流程</h2>
+
+    <div class="list">
+      <div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第一步：初步沟通</strong>　了解公司基本情况、股东现状、是否存在分歧、未来是否有融资或激励计划，判断问题类型和服务范围。</div></div>
+      <div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第二步：材料审阅</strong>　查看营业执照、公司章程、股东名册、出资凭证、历史股权转让文件、已签署协议等，全面了解现有安排。</div></div>
+      <div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第三步：风险诊断</strong>　梳理可能存在的问题，形成问题清单或沟通意见，让客户清楚地了解当前股权结构的潜在风险。</div></div>
+      <div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第四步：方案设计</strong>　根据公司实际情况，提出股权架构调整或设计方案，兼顾法律可行性和商业可接受度。</div></div>
+      <div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第五步：文件起草与修改</strong>　根据确定的方案，起草或修改相关法律文件，把规则落实到可执行的文本中。</div></div>
+      <div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第六步：协助签署与落地</strong>　协助处理股东会议安排、文件签署、工商变更、内部授权、股权转让流程等，确保方案真正落地执行。</div></div>
+    </div>
+  </div>
+
+  <!-- 六 -->
+  <div class="chapter" id="equity-s6">
+    <p class="chapter-num">六</p>
+    <h2 class="chapter-title">六、沟通前建议准备哪些材料？</h2>
+
+    <div class="section">
+      <h3 class="section-title">公司已经成立</h3>
+      <div class="list list-2col">
+        <div class="list-item"><div class="list-dot"></div><span>营业执照</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>公司章程</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>工商登记信息</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>股东及持股比例情况</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>实际出资情况说明</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>股东之间已签署的协议</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>历史股权转让或增资文件</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>是否存在代持的说明</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>公司目前经营情况简要说明</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>当前最希望解决的问题</span></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">公司尚未成立</h3>
+      <div class="list list-2col">
+        <div class="list-item"><div class="list-dot"></div><span>拟设立公司的业务方向</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>创始人名单</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>各创始人拟投入的资金、资源和时间</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>各创始人的职责分工</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>是否有人全职、有人兼职</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>未来是否计划融资</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>是否计划做员工股权激励</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>对控制权和分红的初步想法</span></div>
+      </div>
+      <p style="margin-top:20px">材料不需要一开始就非常完整。初步沟通时，可以先说明基本情况，再根据需要补充。</p>
+    </div>
+
+    <div class="tip">股权架构问题通常需要结合具体材料和交易背景进行判断。未审阅完整材料前，律师一般只能提供初步分析和方向性建议，不能直接作出确定性结论。</div>
+  </div>
+  </div>
+</div>
+
+<div class="svc-panel" id="panel-counsel">
+  <div class="hero">
+    <div class="hero-inner">
+<h1 class="hero-title">企业常年法律顾问</h1>
+      <p class="hero-desc">企业不是出了事才需要律师，而是在关键决策前需要有人把风险说清楚。常年法律顾问的价值，不只是“有问题时问一问”，更重要的是在日常经营、合同签署、内部管理和风险处理的过程中，提前识别问题、控制风险、完善规则。</p>
+    </div>
+  </div>
+  <div class="toc-wrap">
+    <div class="toc-inner">
+      <span class="toc-label">目录</span>
+      <a class="toc-link" href="#counsel-s1">哪些企业适合</a>
+    <a class="toc-link" href="#counsel-s2">主要协助内容</a>
+    <a class="toc-link" href="#counsel-s3">服务边界</a>
+    <a class="toc-link" href="#counsel-s4">服务流程</a>
+    <a class="toc-link" href="#counsel-s5">沟通前准备</a>
+    <a class="toc-link" href="#counsel-s6">建议尽早咨询的情形</a>
+    </div>
+  </div>
+  <div class="content-wrap">
+  <!-- 一 -->
+<div class="chapter" id="counsel-s1">
+<p class="chapter-num">一</p>
+<h2 class="chapter-title">一、哪些企业适合聘请常年法律顾问？</h2>
+<div class="section">
+<h3 class="section-title">经常签合同的企业</h3>
+<p>如果企业日常经营中经常涉及采购、销售、代理、加盟、渠道、服务、技术、租赁、合作开发等合同，就需要对合同风险进行持续管理。很多合同纠纷并不是因为双方一开始就想违约，而是因为合同里没有把交付标准、验收条件、付款节点、违约责任和争议解决说清楚。如果这些问题在签约前没有处理好，后续发生纠纷时，企业往往会变得被动。</p>
+</div>
+<div class="section">
+<h3 class="section-title">正在快速发展的企业</h3>
+<p>企业发展越快，法律风险通常也越多。新增员工、扩大区域、引入投资人、调整股权、签署大额合同——这些事项看似是经营问题，但背后往往都有法律结构和风险边界。如果在快速发展阶段没有同步建立合同、用工、授权和合规规则，后续很容易出现管理失控或责任不清。</p>
+</div>
+<div class="section">
+<h3 class="section-title">股东或合伙人较多的企业</h3>
+<p>股东较多的企业，最需要提前建立内部规则。谁负责日常经营、谁有最终决策权、股东想退出怎么办、公司印章证照由谁管理——如果这些问题只靠口头约定，企业发展到一定阶段后很容易发生分歧。常年法律顾问可以帮助企业把股东合作、公司治理和内部决策机制逐步规范起来。</p>
+</div>
+<div class="section">
+<h3 class="section-title">有应收账款压力的企业</h3>
+<p>很多企业并不是没有业务，而是款项回收困难。债权回收不是只在起诉时才需要律师，更重要的是在合同签署、交付验收、对账催收、证据固定阶段就做好准备。常年法律顾问可以帮助企业建立应收账款管理和催收证据留存机制，提高后续维权的主动性。</p>
+</div>
+<div class="section">
+<h3 class="section-title">内部管理逐渐复杂的企业</h3>
+<p>员工入职离职不规范、劳动合同版本多年未更新、规章制度没有经过民主程序、核心人员保密竞业没有约定、印章使用没有审批流程——这些问题平时不明显，一旦发生劳动争议、合同争议或内部责任追究，就可能变成企业的风险点。</p>
+</div>
+</div>
+<!-- 二 -->
+<div class="chapter" id="counsel-s2">
+<p class="chapter-num">二</p>
+<h2 class="chapter-title">二、律师主要可以协助什么？</h2>
+<div class="section">
+<h3 class="section-title">合同审查与修改</h3>
+<p>这是企业法律顾问最基础、也最常见的服务内容。合同审查的重点，不只是看条款是否合法，而是要判断：交易结构是否清楚、权利义务是否对等、企业的核心利益是否被保护、履行过程中是否容易产生争议、违约责任是否具有实际约束力、付款交付验收解除等关键条款是否明确。好的合同审查，应当服务于交易本身，而不是单纯堆砌法律条款。</p>
+</div>
+<div class="section">
+<h3 class="section-title">合同模板和交易文件体系建设</h3>
+<p>很多企业长期使用网上下载的模板，或由业务人员自行修改旧合同。短期看方便，但长期看容易出现模板与实际交易不匹配、关键条款缺失、多个版本前后矛盾等问题。常年法律顾问可以根据企业实际业务，建立标准销售合同、采购合同、服务合同、保密协议、催款函、结算确认书等常用文件体系，提高签约效率，降低重复审查成本。</p>
+</div>
+<div class="section">
+<h3 class="section-title">公司治理与股东关系支持</h3>
+<p>对有多个股东的企业来说，公司治理非常重要。法律顾问可以协助处理公司章程修改、股东会决议、股权转让、增资扩股、表决权安排、退出机制、印章证照管理、法定代表人和高管变更等事项。很多公司名义上是公司制企业，但内部仍然靠“熟人合伙”方式运转。常年法律顾问的作用，是帮助企业逐步从人情管理走向规则管理。</p>
+</div>
+<div class="section">
+<h3 class="section-title">劳动用工风险管理</h3>
+<p>劳动争议中，很多企业败诉，并不是因为没有道理，而是因为制度、证据和流程没有做好。比如：员工严重违纪，但企业没有合法有效的规章制度；员工不胜任工作，但企业没有考核记录和培训调岗过程；员工离职后带走客户资源，但企业没有保密协议和证据留存。法律顾问可以帮助企业在日常管理阶段就把规则和证据做好。</p>
+</div>
+<div class="section">
+<h3 class="section-title">应收账款和债权管理</h3>
+<p>债权管理的关键，不是等到对方完全不付款才处理，而是在款项出现异常时尽早介入。法律顾问可以协助企业审查付款条款、建立对账流程、起草催款函和律师函、固定催收证据、判断是否需要诉讼仲裁或保全，以及跟进执行回款。越早固定证据，越容易掌握主动权。</p>
+</div>
+<div class="section">
+<h3 class="section-title">重大经营决策法律支持</h3>
+<p>企业在准备签署重要合作协议、引入投资人、收购或转让项目、调整股权结构、解除重要合同、启动诉讼或仲裁前，通常需要评估法律风险。这些事项不能只看法律条文，还要结合商业目标、谈判空间、证据基础和后续成本综合判断。常年法律顾问可以在决策前提供风险提示和处理路径建议。</p>
+</div>
+</div>
+<!-- 三 -->
+<div class="chapter" id="counsel-s3">
+<p class="chapter-num">三</p>
+<h2 class="chapter-title">三、服务边界说明</h2>
+<div class="section">
+<h3 class="section-title">不对结果作出承诺</h3>
+<p>法律服务需要结合事实、证据、合同文本、交易背景和司法裁判尺度进行判断。律师可以提供法律分析、风险提示和处理建议，但不能对交易结果、诉讼结果、回款结果作出保证。</p>
+</div>
+<div class="section">
+<h3 class="section-title">不替代企业内部管理</h3>
+<p>法律顾问可以协助企业建立规则、优化合同、提示风险，但企业内部的执行仍然需要企业自己完成。合同审批流程需要企业落实，员工管理制度需要企业执行，印章使用需要内部遵守，应收账款催收需要业务和财务配合，证据留存需要日常经营人员共同参与。法律顾问的价值，是帮助企业形成更清晰的规则和判断，而不是替代管理层作经营决策。</p>
+</div>
+<div class="section">
+<h3 class="section-title">顾问费不包含所有法律事务</h3>
+<p>常年法律顾问通常覆盖日常法律咨询、合同审查、法律文件修改、风险提示等常规事项。但重大诉讼仲裁、股权并购、大额投融资、尽职调查、专项法律意见书、复杂股权争议、大规模劳动争议等工作量较大的专项服务，通常需要另行确定服务范围和费用。具体是否纳入顾问服务范围，应以双方签署的法律顾问合同为准。</p>
+</div>
+</div>
+<!-- 四 -->
+<div class="chapter" id="counsel-s4">
+<p class="chapter-num">四</p>
+<h2 class="chapter-title">四、服务的一般流程</h2>
+<div class="list">
+<div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第一步：初步沟通</strong>　了解企业基本情况，包括行业、主营业务、公司规模、股东结构、合同类型、员工人数、当前主要法律问题，以及希望法律顾问重点解决什么问题。这一步主要判断企业的法律服务需求和工作重点。</div></div>
+<div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第二步：确定服务范围</strong>　根据企业实际情况，明确服务期限、服务事项、响应方式、合同审查工作量安排，以及哪些事项需要另行收费。服务范围越清晰，后续合作越顺畅。</div></div>
+<div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第三步：签署法律顾问合同</strong>　双方确认服务内容、费用、期限和工作方式后，签署常年法律顾问合同，明确服务主体、响应机制、保密义务、利益冲突处理，以及费用不包含的事项。</div></div>
+<div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第四步：建立日常沟通机制</strong>　根据企业情况确定对接人、沟通渠道、文件提交方式、合同审查流程和紧急事项处理方式。良好的沟通机制，能明显提高法律服务效率。</div></div>
+<div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第五步：开展日常服务</strong>　合作开始后，根据企业需求持续提供日常咨询、合同审查、文件起草、风险提示、争议前期处理、制度优化等服务。</div></div>
+<div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第六步：阶段性复盘</strong>　定期梳理本阶段处理的主要问题、企业最常见的风险点、哪些合同条款和内部流程需要完善。复盘的目的，是帮助企业从单个问题处理，逐步转向整体风险管理。</div></div>
+</div>
+</div>
+<!-- 五 -->
+<div class="chapter" id="counsel-s5">
+<p class="chapter-num">五</p>
+<h2 class="chapter-title">五、沟通前建议准备哪些材料？</h2>
+<div class="section">
+<h3 class="section-title">企业基本信息</h3>
+<div class="list list-2col">
+<div class="list-item"><div class="list-dot"></div><span>营业执照</span></div>
+<div class="list-item"><div class="list-dot"></div><span>公司章程</span></div>
+<div class="list-item"><div class="list-dot"></div><span>股东及持股比例</span></div>
+<div class="list-item"><div class="list-dot"></div><span>主营业务介绍</span></div>
+<div class="list-item"><div class="list-dot"></div><span>公司组织架构</span></div>
+<div class="list-item"><div class="list-dot"></div><span>员工人数</span></div>
+<div class="list-item"><div class="list-dot"></div><span>主要经营区域</span></div>
+<div class="list-item"><div class="list-dot"></div><span>主要客户和供应商类型</span></div>
+</div>
+</div>
+<div class="section">
+<h3 class="section-title">常用合同文本</h3>
+<div class="list list-2col">
+<div class="list-item"><div class="list-dot"></div><span>销售合同</span></div>
+<div class="list-item"><div class="list-dot"></div><span>采购合同</span></div>
+<div class="list-item"><div class="list-dot"></div><span>服务合同</span></div>
+<div class="list-item"><div class="list-dot"></div><span>合作协议</span></div>
+<div class="list-item"><div class="list-dot"></div><span>劳动合同</span></div>
+<div class="list-item"><div class="list-dot"></div><span>保密协议</span></div>
+<div class="list-item"><div class="list-dot"></div><span>竞业限制协议</span></div>
+<div class="list-item"><div class="list-dot"></div><span>其他高频使用合同</span></div>
+</div>
+<p style="margin-top:20px">这些材料有助于律师了解企业日常交易习惯，判断现有合同文本的常见问题。</p>
+</div>
+<div class="section">
+<h3 class="section-title">当前正在处理的问题及最关注的风险</h3>
+<div class="list list-2col">
+<div class="list-item"><div class="list-dot"></div><span>是否有拖欠款项</span></div>
+<div class="list-item"><div class="list-dot"></div><span>是否有合同履行争议</span></div>
+<div class="list-item"><div class="list-dot"></div><span>是否有员工离职纠纷</span></div>
+<div class="list-item"><div class="list-dot"></div><span>是否有股东分歧</span></div>
+<div class="list-item"><div class="list-dot"></div><span>是否准备融资或股权调整</span></div>
+<div class="list-item"><div class="list-dot"></div><span>是否准备签署重大合作协议</span></div>
+<div class="list-item"><div class="list-dot"></div><span>是否存在历史遗留问题</span></div>
+<div class="list-item"><div class="list-dot"></div><span>企业目前最担心的法律风险</span></div>
+</div>
+</div>
+<div class="tip">材料不需要一开始就非常完整。初步沟通时，可以先说明基本情况，再根据需要补充。常年法律顾问服务的具体范围、响应方式和收费方式，需要结合企业规模、业务复杂程度和工作量综合确定。</div>
+</div>
+<!-- 六 -->
+<div class="chapter" id="counsel-s6">
+<p class="chapter-num">六</p>
+<h2 class="chapter-title">六、哪些情形建议尽早咨询律师？</h2>
+<div class="section">
+<h3 class="section-title">准备签署金额较大的合同</h3>
+<p>金额较大的合同，一旦发生争议，损失也会相应放大。签署前应重点审查付款节点、违约责任、交付标准、验收规则、解除条件和管辖条款，避免因合同条款不完整而在争议时处于被动。</p>
+</div>
+<div class="section">
+<h3 class="section-title">对方已经开始拖延付款</h3>
+<p>一旦出现拖款迹象，就应尽快固定证据，包括合同、订单、发票、送货单、验收单、对账单、微信或邮件沟通记录、催款记录和对方付款承诺。越早介入，后续谈判和维权的空间越大。</p>
+</div>
+<div class="section">
+<h3 class="section-title">员工出现严重违纪或准备解除劳动关系</h3>
+<p>劳动关系处理需要非常重视程序和证据。在采取解除、调岗、降薪、处分等措施前，建议先评估是否有制度依据、制度是否有效、是否有充分证据、处理程序是否合规，以及是否存在仲裁风险。</p>
+</div>
+<div class="section">
+<h3 class="section-title">股东之间出现明显分歧</h3>
+<p>股东分歧如果处理不当，可能影响公司经营。例如股东不配合签字、要求查账、要求分红、另行经营同类业务、争夺印章或控制权、要求退出但价格谈不拢。这类问题越早梳理规则和证据，越有利于后续处理。</p>
+</div>
+<div class="section">
+<h3 class="section-title">准备引入投资人或重要合作伙伴</h3>
+<p>引入投资人或重要合作伙伴前，应提前评估交易结构、出资安排、股权比例、退出机制、控制权影响和业绩承诺风险。投资和合作协议不是简单模板，关键条款往往会影响企业未来的主动权。</p>
+</div>
+</div>
+  </div>
+</div>
+
+<div class="svc-panel" id="panel-investment">
+  <div class="hero">
+    <div class="hero-inner">
+<h1 class="hero-title">投融资及合作交易</h1>
+      <p class="hero-desc">投资人给的条款，大部分创始人觉得“都是标准的”。但对赌、回购、优先清算权这些安排，在公司顺风顺水时感觉不到，一旦出现波折，就会发现自己当初签了什么。融资不只是融到钱，还涉及控制权、退出、责任和未来的主动权。</p>
+    </div>
+  </div>
+  <div class="toc-wrap">
+    <div class="toc-inner">
+      <span class="toc-label">目录</span>
+      <a class="toc-link" href="#investment-s1">哪些情况需要关注</a>
+    <a class="toc-link" href="#investment-s2">常见条款风险</a>
+    <a class="toc-link" href="#investment-s3">常见误区</a>
+    <a class="toc-link" href="#investment-s4">律师可以协助什么</a>
+    <a class="toc-link" href="#investment-s5">一般服务流程</a>
+    <a class="toc-link" href="#investment-s6">沟通前准备</a>
+    </div>
+  </div>
+  <div class="content-wrap">
+  <div class="chapter" id="investment-s1">
+<p class="chapter-num">一</p>
+<h2 class="chapter-title">一、哪些情况下需要关注法律问题？</h2>
+<div class="section">
+<h3 class="section-title">准备接受外部投资</h3>
+<p>无论是天使轮、Pre-A还是更后期的融资，一旦引入外部投资人，就涉及股权结构调整、投资人权利安排、创始团队控制权保护等问题。投资协议中的条款，往往比外表看起来更复杂，也更难事后更改。</p>
+</div>
+<div class="section">
+<h3 class="section-title">准备向外部投资</h3>
+<p>企业作为投资方参与股权投资、战略入股或产业合作时，同样需要对目标公司进行尽职调查，评估交易结构、出资风险、股东权利保障、退出路径，以及投资后的管理安排。</p>
+</div>
+<div class="section">
+<h3 class="section-title">准备签署重要合作协议</h3>
+<p>联合开发、品牌授权、渠道合作、加盟代理、合资设立新公司——这类合作协议通常金额较大、周期较长，双方权利义务复杂。一旦合作不顺或中途需要退出，如果协议没有写清楚，处理成本往往很高。</p>
+</div>
+<div class="section">
+<h3 class="section-title">准备收购或出售股权</h3>
+<p>无论是全部收购还是部分股权转让，涉及的法律问题都比较多，包括目标公司的历史合规问题、股权的权属清晰度、交易对价和支付安排、过渡期管理、交割条件，以及交割后的责任划分。这类交易通常不适合简单套用模板。</p>
+</div>
+<div class="section">
+<h3 class="section-title">涉及可转债、对赌或特殊安排</h3>
+<p>部分融资或合作项目会涉及可转债、业绩对赌、回购承诺、优先分红权、优先清算权等特殊安排。这些条款在签署时往往不显眼，但在特定情形下会对创始人产生实质影响。签署前理解清楚，比出问题后再处理要主动得多。</p>
+</div>
+</div>
+<div class="chapter" id="investment-s2">
+<p class="chapter-num">二</p>
+<h2 class="chapter-title">二、投融资协议中的常见条款风险</h2>
+<div class="section">
+<h3 class="section-title">对赌条款</h3>
+<p>对赌通常以业绩目标为触发条件，要求创始人在未达标时进行股权补偿或现金赔付。很多创始人在融资时对自己的增长预期过于乐观，或者没有认真看清触发条件、计算方式和赔付上限，等到真正触发时才意识到压力有多大。对赌条款应重点关注：触发条件是否合理、赔付方式是否可控、是否有解除或豁免机制。</p>
+</div>
+<div class="section">
+<h3 class="section-title">回购条款</h3>
+<p>回购通常约定在特定情形下（如未能上市、业绩不达标、创始人违约等），投资人有权要求公司或创始人按约定价格回购其持有的股权。问题在于：回购义务由谁承担？回购价格如何计算？公司是否有能力支付？创始人是否需要个人承担连带责任？这些细节直接决定了回购条款对创始人的实际风险程度。</p>
+</div>
+<div class="section">
+<h3 class="section-title">优先清算权</h3>
+<p>在公司出售、清算或发生重大变更时，拥有优先清算权的投资人可以优先于普通股东获得分配。如果公司最终的退出价格低于预期，普通股股东（通常是创始人）可能所剩无几。签署时需要关注优先清算的倍数、是否参与分配，以及触发情形的范围。</p>
+</div>
+<div class="section">
+<h3 class="section-title">反稀释条款</h3>
+<p>当公司在后续融资中估值低于本轮时（即“down round”），反稀释条款会自动调整投资人的持股比例，以弥补其损失。这意味着创始人在下一轮融资中可能面临比预期更大的股权稀释。反稀释的计算方式（完全棘轮还是加权平均）对稀释幅度影响很大。</p>
+</div>
+<div class="section">
+<h3 class="section-title">一票否决权与保护性条款</h3>
+<p>投资协议中通常会约定，某些重大事项（如再次融资、重大资产处置、更换核心管理层、修改章程等）需要投资人同意或不反对。如果保护性条款范围过宽，可能导致公司在关键决策上受到制约，影响日常经营效率和未来融资的灵活性。</p>
+</div>
+</div>
+<div class="chapter" id="investment-s3">
+<p class="chapter-num">三</p>
+<h2 class="chapter-title">三、创始人在融资中的常见误区</h2>
+<div class="section">
+<h3 class="section-title">误区一：条款都是标准的，不用仔细看</h3>
+<p>投资机构使用的“标准条款”，是对投资人最有利的安排，不是对创始人最公平的安排。条款本身并没有真正意义上的“标准”，只是部分条款在市场上更常见。即使是常见条款，也有宽严之别，谈判空间因投资方和项目情况而异。</p>
+</div>
+<div class="section">
+<h3 class="section-title">误区二：先把钱拿到，条款以后再说</h3>
+<p>融资协议一旦签署，条款就已生效，很难事后单方面修改。等到触发对赌、遭遇回购、遭遇控制权稀释时，再想“以后再说”已经没有空间。融资前的法律审查，比融资后的补救要有效得多。</p>
+</div>
+<div class="section">
+<h3 class="section-title">误区三：只关注估值，不关注条款结构</h3>
+<p>高估值融资并不一定对创始人更有利。如果伴随着苛刻的回购、对赌、优先清算权安排，高估值在某些情形下反而意味着更大的风险敞口。估值和条款应当一起评估，而不是只看一个数字。</p>
+</div>
+<div class="section">
+<h3 class="section-title">误区四：合作协议用模板就够了</h3>
+<p>重要的合作协议不能靠模板。每一段合作关系的投入方式、退出条件、责任划分和价值分配都不一样，模板几乎无法覆盖这些差异。用错误的文本管理重要的商业关系，最终可能造成比谈判本身更大的损失。</p>
+</div>
+</div>
+<div class="chapter" id="investment-s4">
+<p class="chapter-num">四</p>
+<h2 class="chapter-title">四、律师可以协助做什么？</h2>
+<div class="section">
+<h3 class="section-title">投资协议审查与谈判支持</h3>
+<p>逐条审查投资意向书（TS）和正式投资协议，识别对创始人不利的条款，提示风险并协助谈判。重点通常包括：估值调整机制、对赌触发条件、回购义务范围、优先清算权倍数、保护性条款边界，以及锁定期和退出安排。</p>
+</div>
+<div class="section">
+<h3 class="section-title">交易结构设计</h3>
+<p>根据融资目标、控制权需求和税务考量，协助设计合理的交易结构，包括：是否设置持股平台、是否采用AB股或表决权委托、是否需要VIE架构，以及如何在引入投资人的同时保留创始人的实际控制权。</p>
+</div>
+<div class="section">
+<h3 class="section-title">尽职调查支持</h3>
+<p>作为投资方或被投资方，协助开展或应对法律尽职调查，包括：梳理公司历史沿革、股权变动记录、重大合同、知识产权权属、劳动用工合规、诉讼仲裁历史，以及识别和披露可能影响交易的法律瑕疵。</p>
+</div>
+<div class="section">
+<h3 class="section-title">合作协议起草与审查</h3>
+<p>根据合作的实际内容和双方诉求，起草或审查联合开发协议、战略合作协议、合资协议、加盟合同、品牌授权协议等，重点落实：合作范围、资源投入、利润分配、知识产权归属、退出机制和违约责任。</p>
+</div>
+<div class="section">
+<h3 class="section-title">股权收购及转让交易</h3>
+<p>协助处理股权转让交易的全流程法律工作，包括：目标公司股权清晰度核查、转让协议起草、交割条件设计、过渡期安排、陈述与保证条款、赔偿机制，以及工商变更的配合。</p>
+</div>
+</div>
+<div class="chapter" id="investment-s5">
+<p class="chapter-num">五</p>
+<h2 class="chapter-title">五、一般服务流程</h2>
+<div class="list">
+<div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第一步：初步沟通</strong>　了解交易背景，包括融资轮次、投资方背景、大致估值、对方已提出的核心条款，以及创始人最关注的控制权和退出问题。判断交易结构的复杂程度和服务重点。</div></div>
+<div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第二步：文件审阅</strong>　查看投资意向书、已有草案协议、公司章程、股权结构图，以及此前融资轮次的相关文件，全面了解现有安排对本轮交易的影响。</div></div>
+<div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第三步：风险提示</strong>　梳理协议中对创始人不利的条款，形成风险说明和修改建议，让创始人清楚地了解每一项安排在不同情形下的实际影响。</div></div>
+<div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第四步：谈判协助</strong>　根据确定的底线和优先级，协助与投资方进行条款谈判，在商业可接受的范围内争取对创始人更有利的安排。</div></div>
+<div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第五步：文件起草与修改</strong>　根据谈判结果，起草或修改正式协议文本，确保条款表述清晰、无歧义，与双方达成的商业共识一致。</div></div>
+<div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第六步：交割配合</strong>　协助处理签署、股权变更登记、工商备案等交割事项，确保交易顺利完成。</div></div>
+</div>
+</div>
+<div class="chapter" id="investment-s6">
+<p class="chapter-num">六</p>
+<h2 class="chapter-title">六、沟通前建议准备哪些材料？</h2>
+<div class="section">
+<h3 class="section-title">融资类项目</h3>
+<div class="list list-2col">
+<div class="list-item"><div class="list-dot"></div><span>公司营业执照</span></div>
+<div class="list-item"><div class="list-dot"></div><span>现有股权结构图</span></div>
+<div class="list-item"><div class="list-dot"></div><span>公司章程</span></div>
+<div class="list-item"><div class="list-dot"></div><span>历史融资协议（如有）</span></div>
+<div class="list-item"><div class="list-dot"></div><span>本轮投资意向书或草案</span></div>
+<div class="list-item"><div class="list-dot"></div><span>投资方名称及背景简介</span></div>
+<div class="list-item"><div class="list-dot"></div><span>本轮融资金额及估值</span></div>
+<div class="list-item"><div class="list-dot"></div><span>创始人最关注的核心问题</span></div>
+</div>
+</div>
+<div class="section">
+<h3 class="section-title">合作交易类项目</h3>
+<div class="list list-2col">
+<div class="list-item"><div class="list-dot"></div><span>合作方基本信息</span></div>
+<div class="list-item"><div class="list-dot"></div><span>合作的主要内容和目标</span></div>
+<div class="list-item"><div class="list-dot"></div><span>双方已达成的商业共识</span></div>
+<div class="list-item"><div class="list-dot"></div><span>对方提供的协议草案（如有）</span></div>
+<div class="list-item"><div class="list-dot"></div><span>涉及的知识产权或资产情况</span></div>
+<div class="list-item"><div class="list-dot"></div><span>预计合作期限和规模</span></div>
+<div class="list-item"><div class="list-dot"></div><span>退出或终止的初步想法</span></div>
+</div>
+</div>
+<div class="tip">融资或重要合作的法律工作，通常需要结合具体文件和交易背景进行判断。建议在收到对方草案后尽早介入，预留足够的审查和谈判时间。</div>
+</div>
+  </div>
+</div>
+
+<div class="svc-panel" id="panel-shareholder">
+  <div class="hero">
+    <div class="hero-inner">
+<h1 class="hero-title">股东及控制权争议</h1>
+      <p class="hero-desc">股东之间的摩擦，往往不是突然出现的，而是在公司发展过程中逐渐累积的。开会越来越难达成一致，有人开始质疑决策权归属，印章和账户的控制权出现争议——这种阶段，每拖一天，公司正常运营就多一分风险。</p>
+    </div>
+  </div>
+  <div class="toc-wrap">
+    <div class="toc-inner">
+      <span class="toc-label">目录</span>
+      <a class="toc-link" href="#shareholder-s1">常见争议类型</a>
+    <a class="toc-link" href="#shareholder-s2">为什么不能拖</a>
+    <a class="toc-link" href="#shareholder-s3">律师可以协助什么</a>
+    <a class="toc-link" href="#shareholder-s4">一般处理路径</a>
+    <a class="toc-link" href="#shareholder-s5">沟通前准备</a>
+    </div>
+  </div>
+  <div class="content-wrap">
+  <div class="chapter" id="shareholder-s1">
+    <p class="chapter-num">一</p>
+    <h2 class="chapter-title">一、常见的股东及控制权争议类型</h2>
+
+    <div class="section">
+      <h3 class="section-title">股东之间对重大事项无法形成决议</h3>
+      <p>公司需要就融资、引入新股东、处置重大资产、更换法定代表人、调整公司业务方向等事项作出决策，但股东会反复开会无法达成一致。这种僵局往往源于股权结构设计时没有设置明确的决策机制，或者各方对表决权的理解存在分歧。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">股东争夺印章、证照或账户控制权</h3>
+      <p>印章、营业执照、银行账户是公司日常经营的基础工具。当股东之间出现严重分歧时，控制这些工具往往成为争夺对象。一旦出现一方私自占有印章或账户拒绝配合的情形，公司的正常经营就会立刻受到影响。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">股东要求查账或主张知情权</h3>
+      <p>小股东对公司财务状况产生疑虑，要求查阅账簿、财务报告或会议记录，但遭到大股东或管理层阻拦。知情权纠纷是股东争议中较为常见的一类，也是股东关系恶化的早期信号之一。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">股东认为自身权益受到损害</h3>
+      <p>包括：大股东通过关联交易损害公司利益、控制股东未经合法程序擅自决策、公司长期盈利但拒绝分红、股东被强迫稀释持股、股东被架空或排除在经营决策之外等。这类情况下，受损股东通常需要评估是通过诉讼主张权利，还是先寻求协商解决。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">股东退出引发的价格与程序争议</h3>
+      <p>股东退出时，最容易发生争议的问题通常是：退出价格如何确定、其他股东是否享有优先购买权、退出方是否需要承担连带责任、股权转让手续是否合规。如果事先没有在协议中明确约定，退出时往往很难顺利协商。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">实际控制人与名义股东之间的代持争议</h3>
+      <p>由于历史原因，部分公司存在股权代持安排。当实际出资人与名义持股人之间出现信任危机，或代持关系因离婚、去世、执行等原因被动暴露，可能引发股权归属争议，处理难度较高。</p>
+    </div>
+  </div>
+
+  <div class="chapter" id="shareholder-s2">
+    <p class="chapter-num">二</p>
+    <h2 class="chapter-title">二、为什么股东争议不能拖？</h2>
+
+    <div class="section">
+      <h3 class="section-title">争议期间公司正常经营持续受损</h3>
+      <p>股东之间的争议往往会影响公司的日常经营：签合同需要法定代表人配合，银行账户操作需要授权，员工不知道听谁的，客户和供应商看到内部矛盾也会产生顾虑。争议每拖一天，公司就多承受一天的运营压力。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">证据和权利基础会随时间流失</h3>
+      <p>股东争议中，证据的完整性非常重要。时间越长，重要的沟通记录越容易散失，关键当事人的记忆越容易出现偏差，部分书面文件也可能被销毁或修改。尽早固定证据，是争议处理中最基础也最关键的步骤之一。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">对方可能在此期间完成不利于你的操作</h3>
+      <p>在争议悬而未决时，对方可能利用手中的控制权转移资产、变更公司登记、替换管理层、引入新股东稀释你的持股，或者与第三方签署对公司不利的合同。一旦这些操作完成，撤销的难度和成本都会大幅上升。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">诉讼时效和程序权利有期限限制</h3>
+      <p>部分股东权利的主张受到法定时效的约束。例如：要求撤销股东会决议通常有60天的期限，部分损害赔偿请求也有诉讼时效限制。错过关键时间节点，可能导致合法权利无法得到法律保护。</p>
+    </div>
+  </div>
+
+  <div class="chapter" id="shareholder-s3">
+    <p class="chapter-num">三</p>
+    <h2 class="chapter-title">三、律师可以协助做什么？</h2>
+
+    <div class="section">
+      <h3 class="section-title">梳理权利基础与争议脉络</h3>
+      <p>审查公司章程、股东协议、历史决议、出资记录、代持安排等文件，梳理各方股东的实际权利边界，判断争议的核心问题是什么，哪些主张有依据，哪些主张需要补充证据。这一步的目的是先把情况看清楚。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">固定和保全关键证据</h3>
+      <p>协助梳理和固定现有证据，包括：股东会召开记录、投票记录、书面通知、财务文件、沟通记录、公章使用记录等。在必要时，协助申请财产保全或行为保全，防止对方在争议期间转移资产或完成不利操作。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">设计争议解决方案</h3>
+      <p>根据争议的实质和各方诉求，评估可行的解决路径：是通过股东内部协商达成退出或重组安排，还是通过法律途径主张权利。不同路径在成本、时间和结果确定性上各有差异，需要结合实际情况综合判断。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">代理或协助诉讼与仲裁</h3>
+      <p>如果协商无法解决，协助或代理股东知情权纠纷、股东会决议效力纠纷、损害公司利益责任纠纷、股权转让纠纷、公司解散纠纷等诉讼或仲裁程序，通过法律途径主张权利、保护利益。</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">争议解决后的结构修复</h3>
+      <p>争议平息后，协助修复公司治理结构，包括：修改公司章程、完善股东协议、重新设计表决和决策机制、建立退出规则，避免类似争议再次发生。</p>
+    </div>
+  </div>
+
+  <div class="chapter" id="shareholder-s4">
+    <p class="chapter-num">四</p>
+    <h2 class="chapter-title">四、一般处理路径</h2>
+
+    <div class="list">
+      <div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第一步：了解情况</strong>　了解争议起因、各方股权比例和现有安排、当前最紧迫的问题，以及是否已有对方的正式动作或通知。判断争议的性质和紧迫程度。</div></div>
+      <div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第二步：审查文件</strong>　查看公司章程、股东协议、工商登记信息、历史股东会决议、出资凭证，以及与争议相关的沟通记录，全面了解各方的权利基础。</div></div>
+      <div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第三步：评估路径</strong>　分析争议的核心问题，判断协商解决与法律程序各自的可行性、成本和预期结果，提出建议路径供客户决策。</div></div>
+      <div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第四步：固定证据</strong>　根据选择的路径，协助梳理和固定关键证据，在必要时协助申请保全措施，防止权利基础被进一步削弱。</div></div>
+      <div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第五步：推进解决</strong>　通过协商、调解、诉讼或仲裁推进争议解决，起草相关法律文件，代理或协助处理程序性事项。</div></div>
+      <div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第六步：修复结构</strong>　争议解决后，协助完善公司治理文件，建立更清晰的规则，避免后续再次发生类似问题。</div></div>
+    </div>
+
+    <div class="tip">股东争议的处理方式，在很大程度上取决于当事人的目标——是继续合作、还是彻底分开。不同目标对应不同的策略，建议在初步沟通时明确说清楚。</div>
+  </div>
+
+  <div class="chapter" id="shareholder-s5">
+    <p class="chapter-num">五</p>
+    <h2 class="chapter-title">五、沟通前建议准备哪些材料？</h2>
+
+    <div class="section">
+      <h3 class="section-title">公司基本文件</h3>
+      <div class="list list-2col">
+        <div class="list-item"><div class="list-dot"></div><span>营业执照</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>公司章程（含历次修订）</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>工商登记股东信息</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>股东协议（如有）</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>出资凭证或验资报告</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>历史股东会决议</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>代持协议（如有）</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>一致行动协议（如有）</span></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">争议相关材料</h3>
+      <div class="list list-2col">
+        <div class="list-item"><div class="list-dot"></div><span>争议起因的简要说明</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>对方已采取的行动或表态</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>往来函件或通知</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>微信或邮件中的关键记录</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>公司财务情况（如涉及分红争议）</span></div>
+        <div class="list-item"><div class="list-dot"></div><span>目前印章证照的控制情况</span></div>
+      </div>
+      <p style="margin-top:20px">材料不需要一开始就全部准备好。初步沟通时先说清楚大致情况，后续再根据需要补充。</p>
+    </div>
+  </div>
+  </div>
+</div>
+
+<div class="svc-panel" id="panel-litigation">
+  <div class="hero">
+    <div class="hero-inner">
+<h1 class="hero-title">商事争议解决</h1>
+      <p class="hero-desc">对方不履约、款项收不回来、合作破裂说不清责任——很多人的第一反应是“再等等看”。但等待本身是有代价的：证据在流失，时效在计算，对方可能已经在转移资产。越早介入，能做的事情越多。</p>
+    </div>
+  </div>
+  <div class="toc-wrap">
+    <div class="toc-inner">
+      <span class="toc-label">目录</span>
+      <a class="toc-link" href="#litigation-s1">常见争议类型</a>
+    <a class="toc-link" href="#litigation-s2">为什么不能只等</a>
+    <a class="toc-link" href="#litigation-s3">律师可以协助什么</a>
+    <a class="toc-link" href="#litigation-s4">一般处理路径</a>
+    <a class="toc-link" href="#litigation-s5">沟通前准备</a>
+    </div>
+  </div>
+  <div class="content-wrap">
+  <div class="chapter" id="litigation-s1">
+<p class="chapter-num">一</p>
+<h2 class="chapter-title">一、常见的商事争议类型</h2>
+<div class="section">
+<h3 class="section-title">合同纠纷</h3>
+<p>包括：买卖合同纠纷、服务合同纠纷、建设工程合同纠纷、技术合同纠纷、租赁合同纠纷、加盟合同纠纷等。常见问题包括一方不按时履行、单方解除合同、拒绝支付款项、对交付标准或验收结果存在争议，以及合同解除后的损失赔偿如何计算。</p>
+</div>
+<div class="section">
+<h3 class="section-title">货款和应收账款纠纷</h3>
+<p>这是企业最常见的争议类型之一。对方以各种理由拖延付款——质量问题、资金紧张、等待对账、正在审批——而企业手中可能缺乏完整的书面依据。这类案件的处理结果，往往取决于合同条款是否清晰、交付和验收记录是否完整、催款过程是否留有书面证据。</p>
+</div>
+<div class="section">
+<h3 class="section-title">合作纠纷</h3>
+<p>合作项目进行到一半，双方对成果归属、费用承担、退出条件或违约责任产生分歧。这类纠纷的难点通常在于：双方最初依赖的是口头约定或框架协议，细节没有落实到书面；合作的界定模糊，很难区分哪些属于违约、哪些属于合理的商业判断。</p>
+</div>
+<div class="section">
+<h3 class="section-title">保证金、押金和预付款纠纷</h3>
+<p>合同解除后对方拒绝返还保证金，或者以各种理由主张扣留；预付款已付但对方迟迟不履约，又不配合退款。这类争议中，关键在于合同中关于退还条件的约定是否明确，以及是否存在合理的违约事实支撑对方的抗辩。</p>
+</div>
+<div class="section">
+<h3 class="section-title">知识产权及竞业争议</h3>
+<p>包括：员工离职后带走客户资源或技术成果，前员工违反竞业限制协议加入竞争对手，合作方未经授权使用公司的品牌、技术或数据，以及合作结束后对知识产权归属产生争议等。</p>
+</div>
+<div class="section">
+<h3 class="section-title">担保和连带责任纠纷</h3>
+<p>企业或个人为他人债务提供担保，被要求承担连带责任；或者在签署合同时，因表述不清被认定为对他人债务承担保证责任。这类争议中，担保范围、担保方式和担保协议的表述细节往往决定最终责任边界。</p>
+</div>
+</div>
+<div class="chapter" id="litigation-s2">
+<p class="chapter-num">二</p>
+<h2 class="chapter-title">二、为什么不能只是等待？</h2>
+<div class="section">
+<h3 class="section-title">等待本身不会让问题消失</h3>
+<p>很多企业面对争议的第一反应是“再等一等，看看对方什么态度”。等待的逻辑并不总是错的，但等待是有时间成本的，关键在于等待期间你在做什么。如果等待意味着什么都不做，问题只会越来越难处理。</p>
+</div>
+<div class="section">
+<h3 class="section-title">证据会随时间流失</h3>
+<p>商事争议中，证据是最重要的基础。微信聊天记录可以被删除，关键当事人的说法会随时间出现偏差，交付记录、验收单、对账文件可能找不到，证人可能已经离职。等到真正要处理时，很多关键证据已经无法还原。尽早固定证据，是争议处理中最基础的一步。</p>
+</div>
+<div class="section">
+<h3 class="section-title">诉讼时效在计算</h3>
+<p>民事纠纷的诉讼时效通常为三年。但“三年”的起算点并非从纠纷开始，而是从当事人知道或应当知道权利受到损害时起算，且存在中断和重置的情形。如果超过诉讼时效，法院仍会受理案件，但对方一旦提出时效抗辩，胜诉概率会大幅下降。</p>
+</div>
+<div class="section">
+<h3 class="section-title">对方可能在此期间转移资产</h3>
+<p>如果对方财务状况已经出现问题，等待可能意味着对方在此期间完成资产转移、注销公司或转移主要业务，导致即使获得胜诉判决，执行也困难重重。在争议初期评估是否需要申请财产保全，往往比等到诉讼结束后再追讨更有效率。</p>
+</div>
+</div>
+<div class="chapter" id="litigation-s3">
+<p class="chapter-num">三</p>
+<h2 class="chapter-title">三、律师可以协助做什么？</h2>
+<div class="section">
+<h3 class="section-title">梳理事实与评估胜算</h3>
+<p>在正式介入之前，先梳理争议事实、审查现有合同和证据，判断己方主张的法律依据是否充分、对方的抗辩是否有依据，并评估不同处理路径（协商、仲裁、诉讼）的胜算和成本，帮助当事人做出合理的策略判断。</p>
+</div>
+<div class="section">
+<h3 class="section-title">固定证据与申请保全</h3>
+<p>协助梳理和固定现有证据，包括合同文本、付款记录、交付凭证、往来函件、沟通记录等。在对方可能转移资产或证据可能灭失的情况下，协助申请财产保全或证据保全，防止主动权进一步丧失。</p>
+</div>
+<div class="section">
+<h3 class="section-title">协商与谈判</h3>
+<p>很多商事争议不需要走到诉讼，通过合理的协商就能以较低成本解决。律师可以协助设计谈判方案，起草律师函或催告函，代表当事人参与协商，在维护核心利益的前提下寻求对双方都可接受的解决方案。</p>
+</div>
+<div class="section">
+<h3 class="section-title">代理诉讼与仲裁</h3>
+<p>如果协商无法解决，代理当事人提起诉讼或仲裁，包括：起诉状或仲裁申请书的起草、证据整理与提交、庭审陈述与质证、法律意见的提交，以及判决或裁决作出后的执行申请。</p>
+</div>
+<div class="section">
+<h3 class="section-title">执行阶段的追讨</h3>
+<p>获得胜诉判决后，如果对方仍不履行，申请强制执行并不意味着就能顺利拿回来。协助查找可执行财产、申请执行措施、处理执行异议，是争议解决中常被忽视但同样重要的环节。</p>
+</div>
+</div>
+<div class="chapter" id="litigation-s4">
+<p class="chapter-num">四</p>
+<h2 class="chapter-title">四、一般处理路径</h2>
+<div class="list">
+<div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第一步：了解情况</strong>　了解争议的基本事实、涉及金额、对方当前态度，以及当事人的核心诉求是什么——是尽快拿回款项、还是追究违约责任、还是两者都有。</div></div>
+<div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第二步：审查合同和证据</strong>　查看合同文本、履行记录、往来函件、付款凭证，评估己方的权利基础是否充分，以及现有证据能否支撑诉求。</div></div>
+<div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第三步：评估路径与风险</strong>　根据案件情况，分析协商、仲裁、诉讼各自的可行性、预期成本、时间周期和胜算，提出建议路径，由当事人决策。</div></div>
+<div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第四步：固定证据与保全</strong>　根据选择的路径，协助整理和固定关键证据。在必要时申请财产保全，防止对方在争议期间转移资产。</div></div>
+<div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第五步：推进争议解决</strong>　通过协商、诉讼或仲裁推进处理，起草相关文件，代理或协助处理程序性事项，并在过程中持续评估和调整策略。</div></div>
+<div class="list-item"><div class="list-dot"></div><div><strong style="color:var(--nv);font-weight:500">第六步：执行与回款</strong>　判决或裁决生效后，协助申请强制执行，查找并追讨可执行财产，推进实际回款。</div></div>
+</div>
+<div class="tip">争议处理的策略，取决于案件事实、证据基础、涉及金额和当事人的时间成本。不是每一个争议都适合直接起诉，但“再等等看”也不一定是正确的选择。建议尽早进行一次初步沟通，判断下一步的方向。</div>
+</div>
+<div class="chapter" id="litigation-s5">
+<p class="chapter-num">五</p>
+<h2 class="chapter-title">五、沟通前建议准备哪些材料？</h2>
+<div class="section">
+<h3 class="section-title">基础合同文件</h3>
+<div class="list list-2col">
+<div class="list-item"><div class="list-dot"></div><span>合同正本（含补充协议）</span></div>
+<div class="list-item"><div class="list-dot"></div><span>订单或采购单</span></div>
+<div class="list-item"><div class="list-dot"></div><span>发票</span></div>
+<div class="list-item"><div class="list-dot"></div><span>送货单或交付记录</span></div>
+<div class="list-item"><div class="list-dot"></div><span>验收单或签收记录</span></div>
+<div class="list-item"><div class="list-dot"></div><span>对账单</span></div>
+<div class="list-item"><div class="list-dot"></div><span>付款记录或银行流水</span></div>
+<div class="list-item"><div class="list-dot"></div><span>结算确认书（如有）</span></div>
+</div>
+</div>
+<div class="section">
+<h3 class="section-title">沟通与催收记录</h3>
+<div class="list list-2col">
+<div class="list-item"><div class="list-dot"></div><span>微信或短信沟通记录</span></div>
+<div class="list-item"><div class="list-dot"></div><span>邮件往来记录</span></div>
+<div class="list-item"><div class="list-dot"></div><span>电话沟通的记录或备忘</span></div>
+<div class="list-item"><div class="list-dot"></div><span>已发出的催款函或律师函</span></div>
+<div class="list-item"><div class="list-dot"></div><span>对方的书面回复或承诺</span></div>
+<div class="list-item"><div class="list-dot"></div><span>对方公司的基本信息</span></div>
+</div>
+<p style="margin-top:20px">材料能收集多少就带多少，初步沟通时不需要全部准备齐全。说清楚争议大致情况，我来判断哪些材料最关键、下一步怎么走。</p>
+</div>
+</div>
+  </div>
+</div>
+
+
+<div class="cta-wrap">
+  <div class="cta-bar">
+    <div><div class="cta-bar-label">有类似的问题？</div><p class="cta-bar-text">说清楚你的情况就好，我来判断下一步怎么走。</p></div>
+    <div class="cta-btns">
+      <span class="btn btn-p" onclick="document.getElementById('qr-overlay').classList.add('show')">微信咨询</span>
+      <span class="btn btn-g" onclick="window.location.href='mailto:fllawyer@126.com'">发邮件</span>
+    </div>
+  </div>
+</div>
+
+<div class="qr-overlay" id="qr-overlay" onclick="this.classList.remove('show')">
+  <div class="qr-box" onclick="event.stopPropagation()">
+    <img src="weixin.png" alt="微信二维码">
+    <p>扫码添加微信咨询</p>
+    <button class="qr-close" onclick="document.getElementById('qr-overlay').classList.remove('show')">关闭</button>
+  </div>
+</div>
+
+<footer>© 2026 方雳律师 · 浙江科资律师事务所 · 保留所有权利</footer>
+
+<script>
+function switchSvc(key) {
+  var panels = document.querySelectorAll('.svc-panel');
+  var tabs = document.querySelectorAll('.svc-pill');
+  panels.forEach(function(p) { p.classList.remove('active'); });
+  tabs.forEach(function(t) { t.classList.remove('active'); });
+  var panel = document.getElementById('panel-' + key);
+  if (panel) panel.classList.add('active');
+  tabs.forEach(function(t) { if (t.getAttribute('data-svc') === key) t.classList.add('active'); });
+  window.scrollTo({ top: 0 });
+  // 更新 URL 但不刷新页面
+  try { history.replaceState(null, '', 'services.html?s=' + key); } catch(e) {}
+}
+
+// 初始化：读取 URL 参数
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var s = params.get('s') || 'equity';
+  switchSvc(s);
+})();
+</script>
+</body>
+</html>
