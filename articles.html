@@ -258,6 +258,20 @@ function shareArt() {
 }
 
 // 初始化由动态加载的 onload 触发，无需在此调用
+
+// 处理从主页跳转过来的 ?id=aX 参数
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var id = params.get('id');
+  if (id) {
+    var wait = setInterval(function(){
+      if (typeof ARTICLES !== 'undefined') {
+        clearInterval(wait);
+        showArt(id);
+      }
+    }, 50);
+  }
+})();
 </script>
 </body>
 </html>
