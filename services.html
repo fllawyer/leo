@@ -124,11 +124,11 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
 
 <div class="svc-select">
   <div class="svc-select-inner">
-    <button class="svc-pill" data-svc="equity" onclick="switchSvc('equity')">股权治理</button>
-    <button class="svc-pill" data-svc="counsel" onclick="switchSvc('counsel')">法律顾问</button>
-    <button class="svc-pill" data-svc="investment" onclick="switchSvc('investment')">投融资交易</button>
-    <button class="svc-pill" data-svc="shareholder" onclick="switchSvc('shareholder')">股东争议</button>
-    <button class="svc-pill" data-svc="litigation" onclick="switchSvc('litigation')">商事争议</button>
+    <button class="svc-pill" data-svc="counsel" onclick="switchSvc('counsel')">企业法律顾问</button>
+    <button class="svc-pill" data-svc="equity" onclick="switchSvc('equity')">股权架构与公司治理</button>
+    <button class="svc-pill" data-svc="investment" onclick="switchSvc('investment')">投融资及合作交易</button>
+    <button class="svc-pill" data-svc="shareholder" onclick="switchSvc('shareholder')">股东及控制权争议</button>
+    <button class="svc-pill" data-svc="litigation" onclick="switchSvc('litigation')">商事争议解决</button>
   </div>
   </div>
 </div>
@@ -997,7 +997,7 @@ function switchSvc(key) {
 // 初始化：读取 URL 参数
 (function() {
   var params = new URLSearchParams(window.location.search);
-  var s = params.get('s') || 'equity';
+  var s = params.get('s') || 'counsel';
   switchSvc(s);
 })();
 </script>
