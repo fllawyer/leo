@@ -253,18 +253,34 @@ function shareArt() {
   var text = a ? a.title + ' — 方雳律师' : '方雳律师';
   var url = window.location.href;
   if (navigator.share) {
-    navigator.share({ title: text, url: url });
-  } else {
-    try { navigator.clipboard.writeText(url); } catch(e) {
-      var ta = document.createElement('textarea');
-      ta.value = url; document.body.appendChild(ta);
-      ta.select(); document.execCommand('copy');
-      document.body.removeChild(ta);
-    }
-    var toast = document.getElementById('share-toast');
-    toast.classList.add('show');
-    setTimeout(function() { toast.classList.remove('show'); }, 2000);
+    try { navigator.share({ title: text, url: url }).catch(function(){}); } catch(e) {}
+    return;
   }
+  // 复制链接
+  try {
+    navigator.clipboard.writeText(url).then(function() {
+      showToast();
+    }).catch(function() {
+      fallbackCopy(url);
+    });
+  } catch(e) {
+    fallbackCopy(url);
+  }
+}
+function fallbackCopy(url) {
+  var ta = document.createElement('textarea');
+  ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); } catch(e) {}
+  document.body.removeChild(ta);
+  showToast();
+}
+function showToast() {
+  var toast = document.getElementById('share-toast');
+  if (!toast) return;
+  toast.classList.add('show');
+  setTimeout(function() { toast.classList.remove('show'); }, 2000);
 }
 
 // 初始化由动态加载的 onload 触发，无需在此调用
