@@ -39,13 +39,14 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .hero-title { font-family: var(--serif); font-size: clamp(28px,4vw,48px); font-weight: 300; color: var(--wh); line-height: 1.3; margin-bottom: 24px; }
 .hero-desc { font-size: 16px; color: rgba(255,255,255,.55); line-height: 2.2; font-weight: 300; max-width: 640px; }
 
-.toc-wrap { background: var(--g1); border-bottom: 1px solid var(--bd); }
-.toc-inner { max-width: var(--maxw); margin: 0 auto; padding: 40px var(--pad); display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-.toc-label { font-size: 9px; letter-spacing: 4px; color: var(--gd-dark); text-transform: uppercase; font-weight: 400; margin-right: 8px; white-space: nowrap; }
-.toc-link { font-size: 12px; letter-spacing: 1px; color: var(--mt); text-decoration: none; border: 1px solid var(--bd); padding: 6px 16px; transition: all .2s; font-weight: 300; }
-.toc-link:hover { border-color: var(--nv); color: var(--nv); }
+.body-grid { max-width: 1200px; margin: 0 auto; padding: 80px var(--pad) 96px; display: grid; grid-template-columns: 160px 1fr; gap: 56px; align-items: start; }
+.toc-side { position: sticky; top: 80px; display: flex; flex-direction: column; gap: 0; padding-top: 4px; }
+.toc-label { font-size: 9px; letter-spacing: 4px; color: var(--gd-dark); text-transform: uppercase; font-weight: 400; margin-bottom: 16px; }
+.toc-link { font-size: 13px; color: var(--mt); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--bd); transition: color .2s; font-weight: 300; display: block; line-height: 1.6; }
+.toc-link:first-of-type { border-top: 1px solid var(--bd); }
+.toc-link:hover { color: var(--nv); }
 
-.content-wrap { max-width: var(--maxw); margin: 0 auto; padding: 80px var(--pad) 96px; }
+.content-wrap { padding: 0; }
 .chapter { margin-bottom: 72px; padding-bottom: 72px; border-bottom: 1px solid var(--bd); }
 .chapter:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 .chapter-num { display: none; }
@@ -94,8 +95,12 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
   .svc-pill { font-size: 11px; padding: 6px 14px; }
   .hero-inner { padding: 28px 20px 48px; }
   .cta-bar { flex-direction: column; }
-  .toc-inner { padding: 28px 20px; }
-  .content-wrap { padding: 56px 20px 72px; }
+  .body-grid { grid-template-columns: 1fr; gap: 0; padding: 0 20px 72px; }
+  .toc-side { position: static; flex-direction: row; flex-wrap: wrap; gap: 8px; padding: 28px 0; border-bottom: 1px solid var(--bd); }
+  .toc-label { margin-bottom: 0; margin-right: 8px; padding-top: 6px; }
+  .toc-link { border: 1px solid var(--bd); padding: 6px 14px; font-size: 11px; display: inline-block; }
+  .toc-link:first-of-type { border-top: 1px solid var(--bd); }
+  .content-wrap { padding-top: 40px; }
   .list-2col { grid-template-columns: 1fr; }
   footer { padding: 28px 20px; font-size: 9px; }
 }
@@ -125,6 +130,7 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
     <button class="svc-pill" data-svc="shareholder" onclick="switchSvc('shareholder')">股东争议</button>
     <button class="svc-pill" data-svc="litigation" onclick="switchSvc('litigation')">商事争议</button>
   </div>
+  </div>
 </div>
 
 
@@ -135,17 +141,16 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
       <p class="hero-desc">股权架构设计的核心，不只是"股份怎么分"，而是要提前回答：谁负责决策？谁长期投入？谁可以退出？谁不能轻易拿走股权？公司未来融资、激励、治理是否还有空间？</p>
     </div>
   </div>
-  <div class="toc-wrap">
-    <div class="toc-inner">
-      <span class="toc-label">目录</span>
+  <div class="body-grid">
+  <div class="toc-side">
+<span class="toc-label">目录</span>
       <a class="toc-link" href="#equity-s1">哪些情况需要考虑</a>
     <a class="toc-link" href="#equity-s2">常见误区</a>
     <a class="toc-link" href="#equity-s3">不处理的风险</a>
     <a class="toc-link" href="#equity-s4">律师可以协助什么</a>
     <a class="toc-link" href="#equity-s5">一般服务流程</a>
     <a class="toc-link" href="#equity-s6">沟通前准备</a>
-    </div>
-  </div>
+      </div>
   <div class="content-wrap">
   <!-- 一 -->
   <div class="chapter" id="equity-s1">
@@ -325,6 +330,7 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
     <div class="tip">股权架构问题通常需要结合具体材料和交易背景进行判断。未审阅完整材料前，律师一般只能提供初步分析和方向性建议，不能直接作出确定性结论。</div>
   </div>
   </div>
+  </div>
 </div>
 
 <div class="svc-panel" id="panel-counsel">
@@ -334,17 +340,16 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
       <p class="hero-desc">企业不是出了事才需要律师，而是在关键决策前需要有人把风险说清楚。常年法律顾问的价值，不只是“有问题时问一问”，更重要的是在日常经营、合同签署、内部管理和风险处理的过程中，提前识别问题、控制风险、完善规则。</p>
     </div>
   </div>
-  <div class="toc-wrap">
-    <div class="toc-inner">
-      <span class="toc-label">目录</span>
+  <div class="body-grid">
+  <div class="toc-side">
+<span class="toc-label">目录</span>
       <a class="toc-link" href="#counsel-s1">哪些企业适合</a>
     <a class="toc-link" href="#counsel-s2">主要协助内容</a>
     <a class="toc-link" href="#counsel-s3">服务边界</a>
     <a class="toc-link" href="#counsel-s4">服务流程</a>
     <a class="toc-link" href="#counsel-s5">沟通前准备</a>
     <a class="toc-link" href="#counsel-s6">建议尽早咨询的情形</a>
-    </div>
-  </div>
+      </div>
   <div class="content-wrap">
   <!-- 一 -->
 <div class="chapter" id="counsel-s1">
@@ -502,6 +507,7 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
 </div>
 </div>
   </div>
+  </div>
 </div>
 
 <div class="svc-panel" id="panel-investment">
@@ -511,17 +517,16 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
       <p class="hero-desc">投资人给的条款，大部分创始人觉得“都是标准的”。但对赌、回购、优先清算权这些安排，在公司顺风顺水时感觉不到，一旦出现波折，就会发现自己当初签了什么。融资不只是融到钱，还涉及控制权、退出、责任和未来的主动权。</p>
     </div>
   </div>
-  <div class="toc-wrap">
-    <div class="toc-inner">
-      <span class="toc-label">目录</span>
+  <div class="body-grid">
+  <div class="toc-side">
+<span class="toc-label">目录</span>
       <a class="toc-link" href="#investment-s1">哪些情况需要关注</a>
     <a class="toc-link" href="#investment-s2">常见条款风险</a>
     <a class="toc-link" href="#investment-s3">常见误区</a>
     <a class="toc-link" href="#investment-s4">律师可以协助什么</a>
     <a class="toc-link" href="#investment-s5">一般服务流程</a>
     <a class="toc-link" href="#investment-s6">沟通前准备</a>
-    </div>
-  </div>
+      </div>
   <div class="content-wrap">
   <div class="chapter" id="investment-s1">
 <p class="chapter-num">一</p>
@@ -658,6 +663,7 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
 <div class="tip">融资或重要合作的法律工作，通常需要结合具体文件和交易背景进行判断。建议在收到对方草案后尽早介入，预留足够的审查和谈判时间。</div>
 </div>
   </div>
+  </div>
 </div>
 
 <div class="svc-panel" id="panel-shareholder">
@@ -667,16 +673,15 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
       <p class="hero-desc">股东之间的摩擦，往往不是突然出现的，而是在公司发展过程中逐渐累积的。开会越来越难达成一致，有人开始质疑决策权归属，印章和账户的控制权出现争议——这种阶段，每拖一天，公司正常运营就多一分风险。</p>
     </div>
   </div>
-  <div class="toc-wrap">
-    <div class="toc-inner">
-      <span class="toc-label">目录</span>
+  <div class="body-grid">
+  <div class="toc-side">
+<span class="toc-label">目录</span>
       <a class="toc-link" href="#shareholder-s1">常见争议类型</a>
     <a class="toc-link" href="#shareholder-s2">为什么不能拖</a>
     <a class="toc-link" href="#shareholder-s3">律师可以协助什么</a>
     <a class="toc-link" href="#shareholder-s4">一般处理路径</a>
     <a class="toc-link" href="#shareholder-s5">沟通前准备</a>
-    </div>
-  </div>
+      </div>
   <div class="content-wrap">
   <div class="chapter" id="shareholder-s1">
     <p class="chapter-num">一</p>
@@ -816,6 +821,7 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
     </div>
   </div>
   </div>
+  </div>
 </div>
 
 <div class="svc-panel" id="panel-litigation">
@@ -825,16 +831,15 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
       <p class="hero-desc">对方不履约、款项收不回来、合作破裂说不清责任——很多人的第一反应是“再等等看”。但等待本身是有代价的：证据在流失，时效在计算，对方可能已经在转移资产。越早介入，能做的事情越多。</p>
     </div>
   </div>
-  <div class="toc-wrap">
-    <div class="toc-inner">
-      <span class="toc-label">目录</span>
+  <div class="body-grid">
+  <div class="toc-side">
+<span class="toc-label">目录</span>
       <a class="toc-link" href="#litigation-s1">常见争议类型</a>
     <a class="toc-link" href="#litigation-s2">为什么不能只等</a>
     <a class="toc-link" href="#litigation-s3">律师可以协助什么</a>
     <a class="toc-link" href="#litigation-s4">一般处理路径</a>
     <a class="toc-link" href="#litigation-s5">沟通前准备</a>
-    </div>
-  </div>
+      </div>
   <div class="content-wrap">
   <div class="chapter" id="litigation-s1">
 <p class="chapter-num">一</p>
