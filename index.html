@@ -68,10 +68,13 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 
 .pain-wrap { background: var(--g1); border-top: 1px solid var(--bd); border-bottom: 1px solid var(--bd); }
 .pain-list { display: flex; flex-direction: column; }
-.pain-item { display: flex; align-items: flex-start; gap: 28px; padding: 22px 0; border-bottom: 1px solid var(--bd); }
+.pain-item { display: flex; align-items: flex-start; gap: 28px; padding: 22px 0; border-bottom: 1px solid var(--bd); text-decoration: none; cursor: pointer; transition: background .2s; }
 .pain-item:first-child { border-top: 1px solid var(--bd); }
+.pain-item:hover { background: var(--g1); }
+.pain-item:hover .pain-arrow { opacity: 1; }
 .pain-n { font-size: 9px; letter-spacing: 3px; color: var(--gd); min-width: 20px; padding-top: 4px; }
 .pain-t { font-size: 17px; color: var(--tx); line-height: 1.9; font-weight: 300; }
+.pain-arrow { font-size: 13px; color: var(--gd-dark); opacity: 0; transition: opacity .2s; flex-shrink: 0; padding-top: 6px; }
 
 .style-wrap { background: var(--nv); }
 .style-inner { max-width: var(--maxw); margin: 0 auto; padding: 96px var(--pad); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
@@ -118,13 +121,17 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
   .style-inner { gap: 48px; }
   .contact-inner { gap: 48px; }
 }
+.nav-ham { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-ham svg { display: block; }
+
 @media (max-width: 680px) {
   :root { --pad: 20px; }
   nav { height: 56px; padding: 0 20px; }
   .nav-brand { font-size: 13px; letter-spacing: 4px; }
-  .nav-links { gap: 12px; }
-  .nav-links a { font-size: 10px; letter-spacing: 1px; }
-  .nav-links a:nth-child(2),.nav-links a:nth-child(3) { display: none; }
+  .nav-ham { display: block; }
+  .nav-links { display: none; position: absolute; top: 56px; left: 0; right: 0; background: rgba(255,255,255,.98); backdrop-filter: blur(8px); flex-direction: column; gap: 0; border-bottom: 1px solid var(--bd); z-index: 101; }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 13px; letter-spacing: 2px; padding: 16px 20px; border-top: 1px solid var(--bd); }
   .hero { padding-top: 56px; min-height: auto; }
   .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 60px 20px 52px; }
   .hero-h1 { font-size: clamp(28px,8vw,38px); margin-bottom: 24px; }
@@ -151,13 +158,16 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
 
 <nav>
   <a class="nav-brand" href="index.html">方 · 雳</a>
-  <div class="nav-links">
-    <a onclick="nj('p1')">定位</a>
+  <div class="nav-links" id="nav-menu">
+    <a onclick="nj('p1')">专业定位</a>
     <a onclick="nj('p2')">服务领域</a>
     <a onclick="nj('p3')">执业经历</a>
     <a onclick="nj('p4')">联系方式</a>
     <a href="articles.html">文章</a>
   </div>
+  <button class="nav-ham" onclick="document.getElementById('nav-menu').classList.toggle('open')" aria-label="菜单">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
 </nav>
 
 <section class="hero">
@@ -181,7 +191,7 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
   <p class="section-label">专业定位</p>
   <div class="pos-grid">
     <div>
-      <h2 class="section-title">你现在“先放一放”的问题，<br>迟早会变成你最头疼的事。</h2>
+      <h2 class="section-title">你现在"先放一放"的问题，<br>迟早会变成你最头疼的事。</h2>
       <p class="pos-body">大多数创始人不是不重视法律，而是被更紧迫的事情占满了——融资、产品、团队。法律的事"不急"，就一直往后推。</p>
       <p class="pos-body">但那些没定清楚的股权、没看仔细的融资条款、没写进协议的合伙约定，不会因为你忙就自动消失。它们只是在等一个时机，以更大的代价重新出现在你面前。</p>
       <p class="pos-body">创业初期觉得"先把事做起来"，但等合伙人出现分歧，才发现当初没定清楚的，现在很难改；融资时觉得"条款差不多就行"，签完才发现控制权已经悄悄被稀释；经营中觉得"大家是老朋友，不至于出问题"，直到矛盾爆发，才意识到没有任何书面依据可以保护自己。</p>
@@ -206,39 +216,39 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
         <h3 class="svc-h">企业法律顾问</h3>
         <p class="svc-p">合同发过来了，不知道能不能签；合作谈得差不多，不知道怎么落到纸面；出了纠纷，不知道自己有没有依据。这些不是要打官司才需要律师，而是每个决策节点都需要一个能说清楚的人。</p>
         <p class="svc-sub">适合：日常经营中需要法律支撑的企业</p>
-        <a class="svc-link" href="counsel.html">了解详情 →</a>
+        <a class="svc-link" href="services.html?s=counsel">了解详情 →</a>
       </div>
       <div class="svc-card">
         <div class="svc-n">02</div>
         <h3 class="svc-h">股权架构与公司治理</h3>
         <p class="svc-p">股权怎么分，表决权怎么定，创始人的控制权怎么保住，合伙人退出怎么处理——这些在初期看起来不急，却是日后最容易引发内部撕裂的根源。没定清楚的结构，迟早要补代价。</p>
         <p class="svc-sub">适合：准备创业、已有分歧、计划融资前</p>
-        <a class="svc-link" href="equity.html">了解详情 →</a>
+        <a class="svc-link" href="services.html?s=equity">了解详情 →</a>
       </div>
       <div class="svc-card">
         <div class="svc-n">03</div>
         <h3 class="svc-h">投融资及合作交易</h3>
         <p class="svc-p">投资人给的条款，大部分创始人看不懂，或者觉得"都是标准的"。但对赌、回购、优先清算权这些条款，在公司顺风顺水时感觉不到，一旦出现波折，就会发现自己签了什么。</p>
         <p class="svc-sub">适合：正在融资、谈合作、准备签约的企业</p>
-        <a class="svc-link" href="investment.html">了解详情 →</a>
+        <a class="svc-link" href="services.html?s=investment">了解详情 →</a>
       </div>
       <div class="svc-card">
         <div class="svc-n">04</div>
         <h3 class="svc-h">股东及控制权争议</h3>
         <p class="svc-p">股东之间开始有摩擦，开会越来越难达成一致，有人开始质疑决策权归属——这种阶段，每拖一天，公司的正常运营就多一分风险，最终付出的代价远超早期介入的成本。</p>
         <p class="svc-sub">适合：已出现股东分歧或治理僵局的企业</p>
-        <a class="svc-link" href="shareholder.html">了解详情 →</a>
+        <a class="svc-link" href="services.html?s=shareholder">了解详情 →</a>
       </div>
       <div class="svc-card">
         <div class="svc-n">05</div>
         <h3 class="svc-h">商事争议解决</h3>
         <p class="svc-p">对方不履约、款项收不回来、合作破裂了说不清责任——这些情况发生时，很多人的第一反应是"再等等看"。但越拖，证据越难固定，主动权越少，最终能拿回来的也越少。</p>
         <p class="svc-sub">适合：面临纠纷或合作争议、需要尽快行动的企业</p>
-        <a class="svc-link" href="litigation.html">了解详情 →</a>
+        <a class="svc-link" href="services.html?s=litigation">了解详情 →</a>
       </div>
-      <div class="svc-card" style="display:flex;flex-direction:column;justify-content:flex-end">
-        <p style="font-size:12px;color:rgba(255,255,255,.25);line-height:2;font-weight:300;margin-bottom:24px">如果你不确定自己的问题属于哪个方向，直接联系即可——我来判断。</p>
-        <span onclick="nj('p4')" style="display:inline-block;font-size:9px;letter-spacing:4px;color:rgba(184,151,58,.8);border-bottom:1px solid rgba(184,151,58,.3);padding-bottom:3px;cursor:pointer">预约咨询 →</span>
+      <div class="svc-card" style="display:flex;flex-direction:column;justify-content:center">
+        <p style="font-size:16px;color:rgba(255,255,255,.45);line-height:2;font-weight:300;margin-bottom:24px">如果你不确定自己的问题属于哪个方向，直接联系即可——我来判断。</p>
+        <span onclick="nj('p4')" style="display:inline-block;font-size:11px;letter-spacing:4px;color:rgba(184,151,58,.8);border-bottom:1px solid rgba(184,151,58,.3);padding-bottom:3px;cursor:pointer">预约咨询 →</span>
       </div>
     </div>
   </div>
@@ -249,12 +259,12 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
     <p class="section-label">你是否也有这些困惑</p>
     <p class="section-title">这些问题，很多人拖了很久</p>
     <div class="pain-list">
-      <div class="pain-item"><div class="pain-n">01</div><p class="pain-t">创业时股权随便分了，现在合伙人出现分歧，才发现当初什么都没写清楚</p></div>
-      <div class="pain-item"><div class="pain-n">02</div><p class="pain-t">合伙了好几年，谁负责什么、谁能拍板、谁可以退出，从来没认真谈过</p></div>
-      <div class="pain-item"><div class="pain-n">03</div><p class="pain-t">投资协议签了，后来才慢慢意识到某些条款对自己很不利，但已经没有回头路</p></div>
-      <div class="pain-item"><div class="pain-n">04</div><p class="pain-t">股东之间的矛盾已经影响到正常决策，但不知道从哪里入手、怎么推进才不会把关系彻底搞僵</p></div>
-      <div class="pain-item"><div class="pain-n">05</div><p class="pain-t">法定代表人或董事想退出，但不知道怎么操作，担心退了还要背责任</p></div>
-      <div class="pain-item"><div class="pain-n">06</div><p class="pain-t">合同、采购、对外合作都靠感觉，出了问题才发现完全没有书面依据可以追究</p></div>
+      <a class="pain-item" href="articles.html?id=a1"><div class="pain-n">01</div><p class="pain-t">创业时股权随便分了，现在合伙人出现分歧，才发现当初什么都没写清楚</p><span class="pain-arrow">→</span></a>
+      <a class="pain-item" href="articles.html?id=a3"><div class="pain-n">02</div><p class="pain-t">合伙了好几年，谁负责什么、谁能拍板、谁可以退出，从来没认真谈过</p><span class="pain-arrow">→</span></a>
+      <a class="pain-item" href="articles.html?id=a2"><div class="pain-n">03</div><p class="pain-t">投资协议签了，后来才慢慢意识到某些条款对自己很不利，但已经没有回头路</p><span class="pain-arrow">→</span></a>
+      <a class="pain-item" href="articles.html?id=a4"><div class="pain-n">04</div><p class="pain-t">股东之间的矛盾已经影响到正常决策，但不知道从哪里入手、怎么推进才不会把关系彻底搞僵</p><span class="pain-arrow">→</span></a>
+      <a class="pain-item" href="articles.html?id=a9"><div class="pain-n">05</div><p class="pain-t">法定代表人或董事想退出，但不知道怎么操作，担心退了还要背责任</p><span class="pain-arrow">→</span></a>
+      <a class="pain-item" href="articles.html?id=a10"><div class="pain-n">06</div><p class="pain-t">合同、采购、对外合作都靠感觉，出了问题才发现完全没有书面依据可以追究</p><span class="pain-arrow">→</span></a>
     </div>
   </div>
 </div>
@@ -311,7 +321,7 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
     <p class="contact-desc">如果你现在有一个问题想确认，或者有一个情况不知道该怎么处理，欢迎直接联系。不用准备太多，说清楚你的情况就好，我来判断下一步怎么走。</p>
   </div>
   <div class="contact-list">
-    <div class="contact-item"><span class="contact-label">电话</span><span class="contact-val"><a href="tel:18958154567">18958154567</a></span></div>
+    <div class="contact-item"><span class="contact-label">微信</span><span class="contact-val"><img src="weixin.png" alt="微信二维码" style="width:120px;height:120px;display:block;margin-top:4px;border:1px solid var(--bd)"></span></div>
     <div class="contact-item"><span class="contact-label">邮箱</span><span class="contact-val"><a href="mailto:fllawyer@126.com">fllawyer@126.com</a></span></div>
     <div class="contact-item"><span class="contact-label">律所</span><span class="contact-val">浙江科资律师事务所</span></div>
     <div class="contact-item"><span class="contact-label">地址</span><span class="contact-val">杭州市上城区钱江路<br>太和广场8号楼1307—1309室</span></div>
@@ -324,6 +334,8 @@ footer { text-align: center; padding: 36px var(--pad); font-size: 12px; color: #
 function nj(id) {
   var el = document.getElementById(id);
   if (!el) return;
+  var menu = document.getElementById('nav-menu');
+  if (menu) menu.classList.remove('open');
   window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 64, behavior: 'smooth' });
 }
 var links = document.querySelectorAll('.nav-links a[onclick]');
