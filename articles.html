@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
 <meta name="description" content="方雳律师文章：写给企业经营者的法律思考，不谈法条，只谈处境。">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="canonical" href="https://fllawyer.net/articles.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fllawyer.net/articles.html">
 <meta property="og:title" content="文章 | 方雳律师">
@@ -104,7 +107,7 @@ html.dark .side-toggle:hover { background: var(--cr); }
 .pager-item.disabled { opacity: .3; cursor: default; pointer-events: none; }
 .pager-dir { font-size: 9px; letter-spacing: 3px; color: var(--gd-dark); text-transform: uppercase; margin-bottom: 6px; font-weight: 400; }
 .pager-title { font-family: var(--serif); font-size: 13px; color: var(--nv); line-height: 1.6; font-weight: 400; }
-.side-back { display: block; font-size: 9px; letter-spacing: 3px; color: var(--mt); text-transform: uppercase; font-weight: 400; margin-bottom: 12px; cursor: pointer; transition: color .2s; }
+.side-back { display: block; font-size: 9px; letter-spacing: 3px; color: var(--mt); text-transform: uppercase; font-weight: 400; margin-bottom: 12px; cursor: pointer; transition: color .2s; background: none; border: none; padding: 0; font-family: inherit; }
 .side-back:hover { color: var(--nv); }
 .mob-font-ctrl { display: none; width: 120px; margin: 20px 0 32px auto; }
 .font-ctrl.mob-font-ctrl { display: none; }
@@ -245,13 +248,13 @@ html.dark footer { border-top-color: #2a2720; color: #55524f; }
       <div class="cta-wrap">
         <div class="cta-left"><div class="cta-label">有类似的问题？</div><p>说清楚你的情况就好，我来判断下一步怎么走。</p></div>
         <div class="cta-right">
-          <span class="btn btn-p" onclick="document.getElementById('qr-overlay').classList.add('show')">微信咨询</span>
-          <span class="btn btn-g" onclick="window.location.href='mailto:fllawyer@126.com'">发邮件</span>
+          <button class="btn btn-p" onclick="document.getElementById('qr-overlay').classList.add('show')">微信咨询</button>
+          <a class="btn btn-g" href="mailto:fllawyer@126.com">发邮件</a>
         </div>
       </div>
     </div>
     <div class="art-side">
-      <span class="side-back" onclick="showList()">← 返回列表</span>
+      <button class="side-back" onclick="showList()">← 返回列表</button>
       <div class="font-ctrl desk-font-ctrl">
         <button class="font-btn" onclick="changeFontSize(-1)">A−</button>
         <button class="font-btn" onclick="resetFontSize()">重置</button>
@@ -266,7 +269,7 @@ html.dark footer { border-top-color: #2a2720; color: #55524f; }
 <footer>© 2026 方雳律师 · 浙江科资律师事务所 · 保留所有权利</footer>
 <div class="qr-overlay" id="qr-overlay" onclick="this.classList.remove('show')">
   <div class="qr-box" onclick="event.stopPropagation()">
-    <img src="weixin.png" alt="微信二维码">
+    <img src="weixin.webp" alt="微信二维码" width="200" height="200" loading="lazy">
     <p>扫码添加微信咨询</p>
     <p style="font-size:12px;color:#888;letter-spacing:1px;margin-bottom:16px">微信号：fllawyer</p>
     <button class="qr-close" onclick="document.getElementById('qr-overlay').classList.remove('show')">关闭</button>
